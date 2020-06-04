@@ -1,0 +1,20 @@
+include(FetchContent)
+set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
+FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG "release-1.8.1"
+)
+FetchContent_MakeAvailable(googletest)
+
+include(GoogleTest)
+foreach (t test-iostream)
+    add_executable(${t} ${t}.cpp)
+    target_link_libraries(${t} PUBLIC gmock_main molpro::${PROJECT_NAME})
+    if (NOT CMAKE_CROSSCOMPILING)
+        gtest_discover_tests(${t})
+        add_test(${t} ${t})
+    endif ()
+endforeach ()
+target_sources(test-iostream PRIVATE xout.cpp)
+target_compile_definitions(test-iostream PRIVATE EXTERN_OSTREAM_COUT=xout)
