@@ -8,6 +8,7 @@ FetchContent_Declare(
         GIT_TAG master
 )
 FetchContent_MakeAvailable(LibraryManager)
+LibraryManager_Project()
 
 add_subdirectory(dependencies)
 
