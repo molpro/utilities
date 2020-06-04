@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(iostream CXX)
+project(utilities CXX)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -25,5 +25,5 @@ include(DependencyManagerDocs)
 
 DependencyManagerDocs_Add(${PROJECT_NAME}
         FILES README.md
-        DOC_URL "https://molpro.gitlab.io/iostream/${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+        DOC_URL "https://molpro.gitlab.io/utilities/${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
         )

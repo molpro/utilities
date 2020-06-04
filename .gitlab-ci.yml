@@ -9,7 +9,7 @@ build:
   #    - merge_requests
   script:
     - TOP=$PWD
-    - PROJECT_NAME=iostream
+    - PROJECT_NAME=utilities
     - git checkout $CI_COMMIT_SHA # because of cache
     - git fetch --tags
     - git reset --hard
