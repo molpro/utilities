@@ -1,5 +1,5 @@
-utilities library {#mainpage}
-============================
+utilities library
+=================
 
 This library consists of various utilities needed for Molpro and its libraries:
  - the header ``molpro/iostream.h`` which contains definitions of ``molpro::cout`` and ``molpro::stderr`` which should be used in any library instead of ``std::cout`` and ``std::cerr``.
