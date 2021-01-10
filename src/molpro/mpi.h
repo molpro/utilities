@@ -29,7 +29,7 @@ namespace mpi {
  * @brief Return MPI_COMM_SELF in an MPI program, or an appropriate dummy if not
  * @return MPI_COMM_SELF if MPI initialised, MPI_COMM_NULL otherwise, or 0 if MPI support not compiled
  */
-MPI_Comm comm_self() {
+inline MPI_Comm comm_self() {
 #ifdef HAVE_MPI_H
   int flag;
   MPI_Initialized(&flag);
@@ -52,7 +52,7 @@ MPI_Comm comm_self() {
  * code), a place-holder is chosen.
  * @return The global communicator
  */
-MPI_Comm comm_global() {
+inline MPI_Comm comm_global() {
 #ifdef HAVE_MPI_H
   int flag;
   MPI_Initialized(&flag);
@@ -89,10 +89,10 @@ MPI_Comm comm_global() {
 /*!
  * @brief C binding of mpi::comm_global(), suitable for calling from Fortran
  */
-extern "C" int64_t mpicomm_global() { return (int64_t) MPI_Comm_c2f(molpro::mpi::comm_global()); }
+extern "C" inline int64_t mpicomm_global() { return (int64_t) MPI_Comm_c2f(molpro::mpi::comm_global()); }
 
 /*!
  * @brief C binding of mpi::comm_self(), suitable for calling from Fortran
  */
-extern "C" int64_t mpicomm_self() { return (int64_t) MPI_Comm_c2f(molpro::mpi::comm_self()); }
+extern "C" inline int64_t mpicomm_self() { return (int64_t) MPI_Comm_c2f(molpro::mpi::comm_self()); }
 #endif // UTILITIES_SRC_MOLPRO_MPI_H_
