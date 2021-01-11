@@ -1,10 +1,14 @@
 #ifndef UTILITIES_SRC_MOLPRO_MPI_H_
 #define UTILITIES_SRC_MOLPRO_MPI_H_
+
+#include <cstdint>
+
 #ifndef HAVE_MPI_H
 #if defined(OMPI_MPI_H) || defined(MPI_INCLUDED)
 #define HAVE_MPI_H
 #endif
 #endif
+
 #ifdef HAVE_MPI_H
 #include <mpi.h>
 #else
@@ -89,10 +93,10 @@ inline MPI_Comm comm_global() {
 /*!
  * @brief C binding of mpi::comm_global(), suitable for calling from Fortran
  */
-extern "C" inline int64_t mpicomm_global() { return (int64_t) MPI_Comm_c2f(molpro::mpi::comm_global()); }
+extern "C" int64_t mpicomm_global();
 
 /*!
  * @brief C binding of mpi::comm_self(), suitable for calling from Fortran
  */
-extern "C" inline int64_t mpicomm_self() { return (int64_t) MPI_Comm_c2f(molpro::mpi::comm_self()); }
+extern "C" int64_t mpicomm_self();
 #endif // UTILITIES_SRC_MOLPRO_MPI_H_
