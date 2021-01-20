@@ -67,7 +67,7 @@ inline MPI_Comm comm_global() {
 #else
   return comm_self();
 #endif
-#ifdef PPIDD_H
+#ifdef __PPIDD_H__
   {
     int64_t size;
     PPIDD_Size(&size);
@@ -87,6 +87,15 @@ inline MPI_Comm comm_global() {
   return comm_self();
 }
 
+/*!
+ * @brief In MPI environment initialize; otherwise do nothing. Intended to support MPI-agnostic programs.
+ */
+int init();
+/*!
+ * @brief In MPI environment finalize; otherwise do nothing
+ */
+int finalize();
+
 } // namespace mpi
 } // namespace molpro
 
@@ -99,4 +108,14 @@ extern "C" int64_t mpicomm_global();
  * @brief C binding of mpi::comm_self(), suitable for calling from Fortran
  */
 extern "C" int64_t mpicomm_self();
+
+/*!
+ * @brief C binding of mpi::init(), suitable for calling from Fortran
+ */
+extern "C" int mpi_init();
+
+/*!
+ * @brief C binding of mpi::finalize(), suitable for calling from Fortran
+ */
+extern "C" int mpi_finalize();
 #endif // UTILITIES_SRC_MOLPRO_MPI_H_
