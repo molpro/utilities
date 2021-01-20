@@ -72,7 +72,7 @@ inline MPI_Comm comm_global() {
     int64_t size;
     PPIDD_Size(&size);
     if (size > 0)
-      return MPI_Comm_c2f(PPIDD_Worker_comm());
+      return MPI_Comm_f2c(PPIDD_Worker_comm());
   }
 #else
 #ifdef GA_H
