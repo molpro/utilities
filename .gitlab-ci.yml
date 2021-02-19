@@ -5,8 +5,6 @@ cache:
     - build
 build:
   image: ${CI_REGISTRY}/molpro/${CI_PROJECT_NAME}
-  except:
-    - tags
   #  only:
   #    - merge_requests
   script:
