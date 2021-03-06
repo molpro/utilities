@@ -1,6 +1,6 @@
 # Source files at this level define the public interface to the library
 LibraryManager_Append(${PROJECT_NAME}
-        PUBLIC_HEADER iostream.h mpi.h
+        PUBLIC_HEADER iostream.h mpi.h cblas.h lapacke.h
         SOURCES iostream.cpp mpi.cpp
         )
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
