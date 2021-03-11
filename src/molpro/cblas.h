@@ -5,11 +5,11 @@
  * @brief Non-forcing inclusion of cblas header file.
  * If successful, HAVE_CBLAS is defined.
  */
-#if __has_include(<mkl_cblas.h>)
+#if __has_include(<mkl_lapacke.h>) && ! defined(NO_USE_MKL)
 #include <mkl_cblas.h>
 #define HAVE_CBLAS
 #define HAVE_MKL
-#elif __has_include(<Accelerate/Accelerate.h>)
+#elif __has_include(<Accelerate/Accelerate.h>) && ! defined(NO_USE_ACCELERATE)
 #include <Accelerate/Accelerate.h>
 #define HAVE_CBLAS
 #define HAVE_ACCELERATE

@@ -5,7 +5,7 @@
  * @brief Non-forcing inclusion of lapacke header file.
  * If successful, HAVE_LAPACKE is defined.
  */
-#if __has_include(<mkl_lapacke.h>)
+#if __has_include(<mkl_lapacke.h>) && ! defined(NO_USE_MKL)
 #include <mkl_lapacke.h>
 #define HAVE_MKL
 #define HAVE_LAPACKE
