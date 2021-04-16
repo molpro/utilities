@@ -87,6 +87,22 @@ inline MPI_Comm comm_global() {
   return comm_self();
 }
 
+inline int size_global() {
+  int size = 1;
+#ifdef HAVE_MPI_H
+  MPI_Comm_size(comm_global(), &size);
+#endif
+  return size;
+}
+
+inline int rank_global() {
+  int rank = 0;
+#ifdef HAVE_MPI_H
+  MPI_Comm_rank(comm_global(), &rank);
+#endif
+  return rank;
+}
+
 /*!
  * @brief In MPI environment initialize; otherwise do nothing. Intended to support MPI-agnostic programs.
  */
@@ -108,6 +124,16 @@ extern "C" int64_t mpicomm_global();
  * @brief C binding of mpi::comm_self(), suitable for calling from Fortran
  */
 extern "C" int64_t mpicomm_self();
+
+/*!
+ * @brief C binding of mpi::size_global(), suitable for calling from Fortran
+ */
+extern "C" int64_t mpisize_global();
+
+/*!
+ * @brief C binding of mpi::rank_global(), suitable for calling from Fortran
+ */
+extern "C" int64_t mpirank_global();
 
 /*!
  * @brief C binding of mpi::init(), suitable for calling from Fortran

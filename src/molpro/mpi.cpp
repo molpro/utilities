@@ -2,6 +2,10 @@
 
 extern "C" int64_t mpicomm_global() { return (int64_t)MPI_Comm_c2f(molpro::mpi::comm_global()); }
 
+extern "C" int64_t mpisize_global() { return molpro::mpi::size_global(); }
+
+extern "C" int64_t mpirank_global() { return molpro::mpi::rank_global(); }
+
 extern "C" int64_t mpicomm_self() { return (int64_t)MPI_Comm_c2f(molpro::mpi::comm_self()); }
 
 int molpro::mpi::init() {
