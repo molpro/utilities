@@ -8,6 +8,8 @@ clients of the library can then, if desired, redirect by defining `EXTERN_OSTREA
    
  - the header ``molpro/mpi.h`` which provides functions that return the global and self communicators. These work when there is no MPI support compiled, and when running under [Global Arrays](https://hpc.pnl.gov/globalarrays/) or [PPIDD](https://gitlab.com/molpro/ppidd), where MPI_COMM_WORLD is not the appropriate global communicator.
 
+ - the header ``molpro/Options.h`` which provides a class that manages input options. In the Molpro context, these are input parameters; elsewhere, they can be injected from a Fortran namelist.
+
 Documentation is installed at
 [molpro.gitlab.io/utilities](https://molpro.gitlab.io/utilities)
 
