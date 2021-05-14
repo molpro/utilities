@@ -12,6 +12,7 @@ public:
   /*!
    * \brief Construct Options object
    * \param input Namelist format option specifier
+   * \param program Name of code module owning this set of options. In the Molpro context, this is the registry set.
    */
   explicit Options(std::string program, std::string input = "");
 
