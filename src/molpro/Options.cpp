@@ -12,7 +12,6 @@ using itf::GetOptionS;
 #include <iostream>
 #include <sstream>
 
-
 namespace molpro {
 
 Options::Options(std::string program, std::string input) : m_program(std::move(program)) {
@@ -24,6 +23,15 @@ Options::Options(std::string program, std::string input) : m_program(std::move(p
       namelistData.append(ss);
   namelistData.append(",DUMMY_KEY=,"); // dummy entry at end to simplify parsing
 }
+
+inline std::string args(int argc, const char *argv[]) {
+  std::string keyval;
+  for (int i = 1; i < argc; ++i)
+    keyval += std::string(i != 1 ? " " : "") + argv[i];
+  return keyval;
+}
+
+Options::Options(std::string program, int argc, const char **argv) : Options(program, args(argc, argv)) {}
 
 std::vector<int> Options::parameter(const std::string &key,
                                     const std::vector<int> &def) const { // dirty sucking in from FCIDUMP namelist

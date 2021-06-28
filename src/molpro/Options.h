@@ -16,6 +16,8 @@ public:
    */
   explicit Options(std::string program, std::string input = "");
 
+  explicit Options(std::string program, int argc, const char* argv[]);
+
   /*!
    * \brief Obtain an integer parameter.
    * \param key The name of the parameter
