@@ -21,8 +21,8 @@ TEST(options, construct) {
 }
 
 TEST(Options, construct_from_args) {
-char* argv[4];
-argv[0] = strdup("program");
+  char* argv[4];
+  argv[0] = strdup("program");
   argv[1] = strdup("stringtest=stringvalue");
   argv[2] = strdup("inttest=123");
   argv[3] = strdup("floattest=4.567");

@@ -27,11 +27,12 @@ Options::Options(std::string program, std::string input) : m_program(std::move(p
 inline std::string args(int argc, char** argv) {
   std::string keyval;
   for (int i = 1; i < argc; ++i)
-    keyval += std::string(i != 1 ? " " : "") + argv[i];
+    keyval += std::string(i != 1 ? " " : "") + argv[i] + ",";
   return keyval;
 }
 
-Options::Options(std::string program, int argc, char **argv) : Options(program, args(argc, argv)) {}
+Options::Options(std::string program, int argc, char **argv)
+    : Options(program, std::string{"&"} + program + "\n" + args(argc, argv) + "\n&END") {}
 
 std::vector<int> Options::parameter(const std::string &key,
                                     const std::vector<int> &def) const { // dirty sucking in from FCIDUMP namelist
