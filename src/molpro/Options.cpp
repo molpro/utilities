@@ -49,9 +49,15 @@ std::vector<int> Options::parameter(const std::string &key,
   return answer;
 }
 
+inline std::string upcase(const std::string& s) {
+  auto u{s};
+  std::for_each(u.begin(),u.end(), [](char& c){c=::toupper(c);});
+  return u;
+}
+
 int Options::parameter(const std::string &key, int def) const {
 #ifdef MOLPRO
-  FORTINT r = GetOptionI(key.c_str(), m_program);
+  FORTINT r = GetOptionI(upcase(key).c_str(), upcase(m_program).c_str());
   if (r != (FORTINT)-1)
     return static_cast<int>(r);
 #endif
@@ -60,7 +66,7 @@ int Options::parameter(const std::string &key, int def) const {
 
 double Options::parameter(const std::string &key, double def) const {
 #ifdef MOLPRO
-  FORTDBL r = GetOptionF(key.c_str(), m_program);
+  FORTDBL r = GetOptionF(upcase(key).c_str(), upcase(m_program).c_str());
   return static_cast<double>(r);
 #endif
   return parameter(key, std::vector<double>{def})[0];
@@ -83,7 +89,7 @@ std::vector<double> Options::parameter(const std::string &key,
 
 std::string Options::parameter(const std::string &key, const std::string &def) const {
 #ifdef MOLPRO
-  std::string r = GetOptionS(key.c_str(), m_program);
+  std::string r = GetOptionS(upcase(key).c_str(), upcase(m_program).c_str());
   if (r != std::string(""))
     return r;
 #endif
