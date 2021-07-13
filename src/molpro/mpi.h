@@ -19,11 +19,12 @@ using MPI_Comm = int64_t;
 #define MPI_WIN_NULL 0
 #define MPI_INFO_NULL 0
 using MPI_Win = int64_t;
-#define MPI_Barrier(x) 0
-#define MPI_Win_free(x) 0
-#define MPI_Win_allocate(x1,x2,x3,x4,x5,x6) 0
-#define MPI_Win_lock(x1,x2,x3,x4) 0
-#define MPI_Win_unlock(x1,x2) 0
+inline void _MPI_nullfunction(const void* x) {}
+#define MPI_Barrier(x) _MPI_nullfunction(&x)
+#define MPI_Win_free(x) _MPI_nullfunction(x)
+#define MPI_Win_allocate(x1,x2,x3,x4,x5,x6) _MPI_nullfunction(x5)
+#define MPI_Win_lock(x1,x2,x3,x4) _MPI_nullfunction(&x4)
+#define MPI_Win_unlock(x1,x2) _MPI_nullfunction(&x2)
 /// \endcond
 #endif
 
