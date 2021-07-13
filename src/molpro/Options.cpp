@@ -11,6 +11,7 @@ using itf::GetOptionS;
 #include "Options.h"
 #include <iostream>
 #include <sstream>
+#include <algorithm>
 
 namespace molpro {
 
