@@ -9,9 +9,9 @@ using itf::GetOptionS;
 #endif
 #endif
 #include "Options.h"
+#include <algorithm>
 #include <iostream>
 #include <sstream>
-#include <algorithm>
 
 namespace molpro {
 
@@ -39,7 +39,7 @@ std::vector<int> Options::parameter(const std::string &key,
                                     const std::vector<int> &def) const { // dirty sucking in from FCIDUMP namelist
   std::vector<int> answer;
   std::vector<std::string> strings = parameter(key, std::vector<std::string>(1, " "));
-  if (strings == std::vector<std::string>(1, " "))
+  if (strings.empty() or strings == std::vector<std::string>(1, "") or strings == std::vector<std::string>(1, " "))
     return def;
   for (std::vector<std::string>::const_iterator s1 = strings.begin(); s1 != strings.end(); s1++) {
     int i;
@@ -50,9 +50,9 @@ std::vector<int> Options::parameter(const std::string &key,
   return answer;
 }
 
-inline std::string upcase(const std::string& s) {
+inline std::string upcase(const std::string &s) {
   auto u{s};
-  std::for_each(u.begin(),u.end(), [](char& c){c=::toupper(c);});
+  std::for_each(u.begin(), u.end(), [](char &c) { c = ::toupper(c); });
   return u;
 }
 
@@ -77,7 +77,7 @@ std::vector<double> Options::parameter(const std::string &key,
                                        const std::vector<double> &def) const { // dirty sucking in from FCIDUMP namelist
   std::vector<double> answer;
   std::vector<std::string> strings = parameter(key, std::vector<std::string>(1, " "));
-  if (strings == std::vector<std::string>(1, " "))
+  if (strings.empty() or strings == std::vector<std::string>(1, "") or strings == std::vector<std::string>(1, " "))
     return def;
   for (std::vector<std::string>::const_iterator s1 = strings.begin(); s1 != strings.end(); s1++) {
     double i;
@@ -93,21 +93,28 @@ std::string Options::parameter(const std::string &key, const std::string &def) c
   std::string r = GetOptionS(upcase(key).c_str(), upcase(m_program).c_str());
   if (r != std::string(""))
     return r;
+  else
+    return def;
 #endif
   const std::vector<std::string> &vector1 = parameter(key, std::vector<std::string>(1, def));
   return vector1[0];
 }
 std::vector<std::string> Options::parameter(const std::string &key, const std::vector<std::string> &def) const {
   std::vector<std::string> answer;
-  size_t pos = namelistData.find("," + key + "=");
+#ifdef MOLPRO
+  const auto string = std::string{","} + key + "=" + parameter(key, "") + ",";
+#else
+  const auto &string = namelistData;
+#endif
+  size_t pos = string.find("," + key + "=");
   if (pos == std::string::npos)
     return def;
-  pos = namelistData.find('=', pos) + 1;
-  size_t pose = namelistData.find('=', pos);
-  pose = namelistData.find_last_of(',', pose) + 1;
+  pos = string.find('=', pos) + 1;
+  size_t pose = string.find('=', pos);
+  pose = string.find_last_of(',', pose) + 1;
   for (size_t posNext = pos; posNext < pose; pos = posNext) {
-    posNext = namelistData.find(',', pos) + 1;
-    answer.push_back(namelistData.substr(pos, posNext - pos - 1));
+    posNext = string.find(',', pos) + 1;
+    answer.push_back(string.substr(pos, posNext - pos - 1));
   }
   return answer;
 }
