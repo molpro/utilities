@@ -1,10 +1,34 @@
+stages:
+  - image
+  - test
+  - deploy
+
+build-image:
+  image:
+    name: gcr.io/kaniko-project/executor:debug
+    entrypoint: [ "" ]
+  timeout: 3h
+  script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --destination $CI_REGISTRY_IMAGE:latest
+  stage: image
+  only:
+    refs:
+      - master
+    changes:
+      - Dockerfile
+      - .gitlab-ci.yml
+
 cache:
   key: ${CI_PROJECT_NAME}
   paths:
     - public
     - build
+
 build:
-  image: ${CI_REGISTRY}/molpro/${CI_PROJECT_NAME}
+  stage: test
+  image: ${CI_REGISTRY_IMAGE}:latest
   #  only:
   #    - merge_requests
   script:
@@ -24,6 +48,7 @@ build:
     - if [ $(git describe --tags --abbrev=0 --always HEAD) = $(git describe --tags --abbrev=0 --always origin/master) ]; then cd $TOP/public; rm -f latest; ln -s ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR} latest ; rm -f ./index.html; fi
     - echo '<head><meta http-equiv="refresh" content="0; URL=latest"></head>' > $TOP/public/index.html
 pages:
+  image: ${CI_REGISTRY_IMAGE}:latest
   stage: deploy
   only:
     - tags
