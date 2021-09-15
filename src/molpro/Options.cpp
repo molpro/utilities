@@ -1,5 +1,14 @@
 #ifdef MOLPRO
-#include "cic/ItfFortranInt.h"
+//#include "cic/ItfFortranInt.h"
+#include <string>
+namespace itf{
+#define FORTINT int64_t
+#define FORTDBL double
+FORTINT GetOptionI( char const *pVarName, char const *pSetName );
+FORTDBL GetOptionF( char const *pVarName, char const *pSetName );
+std::string GetOptionS( char const *pVarName, char const *pSetName );
+bool GetOptionL( char const *pVarName, char const *pSetName );
+}
 using itf::GetOptionF;
 using itf::GetOptionI;
 using itf::GetOptionS;
