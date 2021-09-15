@@ -55,6 +55,10 @@ inline MPI_Comm comm_self() {
 #endif
 }
 
+#ifdef MOLPRO
+extern "C" int molpro_mppx();
+#endif
+
 /*!
  * @brief Return the MPI communicator containing all processes available for participation in computation.
  * If MPI support has been compiled (either mpi.h has already been included, or HAVE_MPI_H has been defined) but not yet
@@ -64,9 +68,13 @@ inline MPI_Comm comm_self() {
  * in the case of a program compiled with GA, and for which GA has already been initialised, this will be the GA worker
  * communicator. Otherwise, if MPI support has is active, MPI_COMM_WORLD is selected. Otherwise (completely serial
  * code), a place-holder is chosen.
+ * In the Molpro context, if running in mppx mode, MPI_COMM_SELF is always returned.
  * @return The global communicator
  */
 inline MPI_Comm comm_global() {
+#ifdef MOLPRO
+  if (molpro_mppx()) return comm_self();
+#endif
 #ifdef HAVE_MPI_H
   int flag;
   MPI_Initialized(&flag);
@@ -97,6 +105,10 @@ inline MPI_Comm comm_global() {
   return comm_self();
 }
 
+/*!
+ * @brief Query the size of the global MPI communicator
+ * @return The size of the global communicator, or 1 if not using MPI
+ */
 inline int size_global() {
   int size = 1;
 #ifdef HAVE_MPI_H
@@ -105,6 +117,10 @@ inline int size_global() {
   return size;
 }
 
+/*!
+ * @brief Query the rank in the global MPI communicator
+ * @return The rank in the global communicator, or 0 if not using MPI
+ */
 inline int rank_global() {
   int rank = 0;
 #ifdef HAVE_MPI_H
