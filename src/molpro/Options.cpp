@@ -1,8 +1,7 @@
 #ifdef MOLPRO
-#include "cic/ItfFortranInt.h"
-using itf::GetOptionF;
-using itf::GetOptionI;
-using itf::GetOptionS;
+#include <string>
+#include <stddef.h>
+#include "util/util.h"
 #else
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
@@ -58,17 +57,17 @@ inline std::string upcase(const std::string &s) {
 
 int Options::parameter(const std::string &key, int def) const {
 #ifdef MOLPRO
-  FORTINT r = GetOptionI(upcase(key).c_str(), upcase(m_program).c_str());
-  if (r != (FORTINT)-1)
-    return static_cast<int>(r);
+  int r = get_inpi_c(upcase(key).c_str(), upcase(m_program).c_str());
+  if (r != -1)
+    return r;
 #endif
   return parameter(key, std::vector<int>{def})[0];
 }
 
 double Options::parameter(const std::string &key, double def) const {
 #ifdef MOLPRO
-  FORTDBL r = GetOptionF(upcase(key).c_str(), upcase(m_program).c_str());
-  return static_cast<double>(r);
+  double r = get_inpf_c(upcase(key).c_str(), upcase(m_program).c_str());
+  return r;
 #endif
   return parameter(key, std::vector<double>{def})[0];
 }
@@ -90,7 +89,9 @@ std::vector<double> Options::parameter(const std::string &key,
 
 std::string Options::parameter(const std::string &key, const std::string &def) const {
 #ifdef MOLPRO
-  std::string r = GetOptionS(upcase(key).c_str(), upcase(m_program).c_str());
+  char buf[4096];
+  get_inps_c(upcase(key).c_str(), upcase(m_program).c_str(), buf);
+  std::string r{buf};
   if (r != std::string(""))
     return r;
   else
