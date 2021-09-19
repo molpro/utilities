@@ -1,7 +1,7 @@
 #ifdef MOLPRO
 #include <string>
 #include <stddef.h>
-#include "util/util.h"
+#include "util/getinp.h"
 #else
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
