@@ -16,6 +16,9 @@
 #elif __has_include(<cblas.h>)
 #include <cblas.h>
 #define HAVE_CBLAS
+#else
+#include "cblas_generic.h"
+#define HAVE_CBLAS
 #endif
 
 #endif //MOLPRO_DEPENDENCIES_UTILITIES_SRC_MOLPRO_CBLAS_H_
