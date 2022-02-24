@@ -22,7 +22,7 @@ target_compile_definitions(test-iostream PRIVATE EXTERN_OSTREAM_COUT=xout)
 
 add_library(libtestblas INTERFACE)
 LibraryManager_BLAS(libtestblas INTERFACE )
-LibraryManager_LAPACK(libtestblas INTERFACE OpenBLAS)
+LibraryManager_LAPACK(libtestblas INTERFACE Intel10_64lp Apple)
 target_link_libraries(test-blas PRIVATE BLAS::BLAS)
 target_link_libraries(test-lapacke PRIVATE LAPACK::LAPACK)
 include(LibraryManagerUtils)
