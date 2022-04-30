@@ -21,9 +21,9 @@ if (${CMAKE_PROJECT_NAME} STREQUAL ${PROJECT_NAME})
 endif ()
 
 # Documentation has to come last to make sure all dependencies have been added
-include(DependencyManagerDocs OPTIONAL)
+include(DependencyManagerDocs OPTIONAL RESULT_VARIABLE DependencyManagerDocs_FOUND)
 
-if (DependencyManagerDocs_FOUND)
+if (NOT DependencyManagerDocs_FOUND STREQUAL "NOTFOUND")
     DependencyManagerDocs_Add(${PROJECT_NAME}
             FILES README.md
             DOC_URL "https://molpro.gitlab.io/utilities/${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
