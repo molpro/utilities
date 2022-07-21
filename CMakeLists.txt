@@ -4,7 +4,7 @@ project(utilities CXX)
 include(FetchContent)
 FetchContent_Declare(
         LibraryManager
-        GIT_REPOSITORY https://gitlab.com/molpro/LibraryManager.git
+        GIT_REPOSITORY https://github.com/molpro/library-manager.git
         GIT_TAG 0.11.0
 )
 FetchContent_MakeAvailable(LibraryManager)
