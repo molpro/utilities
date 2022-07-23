@@ -1,10 +1,18 @@
 # Source files at this level define the public interface to the library
 LibraryManager_Append(${PROJECT_NAME}
-        PUBLIC_HEADER iostream.h mpi.h cblas.h lapacke.h Options.h
-        SOURCES mpi.cpp Options.cpp
+        PUBLIC_HEADER iostream.h mpi.h cblas.h lapacke.h Options.h memory.h
+        SOURCES mpi.cpp Options.cpp memoryC.cpp
         )
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_EXTENSIONS OFF)
+if (FORTRAN)
+    set(MOLPRO_MEMORY_FORTRAN ON)
+endif ()
+configure_file(memory-config.h.in memory/memory-config.h)
+LibraryManager_AppendExternal(${PROJECT_NAME}
+        INCLUDE_DIR ${CMAKE_CURRENT_BINARY_DIR}/..
+        PUBLIC_HEADER ${CMAKE_CURRENT_BINARY_DIR}/memory/memory-config.h
+        )
 if (TARGET MPI::MPI_CXX)
     message(STATUS "molpro::utilities with MPI")
     target_link_libraries(${PROJECT_NAME} PUBLIC MPI::MPI_CXX)
