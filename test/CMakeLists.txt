@@ -8,7 +8,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(googletest)
 
 include(GoogleTest)
-foreach (t test-iostream test-mpi test-options test-blas test-lapacke)
+foreach (t test-iostream test-mpi test-options test-blas test-lapacke test-memory)
     add_executable(${t} ${t}.cpp)
     set_property(TARGET ${t} PROPERTY CXX_STANDARD 17)
     target_link_libraries(${t} PUBLIC gmock_main molpro::${PROJECT_NAME})
