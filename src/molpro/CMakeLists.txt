@@ -1,7 +1,7 @@
 # Source files at this level define the public interface to the library
 LibraryManager_Append(${PROJECT_NAME}
-        PUBLIC_HEADER iostream.h mpi.h cblas.h lapacke.h Options.h memory.h
-        SOURCES mpi.cpp Options.cpp memoryC.cpp
+        PUBLIC_HEADER iostream.h mpi.h cblas.h lapacke.h Options.h memory.h bytestreamC.h
+        SOURCES mpi.cpp Options.cpp memoryC.cpp bytestreamC.cpp
         )
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_EXTENSIONS OFF)
