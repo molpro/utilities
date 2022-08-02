@@ -11,16 +11,24 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Doxygen
-        run: |
-          PUBLIC=./public
-          mkdir -p $PUBLIC && touch $PUBLIC/.thing
-          echo '<html> <head> </head> <body> <h1>Hello World<h1> <p>Hello World!!</p> </body> </html>' > $PUBLIC/index.html
-          pwd
+      - name: Configure CMake
+        if: steps.check_configuration.outputs.files_exists == 'true'
+        run: cmake -B ${{github.workspace}}/build
+
+      - name: Build
+        if: steps.check_configuration.outputs.files_exists == 'true'
+        run: cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
+
+#      - name: Doxygen
+#        run: |
+#          PUBLIC=./public
+#          mkdir -p $PUBLIC && touch $PUBLIC/.thing
+#          echo '<html> <head> </head> <body> <h1>Hello World<h1> <p>Hello World!!</p> </body> </html>' > $PUBLIC/index.html
+#          pwd
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.8.0
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ${{github.workspace}}/build/docs/utilities/html
