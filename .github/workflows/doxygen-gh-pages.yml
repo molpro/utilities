@@ -17,7 +17,7 @@ jobs:
 #          doxyfile-path: 'Doxyfile'
         run: |
           PUBLIC=./public
-          mkdir -p $PUBLIC
+          mkdir -p $PUBLIC && touch $PUBLIC/.thing
           echo '<html> <head> </head> <body> <h1>Hello World<h1> <p>Hello World</p> </body> </html>' > $PUBLIC/index.html
           pwd
           echo PUBLIC=$PUBLIC
