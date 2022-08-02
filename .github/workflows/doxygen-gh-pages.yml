@@ -9,13 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
       - name: Doxygen
         uses: mattnotmitt/doxygen-action@v1.9.4
         with:
           doxyfile-path: 'Doxyfile'
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_otken: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
