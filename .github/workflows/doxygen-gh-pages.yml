@@ -23,7 +23,6 @@ jobs:
           echo PUBLIC=$PUBLIC
 #          ls -lRta $PUBLIC
 #          ls -lRta /home/runner/work/utilities/utilities/public/
-#          ls -lRta /home/runner/work/utilities/utilities/public/.*
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.8.0
