@@ -16,13 +16,15 @@ jobs:
 #        with:
 #          doxyfile-path: 'Doxyfile'
         run: |
-          PUBLIC=$HOME/public
+          PUBLIC=./public
           mkdir -p $PUBLIC
           echo '<html> <head> </head> <body> <h1>Hello World<h1> <p>Hello World</p> </body> </html>' > $PUBLIC/index.html
+          pwd
           ls -lRta
+          ls -lRta $PUBLIC
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: $HOME/public
+          publish_dir: ./public
