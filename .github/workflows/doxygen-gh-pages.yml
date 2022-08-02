@@ -38,4 +38,5 @@ jobs:
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ${{github.workspace}}/build/docs/utilities/html
+#          publish_dir: ${{github.workspace}}/build/docs/utilities/html
+          publish_dir: ./build/docs/utilities/html
