@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>utilities: Molpro utilities library</title>
+<title>utilities: File Members</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,19 +61,52 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
-  <div class="headertitle">
-<div class="title">Molpro utilities library </div>  </div>
-</div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md____w_utilities_utilities_README"></a></p>
-<p>This library consists of various utilities needed for Molpro and its libraries:</p><ul>
-<li>the header <code><a class="el" href="iostream_8h.html">molpro/iostream.h</a></code> which contains definitions of <code>molpro::cout</code> and <code>molpro::stderr</code> which should be used in any library used in Molpro instead of <code>std::cout</code> and <code>std::cerr</code>. By default, they are simply an alias for the <code>std::</code> streams, but clients of the library can then, if desired, redirect by defining <code>EXTERN_OSTREAM_COUT</code> as the desired <code>extern std::ostream&amp;</code>.</li>
-<li>the header <code><a class="el" href="mpi_8h.html">molpro/mpi.h</a></code> which provides functions that return the global and self communicators. These work when there is no MPI support compiled, and when running under <a href="https://hpc.pnl.gov/globalarrays/">Global Arrays</a> or <a href="https://gitlab.com/molpro/ppidd">PPIDD</a>, where MPI_COMM_WORLD is not the appropriate global communicator.</li>
-<li>the header <code><a class="el" href="Options_8h.html">molpro/Options.h</a></code> which provides a class that manages input options. In the Molpro context, these are input parameters; elsewhere, they can be injected from a Fortran namelist.</li>
+&#160;<ul>
+<li>memory_bytestream_hash()
+: <a class="el" href="bytestreamC_8cpp.html#a6a2bee24d702e1fc509e77c9807e63e4">bytestreamC.cpp</a>
+, <a class="el" href="bytestreamC_8h.html#a6a2bee24d702e1fc509e77c9807e63e4">bytestreamC.h</a>
+</li>
+<li>memory_initialize()
+: <a class="el" href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">memory.h</a>
+</li>
+<li>memory_print_status()
+: <a class="el" href="memory_8h.html#a963f09ca1733fb5608eabb11d2b8de91">memory.h</a>
+</li>
+<li>memory_remaining()
+: <a class="el" href="memory_8h.html#ab6dc83a79e362f9370c8726259d24d8a">memory.h</a>
+</li>
+<li>memory_reset_maximum_stack()
+: <a class="el" href="memory_8h.html#ad0e4375eab3f07c5ea41d1a155e1f659">memory.h</a>
+</li>
+<li>memory_used()
+: <a class="el" href="memory_8h.html#a16d130acad323a8963144efdb8d865dd">memory.h</a>
+</li>
+<li>mpi_finalize()
+: <a class="el" href="mpi_8h.html#aa71ad85cbc175e31bc1792e401e417f9">mpi.h</a>
+, <a class="el" href="mpi_8cpp.html#aa71ad85cbc175e31bc1792e401e417f9">mpi.cpp</a>
+</li>
+<li>mpi_init()
+: <a class="el" href="mpi_8h.html#a5f048f4250b440aef235f80d950d2818">mpi.h</a>
+, <a class="el" href="mpi_8cpp.html#a5f048f4250b440aef235f80d950d2818">mpi.cpp</a>
+</li>
+<li>mpicomm_global()
+: <a class="el" href="mpi_8h.html#a2daa4c7716d30a22a68043f1b164af1b">mpi.h</a>
+, <a class="el" href="mpi_8cpp.html#a2daa4c7716d30a22a68043f1b164af1b">mpi.cpp</a>
+</li>
+<li>mpicomm_self()
+: <a class="el" href="mpi_8h.html#a6b89f818e883d10d057515d82d01b8ae">mpi.h</a>
+, <a class="el" href="mpi_8cpp.html#a6b89f818e883d10d057515d82d01b8ae">mpi.cpp</a>
+</li>
+<li>mpirank_global()
+: <a class="el" href="mpi_8h.html#a7c4d532cbe9deb7c3184e5e40989c326">mpi.h</a>
+, <a class="el" href="mpi_8cpp.html#a7c4d532cbe9deb7c3184e5e40989c326">mpi.cpp</a>
+</li>
+<li>mpisize_global()
+: <a class="el" href="mpi_8h.html#a79b1ba490cf104bd1bd4da185a1849cc">mpi.h</a>
+, <a class="el" href="mpi_8cpp.html#a79b1ba490cf104bd1bd4da185a1849cc">mpi.cpp</a>
+</li>
 </ul>
-<p>Documentation is installed at <a href="https://molpro.gitlab.io/utilities">molpro.gitlab.io/utilities</a> </p>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

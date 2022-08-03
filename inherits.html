@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>utilities: Molpro utilities library</title>
+<title>utilities: Class Hierarchy</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,19 +61,47 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
-<div class="title">Molpro utilities library </div>  </div>
+<div class="title">Class Hierarchy</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md____w_utilities_utilities_README"></a></p>
-<p>This library consists of various utilities needed for Molpro and its libraries:</p><ul>
-<li>the header <code><a class="el" href="iostream_8h.html">molpro/iostream.h</a></code> which contains definitions of <code>molpro::cout</code> and <code>molpro::stderr</code> which should be used in any library used in Molpro instead of <code>std::cout</code> and <code>std::cerr</code>. By default, they are simply an alias for the <code>std::</code> streams, but clients of the library can then, if desired, redirect by defining <code>EXTERN_OSTREAM_COUT</code> as the desired <code>extern std::ostream&amp;</code>.</li>
-<li>the header <code><a class="el" href="mpi_8h.html">molpro/mpi.h</a></code> which provides functions that return the global and self communicators. These work when there is no MPI support compiled, and when running under <a href="https://hpc.pnl.gov/globalarrays/">Global Arrays</a> or <a href="https://gitlab.com/molpro/ppidd">PPIDD</a>, where MPI_COMM_WORLD is not the appropriate global communicator.</li>
-<li>the header <code><a class="el" href="Options_8h.html">molpro/Options.h</a></code> which provides a class that manages input options. In the Molpro context, these are input parameters; elsewhere, they can be injected from a Fortran namelist.</li>
-</ul>
-<p>Documentation is installed at <a href="https://molpro.gitlab.io/utilities">molpro.gitlab.io/utilities</a> </p>
-</div></div><!-- PageDoc -->
+<div class="textblock">
+<p><a href="hierarchy.html">Go to the textual class hierarchy</a></p>
+</div><table border="0" cellspacing="10" cellpadding="0">
+<tr><td><img src="inherit_graph_0.png" border="0" usemap="#amolpro_1_1allocator___3_01double_01_4" alt=""/>
+<map name="amolpro_1_1allocator___3_01double_01_4" id="amolpro_1_1allocator___3_01double_01_4">
+<area shape="rect" title=" " alt="" coords="5,46,112,73"/>
+<area shape="rect" href="classmolpro_1_1allocator__.html" title=" " alt="" coords="160,5,300,47"/>
+<area shape="rect" href="classmolpro_1_1allocator__.html" title=" " alt="" coords="160,71,300,112"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_1.png" border="0" usemap="#amolpro_1_1allocator___3_01T_00_01A_01_4_1_1rebind_3_01U_01_4" alt=""/>
+<map name="amolpro_1_1allocator___3_01T_00_01A_01_4_1_1rebind_3_01U_01_4" id="amolpro_1_1allocator___3_01T_00_01A_01_4_1_1rebind_3_01U_01_4">
+<area shape="rect" href="structmolpro_1_1allocator___1_1rebind.html" title=" " alt="" coords="5,5,172,47"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_2.png" border="0" usemap="#amolpro_1_1array_3_01T_01_4" alt=""/>
+<map name="amolpro_1_1array_3_01T_01_4" id="amolpro_1_1array_3_01T_01_4">
+<area shape="rect" href="classmolpro_1_1array.html" title="A template for a container class like std::array&lt;T&gt; but with the following features." alt="" coords="5,5,153,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_3.png" border="0" usemap="#amolpro_1_1bytestream" alt=""/>
+<map name="amolpro_1_1bytestream" id="amolpro_1_1bytestream">
+<area shape="rect" href="classmolpro_1_1bytestream.html" title="The bytestream class provides a container for data to be serialised, and subsequently unpacked." alt="" coords="5,5,156,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_4.png" border="0" usemap="#amolpro_1_1Options" alt=""/>
+<map name="amolpro_1_1Options" id="amolpro_1_1Options">
+<area shape="rect" href="classmolpro_1_1Options.html" title=" " alt="" coords="5,5,132,32"/>
+</map>
+</td></tr>
+<tr><td><img src="inherit_graph_5.png" border="0" usemap="#amolpro_1_1vector_3_01T_00_01__Alloc_01_4" alt=""/>
+<map name="amolpro_1_1vector_3_01T_00_01__Alloc_01_4" id="amolpro_1_1vector_3_01T_00_01__Alloc_01_4">
+<area shape="rect" href="classmolpro_1_1vector.html" title="A template for a container class like std::vector&lt;T&gt; but with the following features." alt="" coords="5,5,149,47"/>
+</map>
+</td></tr>
+</table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

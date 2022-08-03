@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>utilities: Molpro utilities library</title>
+<title>utilities: Class Index</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,19 +61,29 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
-<div class="title">Molpro utilities library </div>  </div>
+<div class="title">Class Index</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md____w_utilities_utilities_README"></a></p>
-<p>This library consists of various utilities needed for Molpro and its libraries:</p><ul>
-<li>the header <code><a class="el" href="iostream_8h.html">molpro/iostream.h</a></code> which contains definitions of <code>molpro::cout</code> and <code>molpro::stderr</code> which should be used in any library used in Molpro instead of <code>std::cout</code> and <code>std::cerr</code>. By default, they are simply an alias for the <code>std::</code> streams, but clients of the library can then, if desired, redirect by defining <code>EXTERN_OSTREAM_COUT</code> as the desired <code>extern std::ostream&amp;</code>.</li>
-<li>the header <code><a class="el" href="mpi_8h.html">molpro/mpi.h</a></code> which provides functions that return the global and self communicators. These work when there is no MPI support compiled, and when running under <a href="https://hpc.pnl.gov/globalarrays/">Global Arrays</a> or <a href="https://gitlab.com/molpro/ppidd">PPIDD</a>, where MPI_COMM_WORLD is not the appropriate global communicator.</li>
-<li>the header <code><a class="el" href="Options_8h.html">molpro/Options.h</a></code> which provides a class that manages input options. In the Molpro context, these are input parameters; elsewhere, they can be injected from a Fortran namelist.</li>
-</ul>
-<p>Documentation is installed at <a href="https://molpro.gitlab.io/utilities">molpro.gitlab.io/utilities</a> </p>
-</div></div><!-- PageDoc -->
+<div class="qindex"><a class="qindex" href="#letter_A">A</a>&#160;|&#160;<a class="qindex" href="#letter_B">B</a>&#160;|&#160;<a class="qindex" href="#letter_O">O</a>&#160;|&#160;<a class="qindex" href="#letter_R">R</a>&#160;|&#160;<a class="qindex" href="#letter_V">V</a></div>
+<div class="classindex">
+<dl class="classindex even">
+<dt class="alphachar"><a name="letter_A">A</a></dt>
+<dd><a class="el" href="classmolpro_1_1allocator__.html">allocator_</a> (<a class="el" href="namespacemolpro.html">molpro</a>)</dd><dd><a class="el" href="classmolpro_1_1array.html">array</a> (<a class="el" href="namespacemolpro.html">molpro</a>)</dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a name="letter_B">B</a></dt>
+<dd><a class="el" href="classmolpro_1_1bytestream.html">bytestream</a> (<a class="el" href="namespacemolpro.html">molpro</a>)</dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a name="letter_O">O</a></dt>
+<dd><a class="el" href="classmolpro_1_1Options.html">Options</a> (<a class="el" href="namespacemolpro.html">molpro</a>)</dd></dl>
+<dl class="classindex odd">
+<dt class="alphachar"><a name="letter_R">R</a></dt>
+<dd><a class="el" href="structmolpro_1_1allocator___1_1rebind.html">allocator_::rebind</a> (<a class="el" href="namespacemolpro.html">molpro</a>)</dd></dl>
+<dl class="classindex even">
+<dt class="alphachar"><a name="letter_V">V</a></dt>
+<dd><a class="el" href="classmolpro_1_1vector.html">vector</a> (<a class="el" href="namespacemolpro.html">molpro</a>)</dd></dl>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

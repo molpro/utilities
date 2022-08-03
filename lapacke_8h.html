@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>utilities: Molpro utilities library</title>
+<title>utilities: /__w/utilities/utilities/src/molpro/lapacke.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,7 +46,6 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -61,19 +60,18 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_3a0534501ca4be4079425efd3c8ffab8.html">__w</a></li><li class="navelem"><a class="el" href="dir_3a226b0dd7878ac8cf20da0c06f05947.html">utilities</a></li><li class="navelem"><a class="el" href="dir_49596074060651a736bb4ff8232adf25.html">utilities</a></li><li class="navelem"><a class="el" href="dir_64359fa6a44350e94b4e2e5b1e766613.html">src</a></li><li class="navelem"><a class="el" href="dir_b7f09782393db6b6e812fa9cfba5b32f.html">molpro</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
   <div class="headertitle">
-<div class="title">Molpro utilities library </div>  </div>
+<div class="title">lapacke.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md____w_utilities_utilities_README"></a></p>
-<p>This library consists of various utilities needed for Molpro and its libraries:</p><ul>
-<li>the header <code><a class="el" href="iostream_8h.html">molpro/iostream.h</a></code> which contains definitions of <code>molpro::cout</code> and <code>molpro::stderr</code> which should be used in any library used in Molpro instead of <code>std::cout</code> and <code>std::cerr</code>. By default, they are simply an alias for the <code>std::</code> streams, but clients of the library can then, if desired, redirect by defining <code>EXTERN_OSTREAM_COUT</code> as the desired <code>extern std::ostream&amp;</code>.</li>
-<li>the header <code><a class="el" href="mpi_8h.html">molpro/mpi.h</a></code> which provides functions that return the global and self communicators. These work when there is no MPI support compiled, and when running under <a href="https://hpc.pnl.gov/globalarrays/">Global Arrays</a> or <a href="https://gitlab.com/molpro/ppidd">PPIDD</a>, where MPI_COMM_WORLD is not the appropriate global communicator.</li>
-<li>the header <code><a class="el" href="Options_8h.html">molpro/Options.h</a></code> which provides a class that manages input options. In the Molpro context, these are input parameters; elsewhere, they can be injected from a Fortran namelist.</li>
-</ul>
-<p>Documentation is installed at <a href="https://molpro.gitlab.io/utilities">molpro.gitlab.io/utilities</a> </p>
-</div></div><!-- PageDoc -->
+
+<p><a href="lapacke_8h_source.html">Go to the source code of this file.</a></p>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

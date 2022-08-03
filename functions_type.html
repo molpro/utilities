@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>utilities: Molpro utilities library</title>
+<title>utilities: Class Members - Typedefs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -61,19 +61,41 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
-  <div class="headertitle">
-<div class="title">Molpro utilities library </div>  </div>
-</div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md____w_utilities_utilities_README"></a></p>
-<p>This library consists of various utilities needed for Molpro and its libraries:</p><ul>
-<li>the header <code><a class="el" href="iostream_8h.html">molpro/iostream.h</a></code> which contains definitions of <code>molpro::cout</code> and <code>molpro::stderr</code> which should be used in any library used in Molpro instead of <code>std::cout</code> and <code>std::cerr</code>. By default, they are simply an alias for the <code>std::</code> streams, but clients of the library can then, if desired, redirect by defining <code>EXTERN_OSTREAM_COUT</code> as the desired <code>extern std::ostream&amp;</code>.</li>
-<li>the header <code><a class="el" href="mpi_8h.html">molpro/mpi.h</a></code> which provides functions that return the global and self communicators. These work when there is no MPI support compiled, and when running under <a href="https://hpc.pnl.gov/globalarrays/">Global Arrays</a> or <a href="https://gitlab.com/molpro/ppidd">PPIDD</a>, where MPI_COMM_WORLD is not the appropriate global communicator.</li>
-<li>the header <code><a class="el" href="Options_8h.html">molpro/Options.h</a></code> which provides a class that manages input options. In the Molpro context, these are input parameters; elsewhere, they can be injected from a Fortran namelist.</li>
+&#160;<ul>
+<li>const_iterator
+: <a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">molpro::array&lt; T &gt;</a>
+, <a class="el" href="classmolpro_1_1vector.html#a19729bb9fef6e2fb241427ddfa86e42e">molpro::vector&lt; T, _Alloc &gt;</a>
+</li>
+<li>const_pointer
+: <a class="el" href="classmolpro_1_1allocator__.html#a89d0d82162b08ecb46f31c0332f8e6f0">molpro::allocator_&lt; T, A &gt;</a>
+</li>
+<li>const_reference
+: <a class="el" href="classmolpro_1_1allocator__.html#ab8768bbd8e9e8462dc381c602697c4b9">molpro::allocator_&lt; T, A &gt;</a>
+</li>
+<li>difference_type
+: <a class="el" href="classmolpro_1_1allocator__.html#a81baf623a3a73bc7170b31b24c529f5b">molpro::allocator_&lt; T, A &gt;</a>
+</li>
+<li>iterator
+: <a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">molpro::array&lt; T &gt;</a>
+, <a class="el" href="classmolpro_1_1vector.html#a6960878881bb589d46b2fe04f6783fb7">molpro::vector&lt; T, _Alloc &gt;</a>
+</li>
+<li>other
+: <a class="el" href="structmolpro_1_1allocator___1_1rebind.html#acd655fd0de629f8a25843b7bdbfa8046">molpro::allocator_&lt; T, A &gt;::rebind&lt; U &gt;</a>
+</li>
+<li>pointer
+: <a class="el" href="classmolpro_1_1allocator__.html#a58a6ab7a3cf198c9414b77ca6d4f6990">molpro::allocator_&lt; T, A &gt;</a>
+</li>
+<li>reference
+: <a class="el" href="classmolpro_1_1allocator__.html#a44e57e688a4108dcbda82f8eabcefa55">molpro::allocator_&lt; T, A &gt;</a>
+</li>
+<li>size_type
+: <a class="el" href="classmolpro_1_1allocator__.html#a86308ca07f74a0d800ae208c8a97b399">molpro::allocator_&lt; T, A &gt;</a>
+</li>
+<li>value_type
+: <a class="el" href="classmolpro_1_1allocator__.html#ab48b3605c9098c7ecc727bb044791493">molpro::allocator_&lt; T, A &gt;</a>
+</li>
 </ul>
-<p>Documentation is installed at <a href="https://molpro.gitlab.io/utilities">molpro.gitlab.io/utilities</a> </p>
-</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
