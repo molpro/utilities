@@ -23,12 +23,9 @@ jobs:
       - name: Build
         run: |
           cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
-#          cp ${{github.workspace}}/build/docs/utilities/utilities.tag ${{github.workspace}}/build/docs/utilities/html
           rsync -a ${{github.workspace}}/build/docs/utilities/html .
           cp ${{github.workspace}}/build/docs/utilities/utilities.tag ./html
-#          echo directory=${{github.workspace}}/build
-#          ls -ltRa ${{github.workspace}}/build
-#          pwd
+      #          cp ${{github.workspace}}/build/docs/utilities/utilities.tag ${{github.workspace}}/build/docs/utilities/html
 
 #      - name: check
 #        run: |
