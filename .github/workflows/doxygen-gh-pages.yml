@@ -15,6 +15,7 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     steps:
+      - name: Checkout
       - uses: actions/checkout@v3
 
       - name: Configure CMake
@@ -25,27 +26,10 @@ jobs:
           cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
           rsync -a ${{github.workspace}}/build/docs/utilities/html .
           cp ${{github.workspace}}/build/docs/utilities/utilities.tag ./html
-      #          cp ${{github.workspace}}/build/docs/utilities/utilities.tag ${{github.workspace}}/build/docs/utilities/html
-
-#      - name: check
-#        run: |
-#          pwd
-#          echo ${{github.workspace}}/build
-#          ls -ltRa ${{github.workspace}}/build
-
-#      - name: Doxygen
-#        run: |
-#          PUBLIC=./public
-#          mkdir -p $PUBLIC && touch $PUBLIC/.thing
-#          echo '<html> <head> </head> <body> <h1>Hello World<h1> <p>Hello World!!</p> </body> </html>' > $PUBLIC/index.html
-#          pwd
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.8.0
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_dir: ${{github.workspace}}/build/docs/utilities/html
-#          publish_dir: ./build/docs/utilities/html
-#          publish_dir: /home/runner/work/utilities/utilities/build/docs/utilities/html
           publish_dir: ./html
