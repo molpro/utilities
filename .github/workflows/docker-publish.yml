@@ -5,6 +5,7 @@ on:
     paths:
       - docker/Dockerfile
       - .github/workflows/docker-publish.yml
+  fork:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}

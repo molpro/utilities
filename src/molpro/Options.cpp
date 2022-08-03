@@ -31,7 +31,7 @@ inline std::string args(int argc, char** argv) {
   return keyval;
 }
 
-Options::Options(std::string program, int argc, char **argv)
+Options::Options(std::string program, int argc, char* argv[])
     : Options(program, std::string{"&"} + program + "\n" + args(argc, argv) + "\n&END") {}
 
 std::vector<int> Options::parameter(const std::string &key,
