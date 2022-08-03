@@ -23,8 +23,10 @@ jobs:
       - name: Build
         run: |
           cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
-          cp ${{github.workspace}}/build/docs/utilities/utilities.tag ${{github.workspace}}/build/docs/utilities/html
-          echo directory=${{github.workspace}}/build
+#          cp ${{github.workspace}}/build/docs/utilities/utilities.tag ${{github.workspace}}/build/docs/utilities/html
+          rsync -a ${{github.workspace}}/build/docs/utilities/html .
+          cp ${{github.workspace}}/build/docs/utilities/utilities.tag ./html
+#          echo directory=${{github.workspace}}/build
 #          ls -ltRa ${{github.workspace}}/build
 #          pwd
           
@@ -49,4 +51,4 @@ jobs:
 #          publish_dir: ${{github.workspace}}/build/docs/utilities/html
 #          publish_dir: ./build/docs/utiolities/html
 #          publish_dir: /home/runner/work/utilities/utilities/build/docs/utilities/html
-          publish_dir: ./build/docs/utilities/html
+          publish_dir: ./html
