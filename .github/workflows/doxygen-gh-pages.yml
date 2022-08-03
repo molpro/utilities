@@ -24,11 +24,12 @@ jobs:
 
       - name: Build
         run: |
+          git config --global --add safe.directory ${{github.workspace}}
           cd ${{github.workspace}}/build
           cmake --build . --target DependencyManagerDocs
-          rsync -av ${{github.workspace}}/build/docs/${{ github.event.repository.name }}/html/ ${{github.workspace}}/public
-          mkdir -p ${{github.workspace}}/public/DoxygenTagFiles
-          find ${{github.workspace}}/build/docs -name '*.tag' -exec cp {} ${{github.workspace}}/public/DoxygenTagFiles \;
+          rsync -av ${{github.workspace}}/build/docs/${{ github.event.repository.name }}/html/ ${{github.workspace}}/html
+          mkdir -p ${{github.workspace}}/html/DoxygenTagFiles
+          find ${{github.workspace}}/build/docs -name '*.tag' -exec cp {} ${{github.workspace}}/html/DoxygenTagFiles \;
           find ${{github.workspace}}/build/docs -name 'iostream*.html' -exec cat {} \;
           ls -lRa ${{github.workspace}}
 
@@ -37,4 +38,4 @@ jobs:
         if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          publish_dir: ./html
