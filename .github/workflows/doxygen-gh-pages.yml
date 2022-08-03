@@ -29,7 +29,7 @@ jobs:
 #          echo directory=${{github.workspace}}/build
 #          ls -ltRa ${{github.workspace}}/build
 #          pwd
-          
+
 #      - name: check
 #        run: |
 #          pwd
@@ -49,6 +49,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 #          publish_dir: ${{github.workspace}}/build/docs/utilities/html
-#          publish_dir: ./build/docs/utiolities/html
+#          publish_dir: ./build/docs/utilities/html
 #          publish_dir: /home/runner/work/utilities/utilities/build/docs/utilities/html
           publish_dir: ./html
