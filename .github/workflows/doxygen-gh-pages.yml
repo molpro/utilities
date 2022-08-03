@@ -25,8 +25,13 @@ jobs:
           cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
           echo directory=${{github.workspace}}/build
           ls -ltRa ${{github.workspace}}/build
-          ls -ltRa /__w/utilities/utilities/build/docs/utilities/html
           pwd
+          
+      - name: check
+        run: |
+          pwd
+          echo ${{github.workspace}}/build
+          ls -ltRa ${{github.workspace}}/build
 
 #      - name: Doxygen
 #        run: |
