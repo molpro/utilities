@@ -24,7 +24,8 @@ jobs:
 
       - name: Build
         run: |
-          cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
+          cd ${{github.workspace}}/build
+          cmake --build . --target DependencyManagerDocs
           rsync -a ${{github.workspace}}/build/docs/${{ github.event.repository.name }}/html .
           mkdir -p ./html/DoxygenTagFiles
           find ${{github.workspace}}/build/docs -name '*.tag' -exec cp {} ./html/DoxygenTagFiles \;
