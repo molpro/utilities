@@ -1,6 +1,7 @@
 name: Build doxygen pages and publish to github pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -24,8 +25,8 @@ jobs:
       - name: Build
         run: |
           cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
-          rsync -a ${{github.workspace}}/build/docs/utilities/html .
-          cp ${{github.workspace}}/build/docs/utilities/utilities.tag ./html
+          rsync -a ${{github.workspace}}/build/docs/${{ github.event.repository.name }}/html .
+          cp ${{github.workspace}}/build/docs/${{ github.event.repository.name }}/${{ github.event.repository.name }}.tag ./html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.8.0
