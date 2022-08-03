@@ -25,13 +25,11 @@ jobs:
       - name: Build
         run: |
           git config --global --add safe.directory ${{github.workspace}}
-          cd ${{github.workspace}}/build
-          cmake --build . --target DependencyManagerDocs
-          rsync -av ${{github.workspace}}/build/docs/${{ github.event.repository.name }}/html ${{github.workspace}}
-          mkdir -p ${{github.workspace}}/html/DoxygenTagFiles
-          find ${{github.workspace}}/build/docs -name '*.tag' -exec cp {} ${{github.workspace}}/html/DoxygenTagFiles \;
+          cmake --build ${{github.workspace}}/build --target DependencyManagerDocs
+          rsync -av ${{github.workspace}}/build/docs/${{ github.event.repository.name }}/html .
+          mkdir -p html/DoxygenTagFiles
+          find ${{github.workspace}}/build/docs -name '*.tag' -exec cp {} html/DoxygenTagFiles \;
           find ${{github.workspace}}/build/docs -name 'iostream*.html' -exec cat {} \;
-          ls -lRa ${{github.workspace}}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.8.0
