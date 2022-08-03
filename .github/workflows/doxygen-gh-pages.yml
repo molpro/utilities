@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     container:
       # relies on repository name being all lower case
@@ -48,4 +48,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 #          publish_dir: ${{github.workspace}}/build/docs/utilities/html
 #          publish_dir: ./build/docs/utiolities/html
-          publish_dir: /home/runner/work/utilities/utilities/build/docs/utilities/html
+#          publish_dir: /home/runner/work/utilities/utilities/build/docs/utilities/html
+          publish_dir: ./build/docs/utilities/html
