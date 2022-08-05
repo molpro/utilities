@@ -143,7 +143,7 @@ inline int init() {
 /*!
  * @brief In MPI environment finalize; otherwise do nothing
  */
-int finalize() {
+inline int finalize() {
 #ifdef HAVE_MPI_H
   return MPI_Finalize();
 #else
