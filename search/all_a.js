@@ -13,12 +13,11 @@ var searchData=
   ['molpro_67',['molpro',['../namespacemolpro.html',1,'']]],
   ['molpro_20utilities_20library_68',['Molpro utilities library',['../index.html',1,'']]],
   ['mpi_69',['mpi',['../namespacemolpro_1_1mpi.html',1,'molpro']]],
-  ['mpi_2ecpp_70',['mpi.cpp',['../mpi_8cpp.html',1,'']]],
-  ['mpi_2eh_71',['mpi.h',['../mpi_8h.html',1,'']]],
-  ['mpi_5ffinalize_72',['mpi_finalize',['../mpi_8h.html#aa71ad85cbc175e31bc1792e401e417f9',1,'mpi_finalize():&#160;mpi.cpp'],['../mpi_8cpp.html#aa71ad85cbc175e31bc1792e401e417f9',1,'mpi_finalize():&#160;mpi.cpp']]],
-  ['mpi_5finit_73',['mpi_init',['../mpi_8h.html#a5f048f4250b440aef235f80d950d2818',1,'mpi_init():&#160;mpi.cpp'],['../mpi_8cpp.html#a5f048f4250b440aef235f80d950d2818',1,'mpi_init():&#160;mpi.cpp']]],
-  ['mpicomm_5fglobal_74',['mpicomm_global',['../mpi_8h.html#a2daa4c7716d30a22a68043f1b164af1b',1,'mpicomm_global():&#160;mpi.cpp'],['../mpi_8cpp.html#a2daa4c7716d30a22a68043f1b164af1b',1,'mpicomm_global():&#160;mpi.cpp']]],
-  ['mpicomm_5fself_75',['mpicomm_self',['../mpi_8h.html#a6b89f818e883d10d057515d82d01b8ae',1,'mpicomm_self():&#160;mpi.cpp'],['../mpi_8cpp.html#a6b89f818e883d10d057515d82d01b8ae',1,'mpicomm_self():&#160;mpi.cpp']]],
-  ['mpirank_5fglobal_76',['mpirank_global',['../mpi_8h.html#a7c4d532cbe9deb7c3184e5e40989c326',1,'mpirank_global():&#160;mpi.cpp'],['../mpi_8cpp.html#a7c4d532cbe9deb7c3184e5e40989c326',1,'mpirank_global():&#160;mpi.cpp']]],
-  ['mpisize_5fglobal_77',['mpisize_global',['../mpi_8h.html#a79b1ba490cf104bd1bd4da185a1849cc',1,'mpisize_global():&#160;mpi.cpp'],['../mpi_8cpp.html#a79b1ba490cf104bd1bd4da185a1849cc',1,'mpisize_global():&#160;mpi.cpp']]]
+  ['mpi_2eh_70',['mpi.h',['../mpi_8h.html',1,'']]],
+  ['mpi_5ffinalize_71',['mpi_finalize',['../mpi_8h.html#aa71ad85cbc175e31bc1792e401e417f9',1,'mpi.h']]],
+  ['mpi_5finit_72',['mpi_init',['../mpi_8h.html#a5f048f4250b440aef235f80d950d2818',1,'mpi.h']]],
+  ['mpicomm_5fglobal_73',['mpicomm_global',['../mpi_8h.html#a2daa4c7716d30a22a68043f1b164af1b',1,'mpi.h']]],
+  ['mpicomm_5fself_74',['mpicomm_self',['../mpi_8h.html#a6b89f818e883d10d057515d82d01b8ae',1,'mpi.h']]],
+  ['mpirank_5fglobal_75',['mpirank_global',['../mpi_8h.html#a7c4d532cbe9deb7c3184e5e40989c326',1,'mpi.h']]],
+  ['mpisize_5fglobal_76',['mpisize_global',['../mpi_8h.html#a79b1ba490cf104bd1bd4da185a1849cc',1,'mpi.h']]]
 ];

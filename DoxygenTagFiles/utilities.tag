@@ -194,54 +194,6 @@
     </member>
   </compound>
   <compound kind="file">
-    <name>mpi.cpp</name>
-    <path>/__w/utilities/utilities/src/molpro/</path>
-    <filename>mpi_8cpp.html</filename>
-    <includes id="mpi_8h" name="mpi.h" local="no" imported="no">molpro/mpi.h</includes>
-    <member kind="function">
-      <type>int64_t</type>
-      <name>mpicomm_global</name>
-      <anchorfile>mpi_8cpp.html</anchorfile>
-      <anchor>a2daa4c7716d30a22a68043f1b164af1b</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int64_t</type>
-      <name>mpisize_global</name>
-      <anchorfile>mpi_8cpp.html</anchorfile>
-      <anchor>a79b1ba490cf104bd1bd4da185a1849cc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int64_t</type>
-      <name>mpirank_global</name>
-      <anchorfile>mpi_8cpp.html</anchorfile>
-      <anchor>a7c4d532cbe9deb7c3184e5e40989c326</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int64_t</type>
-      <name>mpicomm_self</name>
-      <anchorfile>mpi_8cpp.html</anchorfile>
-      <anchor>a6b89f818e883d10d057515d82d01b8ae</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>mpi_init</name>
-      <anchorfile>mpi_8cpp.html</anchorfile>
-      <anchor>a5f048f4250b440aef235f80d950d2818</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>mpi_finalize</name>
-      <anchorfile>mpi_8cpp.html</anchorfile>
-      <anchor>aa71ad85cbc175e31bc1792e401e417f9</anchor>
-      <arglist>()</arglist>
-    </member>
-  </compound>
-  <compound kind="file">
     <name>mpi.h</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>mpi_8h.html</filename>
