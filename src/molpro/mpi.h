@@ -132,11 +132,25 @@ inline int rank_global() {
 /*!
  * @brief In MPI environment initialize; otherwise do nothing. Intended to support MPI-agnostic programs.
  */
-int init();
+inline int init() {
+#ifdef HAVE_MPI_H
+  return MPI_Init(0, nullptr);
+#else
+  return 0;
+#endif
+}
+
 /*!
  * @brief In MPI environment finalize; otherwise do nothing
  */
-int finalize();
+inline int finalize() {
+#ifdef HAVE_MPI_H
+  return MPI_Finalize();
+#else
+  return 0;
+#endif
+}
+
 
 } // namespace mpi
 } // namespace molpro
@@ -144,30 +158,30 @@ int finalize();
 /*!
  * @brief C binding of mpi::comm_global(), suitable for calling from Fortran
  */
-extern "C" int64_t mpicomm_global();
+extern "C" inline int64_t mpicomm_global() { return (int64_t)MPI_Comm_c2f(molpro::mpi::comm_global()); }
 
 /*!
  * @brief C binding of mpi::comm_self(), suitable for calling from Fortran
  */
-extern "C" int64_t mpicomm_self();
+extern "C" inline int64_t mpicomm_self() { return (int64_t)MPI_Comm_c2f(molpro::mpi::comm_self()); }
 
 /*!
  * @brief C binding of mpi::size_global(), suitable for calling from Fortran
  */
-extern "C" int64_t mpisize_global();
+extern "C" inline int64_t mpisize_global() { return molpro::mpi::size_global(); }
 
 /*!
  * @brief C binding of mpi::rank_global(), suitable for calling from Fortran
  */
-extern "C" int64_t mpirank_global();
+extern "C" inline int64_t mpirank_global() { return molpro::mpi::rank_global(); }
 
 /*!
  * @brief C binding of mpi::init(), suitable for calling from Fortran
  */
-extern "C" int mpi_init();
+extern "C" inline int mpi_init() { return molpro::mpi::init(); }
 
 /*!
  * @brief C binding of mpi::finalize(), suitable for calling from Fortran
  */
-extern "C" int mpi_finalize();
+extern "C" inline int mpi_finalize() { return molpro::mpi::finalize(); }
 #endif // UTILITIES_SRC_MOLPRO_MPI_H_
