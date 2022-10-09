@@ -26,6 +26,6 @@ include(DependencyManagerDocs OPTIONAL RESULT_VARIABLE DependencyManagerDocs_FOU
 if (NOT DependencyManagerDocs_FOUND STREQUAL "NOTFOUND")
     DependencyManagerDocs_Add(${PROJECT_NAME}
             FILES README.md
-            DOC_URL "https://molpro.gitlab.io/utilities/${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
+            DOC_URL "https://molpro.github.io/utilities/${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}"
             )
 endif()
