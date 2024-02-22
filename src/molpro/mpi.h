@@ -87,9 +87,7 @@ inline MPI_Comm comm_global() {
 #endif
 #ifdef __PPIDD_H__
   {
-    int64_t size;
-    PPIDD_Size(&size);
-    if (size > 0)
+    if (PPIDD_Size() > 0)
       return MPI_Comm_f2c(PPIDD_Worker_comm());
   }
 #else
