@@ -30,6 +30,7 @@ inline void _MPI_nullfunction(const void* x) {}
 
 #ifdef HAVE_GA_H
 #include <ga.h>
+#include <ga-mpi.h>
 #endif
 
 #ifdef HAVE_PPIDD_H
@@ -92,7 +93,7 @@ inline MPI_Comm comm_global() {
   }
 #else
 #ifdef HAVE_GA_H
-  if (GA_MPI_Comm() != NULL && GA_MPI_Comm() != MPI_COMM_NULL) {
+  if (GA_MPI_Comm() != 0 && GA_MPI_Comm() != MPI_COMM_NULL) {
     return GA_MPI_Comm();
   }
 #endif
