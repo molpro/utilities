@@ -91,7 +91,7 @@ inline MPI_Comm comm_global() {
       return MPI_Comm_f2c(PPIDD_Worker_comm());
   }
 #else
-#ifdef GA_H
+#ifdef HAVE_GA_H
   if (GA_MPI_Comm() != NULL && GA_MPI_Comm() != MPI_COMM_NULL) {
     return GA_MPI_Comm();
   }
