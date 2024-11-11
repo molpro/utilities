@@ -42,7 +42,7 @@ public:
    * \param def Default value if the parameter is not found.
    * \return  The result as a vector of integers.
    */
-  std::vector<std::string> parameter(const std::string &key, const std::vector<std::string> &def) const;
+  std::vector<std::string> parameter(const std::string &key, const std::vector<std::string> &def, bool molpro_parameter=false) const;
   std::string parameter(const std::string &key, const std::string &def) const;
 
   /*!

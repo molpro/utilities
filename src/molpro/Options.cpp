@@ -100,10 +100,10 @@ std::string Options::parameter(const std::string &key, const std::string &def) c
   const std::vector<std::string> &vector1 = parameter(key, std::vector<std::string>(1, def));
   return vector1[0];
 }
-std::vector<std::string> Options::parameter(const std::string &key, const std::vector<std::string> &def) const {
+std::vector<std::string> Options::parameter(const std::string &key, const std::vector<std::string> &def, bool molpro_parameter) const {
   std::vector<std::string> answer;
 #ifdef MOLPRO
-  const auto string = std::string{","} + key + "=" + parameter(key, "") + ",";
+  const auto string = molpro_parameter ? std::string{","} + key + "=" + parameter(key, "") + "," : namelistData;
 #else
   const auto &string = namelistData;
 #endif
@@ -117,7 +117,7 @@ std::vector<std::string> Options::parameter(const std::string &key, const std::v
     posNext = string.find(',', pos) + 1;
     answer.push_back(string.substr(pos, posNext - pos - 1));
   }
-  return answer;
+  return answer.empty() && !molpro_parameter ? parameter(key,def,true) : answer;
 }
 
 void Options::addParameter(const std::string &key, const std::vector<std::string> &values, bool echo) {
