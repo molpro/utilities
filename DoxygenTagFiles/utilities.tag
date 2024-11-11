@@ -1065,8 +1065,8 @@
       <type>std::vector&lt; std::string &gt;</type>
       <name>parameter</name>
       <anchorfile>classmolpro_1_1Options.html</anchorfile>
-      <anchor>a8383221628e93723629bb19e0f94671e</anchor>
-      <arglist>(const std::string &amp;key, const std::vector&lt; std::string &gt; &amp;def) const</arglist>
+      <anchor>a094d1b3403120ce28928cd8d72354282</anchor>
+      <arglist>(const std::string &amp;key, const std::vector&lt; std::string &gt; &amp;def, bool molpro_parameter=false) const</arglist>
     </member>
     <member kind="function">
       <type>std::string</type>

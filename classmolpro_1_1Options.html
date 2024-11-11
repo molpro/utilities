@@ -93,9 +93,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a30de42aad8464d257c3d6e92ed427851"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5cc4e103a7b8d589e7366854c9caf05"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1Options.html#af5cc4e103a7b8d589e7366854c9caf05">parameter</a> (const std::string &amp;key, double def) const</td></tr>
 <tr class="separator:af5cc4e103a7b8d589e7366854c9caf05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8383221628e93723629bb19e0f94671e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1Options.html#a8383221628e93723629bb19e0f94671e">parameter</a> (const std::string &amp;key, const std::vector&lt; std::string &gt; &amp;def) const</td></tr>
-<tr class="memdesc:a8383221628e93723629bb19e0f94671e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a string parameter.  <a href="classmolpro_1_1Options.html#a8383221628e93723629bb19e0f94671e">More...</a><br /></td></tr>
-<tr class="separator:a8383221628e93723629bb19e0f94671e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a094d1b3403120ce28928cd8d72354282"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1Options.html#a094d1b3403120ce28928cd8d72354282">parameter</a> (const std::string &amp;key, const std::vector&lt; std::string &gt; &amp;def, bool molpro_parameter=false) const</td></tr>
+<tr class="memdesc:a094d1b3403120ce28928cd8d72354282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtain a string parameter.  <a href="classmolpro_1_1Options.html#a094d1b3403120ce28928cd8d72354282">More...</a><br /></td></tr>
+<tr class="separator:a094d1b3403120ce28928cd8d72354282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9397ac61a847cb9fe4b7eed65bafab10"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1Options.html#a9397ac61a847cb9fe4b7eed65bafab10">parameter</a> (const std::string &amp;key, const std::string &amp;def) const</td></tr>
 <tr class="separator:a9397ac61a847cb9fe4b7eed65bafab10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84cf0592cc4e1878834b715375f53d65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1Options.html#a84cf0592cc4e1878834b715375f53d65">addParameter</a> (const std::string &amp;key, const std::vector&lt; std::string &gt; &amp;values, bool echo=false)</td></tr>
@@ -601,8 +601,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8383221628e93723629bb19e0f94671e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8383221628e93723629bb19e0f94671e">&#9670;&nbsp;</a></span>parameter() <span class="overload">[4/6]</span></h2>
+<a id="a094d1b3403120ce28928cd8d72354282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a094d1b3403120ce28928cd8d72354282">&#9670;&nbsp;</a></span>parameter() <span class="overload">[4/6]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -617,7 +617,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>def</em>&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>molpro_parameter</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
