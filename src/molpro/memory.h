@@ -270,6 +270,12 @@ using stdvector = std::vector<T, A>;
  * \endcode
  */
 template<typename T=double, typename _Alloc=molpro::allocator<T>>
+class pointer_holder {
+public:
+  pointer_holder(T* const ptr) : m_ptr(ptr) {}
+  T* m_ptr;
+};
+template<typename T=double, typename _Alloc=molpro::allocator<T>>
 class vector {
 /* The _Alloc template argument is provided to let molpro::vector have
    the same signature as std::vector. They must have same signature if you
@@ -430,27 +436,27 @@ class vector {
   }
 
   template <bool IsConst>
-  class MyIterator {
+  class MyIterator : public pointer_holder<T,_Alloc> {
   public:
     using iterator_category = std::forward_iterator_tag;
     using value_type = T;
     using difference_type = std::ptrdiff_t;
     using pointer = T*;
     using reference = T&;
-    MyIterator() noexcept : m_ptr(nullptr) {}
-    MyIterator(pointer ptr) : m_ptr(ptr) {}
+    MyIterator() noexcept : pointer_holder<T>(nullptr) {}
+    MyIterator(pointer ptr) : pointer_holder<T>(ptr) {}
     MyIterator(const MyIterator&) = default;
     template<bool IsConst_ = IsConst, class = std::enable_if_t<IsConst_>>
-    MyIterator(const MyIterator<false>& rhs) : m_ptr(rhs.m_ptr) {}
+    MyIterator(const MyIterator<false>& rhs) : pointer_holder<T>(rhs.m_ptr) {}
 
-    reference operator*() const noexcept { return *m_ptr; }
-    pointer operator->() const noexcept { return m_ptr; }
-    MyIterator& operator++() {m_ptr++; return *this; }
+    reference operator*() const noexcept { return *(this->m_ptr); }
+    pointer operator->() const noexcept { return (this->m_ptr); }
+    MyIterator& operator++() {(this->m_ptr)++; return *this; }
     MyIterator operator++(int) {MyIterator tmp = *this; ++(*this); return tmp; }
-    MyIterator& operator--() {m_ptr--; return *this; }
+    MyIterator& operator--() {(this->m_ptr)--; return *this; }
     MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
-    MyIterator& operator+=(difference_type n) {m_ptr += n; return *this; }
-    MyIterator& operator-=(difference_type n) {m_ptr -= n; return *this; }
+    MyIterator& operator+=(difference_type n) {(this->m_ptr) += n; return *this; }
+    MyIterator& operator-=(difference_type n) {(this->m_ptr) -= n; return *this; }
     friend MyIterator operator+(difference_type n, const MyIterator& rhs) {MyIterator tmp(rhs); return tmp += n; }
     friend MyIterator operator+( const MyIterator& rhs,difference_type n) {MyIterator tmp(rhs); return tmp += n; }
     friend MyIterator operator-(difference_type n, const MyIterator& rhs) {MyIterator tmp(rhs); return tmp -= n; }
@@ -465,8 +471,8 @@ class vector {
     friend class MyIterator<false>;
     // friend MyIterator erase(MyIterator first, MyIterator last) ;
     // friend MyIterator erase(MyIterator pos) ;
-  private:
-    pointer m_ptr;
+  // private:
+    // pointer m_ptr;
   };
 
   using Iterator = MyIterator<false>;
@@ -586,16 +592,9 @@ std::ostream& operator<<(std::ostream& os, vector<T, _Alloc> const& obj) {
   return os << obj.str();
 }
 
-template <typename T, typename _Alloc>
-std::ptrdiff_t operator-(const typename vector<T, _Alloc>::Iterator& a,
-                         const typename vector<T, _Alloc>::Iterator& b)
-{
-  return a.m_ptr - b.m_ptr;
-}
-
-template <typename T, typename _Alloc>
-std::ptrdiff_t operator-(const typename vector<T, _Alloc>::ConstIterator& a,
-                         const typename vector<T, _Alloc>::ConstIterator& b)
+template<typename T=double, typename _Alloc=molpro::allocator<T>>
+std::ptrdiff_t operator-(const pointer_holder<T>& a,
+                         const pointer_holder<T>& b)
 {
   return a.m_ptr - b.m_ptr;
 }

@@ -98,6 +98,9 @@ TEST(utilities_memory, vector_iterators) {
   auto it=array.begin();
   it+=2;
   EXPECT_EQ(*it,q[2]);
+  auto diff = it-array.begin();
+  EXPECT_EQ(diff,2);
+
   array.erase(array.begin()+1,array.end()-1);
   EXPECT_EQ(array[1],q[3]);
   EXPECT_EQ(array.size(),q.size()-2);
