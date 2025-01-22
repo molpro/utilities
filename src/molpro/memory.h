@@ -437,6 +437,7 @@ class vector {
     using difference_type = std::ptrdiff_t;
     using pointer = T*;
     using reference = T&;
+    MyIterator() noexcept : m_ptr(nullptr) {}
     MyIterator(pointer ptr) : m_ptr(ptr) {}
     MyIterator(const MyIterator&) = default;
     template<bool IsConst_ = IsConst, class = std::enable_if_t<IsConst_>>
@@ -825,6 +826,7 @@ class array {
     using difference_type = std::ptrdiff_t;
     using pointer = T*;
     using reference = T&;
+    MyIterator() noexcept : m_ptr(nullptr) {}
     MyIterator(pointer ptr) : m_ptr(ptr) {}
     MyIterator(const MyIterator&) = default;
     template<bool IsConst_ = IsConst, class = std::enable_if_t<IsConst_>>
