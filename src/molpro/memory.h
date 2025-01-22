@@ -492,14 +492,14 @@ class vector {
   const_reverse_iterator rend() const noexcept { return const_reverse_iterator(begin()); }
   const_reverse_iterator crend() const noexcept { return const_reverse_iterator(cend()); }
 
-  // iterator erase(const_iterator pos) {
-    // return &(*m_stdvector.erase(m_stdvector.begin() + (pos.m_ptr - data())));
-  // }
+  iterator erase(const_iterator pos) {
+    return &(*m_stdvector.erase(m_stdvector.begin() + (&(*pos) - data())));
+  }
 
-  // iterator erase(const_iterator first, const_iterator last) {
-    // return &(*m_stdvector.erase(m_stdvector.begin() + (first.m_ptr - data()),
-                                // m_stdvector.begin() + (last.m_ptr - data())));
-  // }
+  iterator erase(const_iterator first, const_iterator last) {
+    return &(*m_stdvector.erase(m_stdvector.begin() + (&(*first) - data()),
+                                m_stdvector.begin() + (&(*last) - data())));
+  }
 
 /*!
  * \brief Generate a printable representation of the object
