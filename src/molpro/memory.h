@@ -578,18 +578,36 @@ std::ostream& operator<<(std::ostream& os, vector<T, _Alloc> const& obj) {
   return os << obj.str();
 }
 
-template <typename T=double, typename _Alloc=molpro::allocator<T>>
+template <typename T, typename _Alloc>
 std::ptrdiff_t operator-(const typename vector<T, _Alloc>::Iterator& a,
                          const typename vector<T, _Alloc>::Iterator& b)
 {
   return a.m_ptr - b.m_ptr;
 }
 
-template <typename T=double, typename _Alloc=molpro::allocator<T>>
+template <typename T, typename _Alloc>
 std::ptrdiff_t operator-(const typename vector<T, _Alloc>::ConstIterator& a,
                          const typename vector<T, _Alloc>::ConstIterator& b)
 {
   return a.m_ptr - b.m_ptr;
+}
+
+template <typename T, typename _Alloc>
+typename vector<T, _Alloc>::Iterator operator+(const typename vector<T, _Alloc>::Iterator& a,
+                                               int increment)
+{
+  auto result = vector<T, _Alloc>::Iterator(a);
+  result += increment;
+  return result;
+}
+
+template <typename T, typename _Alloc>
+typename vector<T, _Alloc>::Iterator operator-(const typename vector<T, _Alloc>::Iterator& a,
+                                               int increment)
+{
+  auto result = vector<T, _Alloc>::Iterator(a);
+  result -= increment;
+  return result;
 }
 
 
