@@ -450,6 +450,10 @@ class vector {
     MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
     friend bool operator==(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr == rhs.m_ptr;}
     friend bool operator!=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr != rhs.m_ptr;}
+    friend bool operator<(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr < rhs.m_ptr;}
+    friend bool operator>(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr > rhs.m_ptr;}
+    friend bool operator<=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr <= rhs.m_ptr;}
+    friend bool operator>=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr >= rhs.m_ptr;}
     friend class MyIterator<true>;
     friend class MyIterator<false>;
   private:
@@ -834,6 +838,10 @@ class array {
     MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
     friend bool operator==(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr == rhs.m_ptr;}
     friend bool operator!=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr != rhs.m_ptr;}
+    friend bool operator<(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr < rhs.m_ptr;}
+    friend bool operator>(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr > rhs.m_ptr;}
+    friend bool operator<=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr <= rhs.m_ptr;}
+    friend bool operator>=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr >= rhs.m_ptr;}
     friend class MyIterator<true>;
     friend class MyIterator<false>;
   private:
