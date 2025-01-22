@@ -449,16 +449,22 @@ class vector {
     MyIterator operator++(int) {MyIterator tmp = *this; ++(*this); return tmp; }
     MyIterator& operator--() {m_ptr--; return *this; }
     MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
+    MyIterator& operator+=(difference_type n) {m_ptr += n; return *this; }
+    MyIterator& operator-=(difference_type n) {m_ptr -= n; return *this; }
+    friend MyIterator operator+(difference_type n, const MyIterator& rhs) {MyIterator tmp(rhs); return tmp += n; }
+    friend MyIterator operator+( const MyIterator& rhs,difference_type n) {MyIterator tmp(rhs); return tmp += n; }
+    friend MyIterator operator-(difference_type n, const MyIterator& rhs) {MyIterator tmp(rhs); return tmp -= n; }
+    friend MyIterator operator-( const MyIterator& rhs,difference_type n) {MyIterator tmp(rhs); return tmp -= n; }
     friend bool operator==(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr == rhs.m_ptr;}
     friend bool operator!=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr != rhs.m_ptr;}
     friend bool operator<(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr < rhs.m_ptr;}
     friend bool operator>(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr > rhs.m_ptr;}
     friend bool operator<=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr <= rhs.m_ptr;}
-    friend bool operator>=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr >= rhs.m_ptr;}
+    friend bool operator>=(const MyIterator& lhs, const MyIterator& rhs) { return lhs.m_ptr >= rhs.m_ptr; }
     friend class MyIterator<true>;
     friend class MyIterator<false>;
-    friend MyIterator erase(MyIterator first, MyIterator last) ;
-    friend MyIterator erase(MyIterator pos) ;
+    // friend MyIterator erase(MyIterator first, MyIterator last) ;
+    // friend MyIterator erase(MyIterator pos) ;
   private:
     pointer m_ptr;
   };
@@ -486,14 +492,14 @@ class vector {
   const_reverse_iterator rend() const noexcept { return const_reverse_iterator(begin()); }
   const_reverse_iterator crend() const noexcept { return const_reverse_iterator(cend()); }
 
-  iterator erase(const_iterator pos) {
-    return &(*m_stdvector.erase(m_stdvector.begin() + (pos.m_ptr - data())));
-  }
+  // iterator erase(const_iterator pos) {
+    // return &(*m_stdvector.erase(m_stdvector.begin() + (pos.m_ptr - data())));
+  // }
 
-  iterator erase(const_iterator first, const_iterator last) {
-    return &(*m_stdvector.erase(m_stdvector.begin() + (first.m_ptr - data()),
-                                m_stdvector.begin() + (last.m_ptr - data())));
-  }
+  // iterator erase(const_iterator first, const_iterator last) {
+    // return &(*m_stdvector.erase(m_stdvector.begin() + (first.m_ptr - data()),
+                                // m_stdvector.begin() + (last.m_ptr - data())));
+  // }
 
 /*!
  * \brief Generate a printable representation of the object

@@ -95,6 +95,10 @@ TEST(utilities_memory, vector_iterators) {
   for (auto it=array.begin();it!=array.end();it++) {
     *it=q[count++];
   }
+  auto it=array.begin();
+  it+=2;
+  EXPECT_EQ(*it,q[2]);
+  array.erase(array.begin(),array.end());
 }
 
 TEST(utilities_memory, array_iterators) {
