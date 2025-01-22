@@ -457,6 +457,8 @@ class vector {
     friend bool operator>=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr >= rhs.m_ptr;}
     friend class MyIterator<true>;
     friend class MyIterator<false>;
+    friend MyIterator erase(MyIterator first, MyIterator last) ;
+    friend MyIterator erase(MyIterator pos) ;
   private:
     pointer m_ptr;
   };
