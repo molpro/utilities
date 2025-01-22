@@ -73,3 +73,53 @@ TEST(utilities_memory, construction) {
   memory_initialize(q.data(), q.size());
   molpro::vector<thing, molpro::allocator<thing> > array(4);
 }
+
+TEST(utilities_memory, vector_iterators) {
+  std::array<int,4> q = {{1,2,3,4}};
+  molpro::vector<int, molpro::allocator<int> > array(q.begin(), q.end());
+  size_t count=0;
+  for (const auto& i : array) {
+    EXPECT_EQ(i,q[count++]);
+  }
+  count=0;
+  for (auto it=array.begin();it!=array.end();it++) {
+    EXPECT_EQ(*it,q[count++]);
+  }
+  count=0;
+  for (auto it=array.cbegin();it!=array.cend();it++) {
+    EXPECT_EQ(*it,q[count++]);
+  }
+  for (auto it=array.rbegin();it!=array.rend();it++) {
+    EXPECT_EQ(*it,q[--count]);
+  }
+  for (auto it=array.begin();it!=array.end();it++) {
+    *it=q[count++];
+  }
+}
+
+TEST(utilities_memory, array_iterators) {
+  std::array<int,4> q = {{1,2,3,4}};
+  molpro::array<int> array(q.size());
+  size_t count=0;
+  for (auto& i : array) {
+    i = q[count++];
+  }
+  count=0;
+  for (const auto& i : array) {
+    EXPECT_EQ(i,q[count++]);
+  }
+  count=0;
+  for (auto it=array.begin();it!=array.end();it++) {
+    EXPECT_EQ(*it,q[count++]);
+  }
+  count=0;
+  for (auto it=array.cbegin();it!=array.cend();it++) {
+    EXPECT_EQ(*it,q[count++]);
+  }
+  for (auto it=array.rbegin();it!=array.rend();it++) {
+    EXPECT_EQ(*it,q[--count]);
+  }
+  for (auto it=array.begin();it!=array.end();it++) {
+    *it=q[count++];
+  }
+}

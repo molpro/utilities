@@ -429,25 +429,55 @@ class vector {
     std::swap(a.m_stdvector, b.m_stdvector);
   }
 
-// implement iterators as simple pointers
-  typedef T* iterator;
-  typedef const T* const_iterator;
+  template <bool IsConst>
+  class MyIterator {
+  public:
+    using iterator_category = std::forward_iterator_tag;
+    using value_type = T;
+    using difference_type = std::ptrdiff_t;
+    using pointer = T*;
+    using reference = T&;
+    MyIterator(pointer ptr) : m_ptr(ptr) {}
+    MyIterator(const MyIterator&) = default;
+    template<bool IsConst_ = IsConst, class = std::enable_if_t<IsConst_>>
+    MyIterator(const MyIterator<false>& rhs) : m_ptr(rhs.m_ptr) {}
 
-  iterator begin() noexcept { return data(); }
+    reference operator*() const noexcept { return *m_ptr; }
+    pointer operator->() const noexcept { return m_ptr; }
+    MyIterator& operator++() {m_ptr++; return *this; }
+    MyIterator operator++(int) {MyIterator tmp = *this; ++(*this); return tmp; }
+    MyIterator& operator--() {m_ptr--; return *this; }
+    MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
+    friend bool operator==(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr == rhs.m_ptr;}
+    friend bool operator!=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr != rhs.m_ptr;}
+    friend class MyIterator<true>;
+    friend class MyIterator<false>;
+  private:
+    pointer m_ptr;
+  };
+
+  using Iterator = MyIterator<false>;
+  using ConstIterator = MyIterator<true>;
+
+  typedef Iterator iterator;
+  typedef ConstIterator const_iterator;
+
+  iterator begin() noexcept { return iterator(m_buffer); }
   const_iterator begin() const noexcept { return cbegin(); }
-  const_iterator cbegin() const noexcept { return const_iterator(data()); }
+  const_iterator cbegin() const noexcept { return const_iterator(m_buffer); }
 
-  iterator end() noexcept { return data() + size(); }
+  iterator end() noexcept { return m_buffer + size(); }
   const_iterator end() const noexcept { return cend(); }
-  const_iterator cend() const noexcept { return const_iterator(data() + size()); }
+  const_iterator cend() const noexcept { return const_iterator(m_buffer + size()); }
 
-  iterator rend() noexcept { return data(); }
-  const_iterator rend() const noexcept { return crend(); }
-  const_iterator crend() const noexcept { return const_iterator(data()); }
-
-  iterator rbegin() noexcept { return data() + size(); }
-  const_iterator rbegin() const noexcept { return crbegin(); }
-  const_iterator crbegin() const noexcept { return const_iterator(data() + size()); }
+  using reverse_iterator = std::reverse_iterator<Iterator>;
+  using const_reverse_iterator = std::reverse_iterator<ConstIterator>;
+  reverse_iterator rbegin() noexcept { return reverse_iterator(end()); }
+  const_reverse_iterator rbegin() const noexcept { return const_reverse_iterator(end()); }
+  const_reverse_iterator crbegin() const noexcept { return const_reverse_iterator(cend()); }
+  reverse_iterator rend() noexcept { return reverse_iterator(begin()); }
+  const_reverse_iterator rend() const noexcept { return const_reverse_iterator(begin()); }
+  const_reverse_iterator crend() const noexcept { return const_reverse_iterator(cend()); }
 
   iterator erase(const_iterator pos) {
     return &(*m_stdvector.erase(m_stdvector.begin() + (pos - data())));
@@ -783,25 +813,56 @@ class array {
     std::swap(a.m_owned, b.m_owned);
   }
 
-// implement iterators as simple pointers
-  typedef T* iterator;
-  typedef const T* const_iterator;
+  template <bool IsConst>
+  class MyIterator {
+  public:
+    using iterator_category = std::forward_iterator_tag;
+    using value_type = T;
+    using difference_type = std::ptrdiff_t;
+    using pointer = T*;
+    using reference = T&;
+    MyIterator(pointer ptr) : m_ptr(ptr) {}
+    MyIterator(const MyIterator&) = default;
+    template<bool IsConst_ = IsConst, class = std::enable_if_t<IsConst_>>
+    MyIterator(const MyIterator<false>& rhs) : m_ptr(rhs.m_ptr) {}
 
-  iterator begin() noexcept { return data(); }
+    reference operator*() const noexcept { return *m_ptr; }
+    pointer operator->() const noexcept { return m_ptr; }
+    MyIterator& operator++() {m_ptr++; return *this; }
+    MyIterator operator++(int) {MyIterator tmp = *this; ++(*this); return tmp; }
+    MyIterator& operator--() {m_ptr--; return *this; }
+    MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
+    friend bool operator==(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr == rhs.m_ptr;}
+    friend bool operator!=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr != rhs.m_ptr;}
+    friend class MyIterator<true>;
+    friend class MyIterator<false>;
+  private:
+    pointer m_ptr;
+  };
+
+  using Iterator = MyIterator<false>;
+  using ConstIterator = MyIterator<true>;
+
+  typedef Iterator iterator;
+  typedef ConstIterator const_iterator;
+
+  iterator begin() noexcept { return iterator(m_buffer); }
   const_iterator begin() const noexcept { return cbegin(); }
-  const_iterator cbegin() const noexcept { return const_iterator(data()); }
+  const_iterator cbegin() const noexcept { return const_iterator(m_buffer); }
 
-  iterator end() noexcept { return data() + size(); }
+  iterator end() noexcept { return m_buffer + size(); }
   const_iterator end() const noexcept { return cend(); }
-  const_iterator cend() const noexcept { return const_iterator(data() + size()); }
+  const_iterator cend() const noexcept { return const_iterator(m_buffer + size()); }
 
-  iterator rend() noexcept { return data(); }
-  const_iterator rend() const noexcept { return crend(); }
-  const_iterator crend() const noexcept { return const_iterator(data()); }
+  using reverse_iterator = std::reverse_iterator<Iterator>;
+  using const_reverse_iterator = std::reverse_iterator<ConstIterator>;
+  reverse_iterator rbegin() noexcept { return reverse_iterator(end()); }
+  const_reverse_iterator rbegin() const noexcept { return const_reverse_iterator(end()); }
+  const_reverse_iterator crbegin() const noexcept { return const_reverse_iterator(cend()); }
+  reverse_iterator rend() noexcept { return reverse_iterator(begin()); }
+  const_reverse_iterator rend() const noexcept { return const_reverse_iterator(begin()); }
+  const_reverse_iterator crend() const noexcept { return const_reverse_iterator(cend()); }
 
-  iterator rbegin() noexcept { return data() + size(); }
-  const_iterator rbegin() const noexcept { return crbegin(); }
-  const_iterator crbegin() const noexcept { return const_iterator(data() + size()); }
 
 /*!
  * \brief Generate a printable representation of the object

@@ -3,7 +3,7 @@ LibraryManager_Append(${PROJECT_NAME}
         PUBLIC_HEADER iostream.h mpi.h cblas.h lapacke.h Options.h memory.h bytestreamC.h
         SOURCES Options.cpp memoryC.cpp bytestreamC.cpp
         )
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_11)
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_EXTENSIONS OFF)
 if (FORTRAN)
     set(MOLPRO_MEMORY_FORTRAN ON)
