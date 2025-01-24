@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#friends">Friends</a> &#124;
@@ -81,12 +82,25 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="memory_8h_source.html">memory.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array_1_1MyIterator.html">MyIterator</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a14aef0d762b220dc566cfb18406a3fea"><td class="memItemLeft" align="right" valign="top">typedef T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a></td></tr>
-<tr class="separator:a14aef0d762b220dc566cfb18406a3fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade99e5180bbc92043d7b2e01205d9673"><td class="memItemLeft" align="right" valign="top">typedef const T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a></td></tr>
-<tr class="separator:ade99e5180bbc92043d7b2e01205d9673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab86ecec09637202a0a53ab5274baab98"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#ab86ecec09637202a0a53ab5274baab98">Iterator</a> = <a class="el" href="classmolpro_1_1array_1_1MyIterator.html">MyIterator</a>&lt; false &gt;</td></tr>
+<tr class="separator:ab86ecec09637202a0a53ab5274baab98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a70fe93eac8174b296a3c565d8b56bf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a1a70fe93eac8174b296a3c565d8b56bf">ConstIterator</a> = <a class="el" href="classmolpro_1_1array_1_1MyIterator.html">MyIterator</a>&lt; true &gt;</td></tr>
+<tr class="separator:a1a70fe93eac8174b296a3c565d8b56bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a923b7a903fd3b8c69056d41931950f0a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classmolpro_1_1array.html#ab86ecec09637202a0a53ab5274baab98">Iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a923b7a903fd3b8c69056d41931950f0a">iterator</a></td></tr>
+<tr class="separator:a923b7a903fd3b8c69056d41931950f0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a988d44a2a9993b6cba41e6308a156f8c"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classmolpro_1_1array.html#a1a70fe93eac8174b296a3c565d8b56bf">ConstIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a></td></tr>
+<tr class="separator:a988d44a2a9993b6cba41e6308a156f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ed223f96ddbccd3778734a404ce890"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a18ed223f96ddbccd3778734a404ce890">reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="classmolpro_1_1array.html#ab86ecec09637202a0a53ab5274baab98">Iterator</a> &gt;</td></tr>
+<tr class="separator:a18ed223f96ddbccd3778734a404ce890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46422bd3aef4c980965e56caa05f481c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="classmolpro_1_1array.html#a1a70fe93eac8174b296a3c565d8b56bf">ConstIterator</a> &gt;</td></tr>
+<tr class="separator:a46422bd3aef4c980965e56caa05f481c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -163,30 +177,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2fcff67604bb9917820335df57ea31d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a2fcff67604bb9917820335df57ea31d8">swap</a> (<a class="el" href="classmolpro_1_1array.html">array</a>&lt; T &gt; &amp;x)</td></tr>
 <tr class="memdesc:a2fcff67604bb9917820335df57ea31d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchange the content of the container by the content of x, which is another object of the same type.  <a href="classmolpro_1_1array.html#a2fcff67604bb9917820335df57ea31d8">More...</a><br /></td></tr>
 <tr class="separator:a2fcff67604bb9917820335df57ea31d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0807b80d316f8b21db9c64a44eb4152d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a0807b80d316f8b21db9c64a44eb4152d">begin</a> () noexcept</td></tr>
+<tr class="memitem:a0807b80d316f8b21db9c64a44eb4152d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a923b7a903fd3b8c69056d41931950f0a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a0807b80d316f8b21db9c64a44eb4152d">begin</a> () noexcept</td></tr>
 <tr class="separator:a0807b80d316f8b21db9c64a44eb4152d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a258bdc7e63435f18bcc3ca7b653fb68e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a258bdc7e63435f18bcc3ca7b653fb68e">begin</a> () const noexcept</td></tr>
+<tr class="memitem:a258bdc7e63435f18bcc3ca7b653fb68e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a258bdc7e63435f18bcc3ca7b653fb68e">begin</a> () const noexcept</td></tr>
 <tr class="separator:a258bdc7e63435f18bcc3ca7b653fb68e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f5d6739ae604e54910f4e19433f7aab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a6f5d6739ae604e54910f4e19433f7aab">cbegin</a> () const noexcept</td></tr>
+<tr class="memitem:a6f5d6739ae604e54910f4e19433f7aab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a6f5d6739ae604e54910f4e19433f7aab">cbegin</a> () const noexcept</td></tr>
 <tr class="separator:a6f5d6739ae604e54910f4e19433f7aab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b9635b131a90da75019d8e5d9587600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a7b9635b131a90da75019d8e5d9587600">end</a> () noexcept</td></tr>
+<tr class="memitem:a7b9635b131a90da75019d8e5d9587600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a923b7a903fd3b8c69056d41931950f0a">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a7b9635b131a90da75019d8e5d9587600">end</a> () noexcept</td></tr>
 <tr class="separator:a7b9635b131a90da75019d8e5d9587600"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52fb7329d4009f87d399331224b61fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a52fb7329d4009f87d399331224b61fcd">end</a> () const noexcept</td></tr>
+<tr class="memitem:a52fb7329d4009f87d399331224b61fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a52fb7329d4009f87d399331224b61fcd">end</a> () const noexcept</td></tr>
 <tr class="separator:a52fb7329d4009f87d399331224b61fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e2203f477f32e4ec62dbfd85ded78dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a0e2203f477f32e4ec62dbfd85ded78dd">cend</a> () const noexcept</td></tr>
+<tr class="memitem:a0e2203f477f32e4ec62dbfd85ded78dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a0e2203f477f32e4ec62dbfd85ded78dd">cend</a> () const noexcept</td></tr>
 <tr class="separator:a0e2203f477f32e4ec62dbfd85ded78dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab66fb0843f644a9d09b109e65533decc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#ab66fb0843f644a9d09b109e65533decc">rend</a> () noexcept</td></tr>
-<tr class="separator:ab66fb0843f644a9d09b109e65533decc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8449a4f36255cb71c6c062104bba9e44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a8449a4f36255cb71c6c062104bba9e44">rend</a> () const noexcept</td></tr>
-<tr class="separator:a8449a4f36255cb71c6c062104bba9e44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72fce750096e7f927382162fd621b13b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a72fce750096e7f927382162fd621b13b">crend</a> () const noexcept</td></tr>
-<tr class="separator:a72fce750096e7f927382162fd621b13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c4b1efcaa243ab14caf3be3cb2e4bcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a6c4b1efcaa243ab14caf3be3cb2e4bcb">rbegin</a> () noexcept</td></tr>
-<tr class="separator:a6c4b1efcaa243ab14caf3be3cb2e4bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae234de5c7414aaf03f73d8a29025245f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#ae234de5c7414aaf03f73d8a29025245f">rbegin</a> () const noexcept</td></tr>
-<tr class="separator:ae234de5c7414aaf03f73d8a29025245f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75b6c013ff1b276684909b4d3ee2a191"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a75b6c013ff1b276684909b4d3ee2a191">crbegin</a> () const noexcept</td></tr>
-<tr class="separator:a75b6c013ff1b276684909b4d3ee2a191"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d40d516f50b0978f19ff73e61b0bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a18ed223f96ddbccd3778734a404ce890">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a38d40d516f50b0978f19ff73e61b0bb4">rbegin</a> () noexcept</td></tr>
+<tr class="separator:a38d40d516f50b0978f19ff73e61b0bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab286dd12aa29e942acc98dced3ddded8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#ab286dd12aa29e942acc98dced3ddded8">rbegin</a> () const noexcept</td></tr>
+<tr class="separator:ab286dd12aa29e942acc98dced3ddded8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab71630b99d5252da2dd105424e7d94c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#ab71630b99d5252da2dd105424e7d94c0">crbegin</a> () const noexcept</td></tr>
+<tr class="separator:ab71630b99d5252da2dd105424e7d94c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a885d7fcc040a3f71880098024d38cb72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a18ed223f96ddbccd3778734a404ce890">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a885d7fcc040a3f71880098024d38cb72">rend</a> () noexcept</td></tr>
+<tr class="separator:a885d7fcc040a3f71880098024d38cb72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee794c1b00d6e76d7afb3c3cd685cd90"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#aee794c1b00d6e76d7afb3c3cd685cd90">rend</a> () const noexcept</td></tr>
+<tr class="separator:aee794c1b00d6e76d7afb3c3cd685cd90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a122faaab9a23648ed6f97b1c110d5e62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a122faaab9a23648ed6f97b1c110d5e62">crend</a> () const noexcept</td></tr>
+<tr class="separator:a122faaab9a23648ed6f97b1c110d5e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a372ca876427f1789ae9f98276f7083e1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html#a372ca876427f1789ae9f98276f7083e1">str</a> (int verbosity=1, unsigned int columns=UINT_MAX) const</td></tr>
 <tr class="memdesc:a372ca876427f1789ae9f98276f7083e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a printable representation of the object.  <a href="classmolpro_1_1array.html#a372ca876427f1789ae9f98276f7083e1">More...</a><br /></td></tr>
 <tr class="separator:a372ca876427f1789ae9f98276f7083e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,24 +238,24 @@ class molpro::array&lt; T &gt;</h3>
 <div class="line">{</div>
 <div class="line">  <a class="code" href="classmolpro_1_1array.html">molpro::array&lt;&gt;</a> arr(5);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;arr.size(); i++) arr[i]=100*i;</div>
-<div class="line">  <span class="keywordflow">for</span> (<a class="code" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">molpro::array&lt;&gt;::iterator</a> el=arr.begin(); el!=arr.end(); el++)</div>
+<div class="line">  <span class="keywordflow">for</span> (<a class="code" href="classmolpro_1_1array_1_1MyIterator.html">molpro::array&lt;&gt;::iterator</a> el=arr.begin(); el!=arr.end(); el++)</div>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;array element &quot;</span>&lt;&lt;*el&lt;&lt;std::endl;</div>
 <div class="line">} <span class="comment">// arr will release its buffer and be destroyed on going out of scope</span></div>
 <div class="line"><span class="keywordtype">int</span> v[]={1,2,3,4,5,6};</div>
 <div class="line">{</div>
 <div class="line">  <a class="code" href="classmolpro_1_1array.html">molpro::array&lt;int&gt;</a> arr(v,6);</div>
-<div class="line">  <span class="keywordflow">for</span> (<a class="code" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">molpro::array&lt;double&gt;::iterator</a> el=arr.begin(); el!=arr.end(); el++)</div>
+<div class="line">  <span class="keywordflow">for</span> (<a class="code" href="classmolpro_1_1array_1_1MyIterator.html">molpro::array&lt;double&gt;::iterator</a> el=arr.begin(); el!=arr.end(); el++)</div>
 <div class="line">    *el=99;</div>
 <div class="line">} <span class="comment">// arr is destroyed, but (modified) v survives</span></div>
 <div class="line">std::cout &lt;&lt; v[0] &lt;&lt; std::endl;</div>
 <div class="line"><span class="keywordflow">return</span> 0; }</div>
-<div class="ttc" id="aclassmolpro_1_1array_html"><div class="ttname"><a href="classmolpro_1_1array.html">molpro::array</a></div><div class="ttdoc">A template for a container class like std::array&lt;T&gt; but with the following features.</div><div class="ttdef"><b>Definition:</b> memory.h:590</div></div>
-<div class="ttc" id="aclassmolpro_1_1array_html_a14aef0d762b220dc566cfb18406a3fea"><div class="ttname"><a href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">molpro::array::iterator</a></div><div class="ttdeci">T * iterator</div><div class="ttdef"><b>Definition:</b> memory.h:787</div></div>
+<div class="ttc" id="aclassmolpro_1_1array_1_1MyIterator_html"><div class="ttname"><a href="classmolpro_1_1array_1_1MyIterator.html">molpro::array::MyIterator</a></div><div class="ttdef"><b>Definition:</b> memory.h:863</div></div>
+<div class="ttc" id="aclassmolpro_1_1array_html"><div class="ttname"><a href="classmolpro_1_1array.html">molpro::array</a></div><div class="ttdoc">A template for a container class like std::array&lt;T&gt; but with the following features.</div><div class="ttdef"><b>Definition:</b> memory.h:666</div></div>
 <div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
 <div class="ttc" id="amemory_8h_html_a17843591b3971a2603f88bd29f56e057"><div class="ttname"><a href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">memory_initialize</a></div><div class="ttdeci">size_t memory_initialize(char *buffer, size_t max)</div><div class="ttdef"><b>Definition:</b> memory.h:104</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="ade99e5180bbc92043d7b2e01205d9673"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade99e5180bbc92043d7b2e01205d9673">&#9670;&nbsp;</a></span>const_iterator</h2>
+<a id="a988d44a2a9993b6cba41e6308a156f8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a988d44a2a9993b6cba41e6308a156f8c">&#9670;&nbsp;</a></span>const_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,15 +263,15 @@ class molpro::array&lt; T &gt;</h3>
 template&lt;typename T  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef const T* <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a></td>
+          <td class="memname">typedef <a class="el" href="classmolpro_1_1array.html#a1a70fe93eac8174b296a3c565d8b56bf">ConstIterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a14aef0d762b220dc566cfb18406a3fea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14aef0d762b220dc566cfb18406a3fea">&#9670;&nbsp;</a></span>iterator</h2>
+<a id="a46422bd3aef4c980965e56caa05f481c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46422bd3aef4c980965e56caa05f481c">&#9670;&nbsp;</a></span>const_reverse_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +279,71 @@ template&lt;typename T  = double&gt; </div>
 template&lt;typename T  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">typedef T* <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a></td>
+          <td class="memname">using <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a> =  std::reverse_iterator&lt;<a class="el" href="classmolpro_1_1array.html#a1a70fe93eac8174b296a3c565d8b56bf">ConstIterator</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1a70fe93eac8174b296a3c565d8b56bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a70fe93eac8174b296a3c565d8b56bf">&#9670;&nbsp;</a></span>ConstIterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#a1a70fe93eac8174b296a3c565d8b56bf">ConstIterator</a> =  <a class="el" href="classmolpro_1_1array_1_1MyIterator.html">MyIterator</a>&lt;true&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab86ecec09637202a0a53ab5274baab98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab86ecec09637202a0a53ab5274baab98">&#9670;&nbsp;</a></span>Iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#ab86ecec09637202a0a53ab5274baab98">Iterator</a> =  <a class="el" href="classmolpro_1_1array_1_1MyIterator.html">MyIterator</a>&lt;false&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a923b7a903fd3b8c69056d41931950f0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a923b7a903fd3b8c69056d41931950f0a">&#9670;&nbsp;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classmolpro_1_1array.html#ab86ecec09637202a0a53ab5274baab98">Iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#a923b7a903fd3b8c69056d41931950f0a">iterator</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18ed223f96ddbccd3778734a404ce890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18ed223f96ddbccd3778734a404ce890">&#9670;&nbsp;</a></span>reverse_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T  = double&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::<a class="el" href="classmolpro_1_1array.html#a18ed223f96ddbccd3778734a404ce890">reverse_iterator</a> =  std::reverse_iterator&lt;<a class="el" href="classmolpro_1_1array.html#ab86ecec09637202a0a53ab5274baab98">Iterator</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -916,7 +994,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -943,7 +1021,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a923b7a903fd3b8c69056d41931950f0a">iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -970,7 +1048,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::cbegin </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::cbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -997,7 +1075,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::cend </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::cend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1012,8 +1090,8 @@ template&lt;typename T  = double&gt; </div>
 
 </div>
 </div>
-<a id="a75b6c013ff1b276684909b4d3ee2a191"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a75b6c013ff1b276684909b4d3ee2a191">&#9670;&nbsp;</a></span>crbegin()</h2>
+<a id="ab71630b99d5252da2dd105424e7d94c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab71630b99d5252da2dd105424e7d94c0">&#9670;&nbsp;</a></span>crbegin()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1024,7 +1102,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::crbegin </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::crbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1039,8 +1117,8 @@ template&lt;typename T  = double&gt; </div>
 
 </div>
 </div>
-<a id="a72fce750096e7f927382162fd621b13b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72fce750096e7f927382162fd621b13b">&#9670;&nbsp;</a></span>crend()</h2>
+<a id="a122faaab9a23648ed6f97b1c110d5e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a122faaab9a23648ed6f97b1c110d5e62">&#9670;&nbsp;</a></span>crend()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1051,7 +1129,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::crend </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::crend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1159,7 +1237,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::end </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a988d44a2a9993b6cba41e6308a156f8c">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1186,7 +1264,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::end </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a923b7a903fd3b8c69056d41931950f0a">iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1368,8 +1446,8 @@ template&lt;typename T  = double&gt; </div>
 
 </div>
 </div>
-<a id="ae234de5c7414aaf03f73d8a29025245f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae234de5c7414aaf03f73d8a29025245f">&#9670;&nbsp;</a></span>rbegin() <span class="overload">[1/2]</span></h2>
+<a id="ab286dd12aa29e942acc98dced3ddded8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab286dd12aa29e942acc98dced3ddded8">&#9670;&nbsp;</a></span>rbegin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1380,7 +1458,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rbegin </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1395,8 +1473,8 @@ template&lt;typename T  = double&gt; </div>
 
 </div>
 </div>
-<a id="a6c4b1efcaa243ab14caf3be3cb2e4bcb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c4b1efcaa243ab14caf3be3cb2e4bcb">&#9670;&nbsp;</a></span>rbegin() <span class="overload">[2/2]</span></h2>
+<a id="a38d40d516f50b0978f19ff73e61b0bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38d40d516f50b0978f19ff73e61b0bb4">&#9670;&nbsp;</a></span>rbegin() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1407,7 +1485,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rbegin </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a18ed223f96ddbccd3778734a404ce890">reverse_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1422,8 +1500,8 @@ template&lt;typename T  = double&gt; </div>
 
 </div>
 </div>
-<a id="a8449a4f36255cb71c6c062104bba9e44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8449a4f36255cb71c6c062104bba9e44">&#9670;&nbsp;</a></span>rend() <span class="overload">[1/2]</span></h2>
+<a id="aee794c1b00d6e76d7afb3c3cd685cd90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee794c1b00d6e76d7afb3c3cd685cd90">&#9670;&nbsp;</a></span>rend() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1434,7 +1512,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#ade99e5180bbc92043d7b2e01205d9673">const_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rend </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a46422bd3aef4c980965e56caa05f481c">const_reverse_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1449,8 +1527,8 @@ template&lt;typename T  = double&gt; </div>
 
 </div>
 </div>
-<a id="ab66fb0843f644a9d09b109e65533decc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab66fb0843f644a9d09b109e65533decc">&#9670;&nbsp;</a></span>rend() <span class="overload">[2/2]</span></h2>
+<a id="a885d7fcc040a3f71880098024d38cb72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a885d7fcc040a3f71880098024d38cb72">&#9670;&nbsp;</a></span>rend() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1461,7 +1539,7 @@ template&lt;typename T  = double&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a14aef0d762b220dc566cfb18406a3fea">iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rend </td>
+          <td class="memname"><a class="el" href="classmolpro_1_1array.html#a18ed223f96ddbccd3778734a404ce890">reverse_iterator</a> <a class="el" href="classmolpro_1_1array.html">molpro::array</a>&lt; T &gt;::rend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>

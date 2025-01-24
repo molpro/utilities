@@ -136,11 +136,17 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmolpro_1_1allocator___1_1rebind.html">molpro::allocator_&lt; T, A &gt;::rebind&lt; U &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1pointer__holder.html">molpro::pointer_holder&lt; T, _Alloc &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template for a container class like std::vector&lt;T&gt; but with the following features.  <a href="classmolpro_1_1pointer__holder.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1vector.html">molpro::vector&lt; T, _Alloc &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template for a container class like std::vector&lt;T&gt; but with the following features.  <a href="classmolpro_1_1vector.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1vector_1_1MyIterator.html">molpro::vector&lt; T, _Alloc &gt;::MyIterator&lt; IsConst &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array.html">molpro::array&lt; T &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A template for a container class like std::array&lt;T&gt; but with the following features.  <a href="classmolpro_1_1array.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1array_1_1MyIterator.html">molpro::array&lt; T &gt;::MyIterator&lt; IsConst &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
@@ -177,6 +183,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ad6f4e48b18a910293f0fb426c126bc30"><td class="memTemplParams" colspan="2">template&lt;class T , typename _Alloc &gt; </td></tr>
 <tr class="memitem:ad6f4e48b18a910293f0fb426c126bc30"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemolpro.html#ad6f4e48b18a910293f0fb426c126bc30">molpro::operator&lt;&lt;</a> (std::ostream &amp;os, vector&lt; T, _Alloc &gt; const &amp;obj)</td></tr>
 <tr class="separator:ad6f4e48b18a910293f0fb426c126bc30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6cb0c31e2caae37e01214de4881d10b"><td class="memTemplParams" colspan="2">template&lt;typename T  = double, typename _Alloc  = molpro::allocator&lt;T&gt;&gt; </td></tr>
+<tr class="memitem:ab6cb0c31e2caae37e01214de4881d10b"><td class="memTemplItemLeft" align="right" valign="top">std::ptrdiff_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemolpro.html#ab6cb0c31e2caae37e01214de4881d10b">molpro::operator-</a> (const pointer_holder&lt; T &gt; &amp;a, const pointer_holder&lt; T &gt; &amp;b)</td></tr>
+<tr class="separator:ab6cb0c31e2caae37e01214de4881d10b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaebcdbe51848d95c74e25dc841b9f0c2"><td class="memTemplParams" colspan="2">template&lt;typename T , typename _Alloc &gt; </td></tr>
+<tr class="memitem:aaebcdbe51848d95c74e25dc841b9f0c2"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T, _Alloc &gt;::Iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemolpro.html#aaebcdbe51848d95c74e25dc841b9f0c2">molpro::operator+</a> (const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</td></tr>
+<tr class="separator:aaebcdbe51848d95c74e25dc841b9f0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbffc7773f84d83061ae974d90fb765"><td class="memTemplParams" colspan="2">template&lt;typename T , typename _Alloc &gt; </td></tr>
+<tr class="memitem:a2dbffc7773f84d83061ae974d90fb765"><td class="memTemplItemLeft" align="right" valign="top">vector&lt; T, _Alloc &gt;::Iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemolpro.html#a2dbffc7773f84d83061ae974d90fb765">molpro::operator-</a> (const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</td></tr>
+<tr class="separator:a2dbffc7773f84d83061ae974d90fb765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25bbb58956838b7151d98e019f9f0bfb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a25bbb58956838b7151d98e019f9f0bfb"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacemolpro.html#a25bbb58956838b7151d98e019f9f0bfb">molpro::operator&lt;&lt;</a> (std::ostream &amp;os, array&lt; T &gt; const &amp;obj)</td></tr>
 <tr class="separator:a25bbb58956838b7151d98e019f9f0bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>

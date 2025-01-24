@@ -78,8 +78,11 @@
     <includes id="memory-config_8h" name="memory-config.h" local="no" imported="no">molpro/memory/memory-config.h</includes>
     <class kind="class">molpro::allocator_</class>
     <class kind="struct">molpro::allocator_::rebind</class>
+    <class kind="class">molpro::pointer_holder</class>
     <class kind="class">molpro::vector</class>
+    <class kind="class">molpro::vector::MyIterator</class>
     <class kind="class">molpro::array</class>
+    <class kind="class">molpro::array::MyIterator</class>
     <namespace>molpro</namespace>
     <member kind="typedef">
       <type>allocator_&lt; T, std::allocator&lt; T &gt; &gt;</type>
@@ -136,6 +139,27 @@
       <anchorfile>namespacemolpro.html</anchorfile>
       <anchor>ad6f4e48b18a910293f0fb426c126bc30</anchor>
       <arglist>(std::ostream &amp;os, vector&lt; T, _Alloc &gt; const &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::ptrdiff_t</type>
+      <name>operator-</name>
+      <anchorfile>namespacemolpro.html</anchorfile>
+      <anchor>ab6cb0c31e2caae37e01214de4881d10b</anchor>
+      <arglist>(const pointer_holder&lt; T &gt; &amp;a, const pointer_holder&lt; T &gt; &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
+      <name>operator+</name>
+      <anchorfile>namespacemolpro.html</anchorfile>
+      <anchor>aaebcdbe51848d95c74e25dc841b9f0c2</anchor>
+      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
+    </member>
+    <member kind="function">
+      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
+      <name>operator-</name>
+      <anchorfile>namespacemolpro.html</anchorfile>
+      <anchor>a2dbffc7773f84d83061ae974d90fb765</anchor>
+      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>
@@ -563,18 +587,47 @@
     <name>molpro::array</name>
     <filename>classmolpro_1_1array.html</filename>
     <templarg></templarg>
+    <class kind="class">molpro::array::MyIterator</class>
     <member kind="typedef">
-      <type>T *</type>
-      <name>iterator</name>
+      <type>MyIterator&lt; false &gt;</type>
+      <name>Iterator</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a14aef0d762b220dc566cfb18406a3fea</anchor>
+      <anchor>ab86ecec09637202a0a53ab5274baab98</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>const T *</type>
+      <type>MyIterator&lt; true &gt;</type>
+      <name>ConstIterator</name>
+      <anchorfile>classmolpro_1_1array.html</anchorfile>
+      <anchor>a1a70fe93eac8174b296a3c565d8b56bf</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Iterator</type>
+      <name>iterator</name>
+      <anchorfile>classmolpro_1_1array.html</anchorfile>
+      <anchor>a923b7a903fd3b8c69056d41931950f0a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>ConstIterator</type>
       <name>const_iterator</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>ade99e5180bbc92043d7b2e01205d9673</anchor>
+      <anchor>a988d44a2a9993b6cba41e6308a156f8c</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::reverse_iterator&lt; Iterator &gt;</type>
+      <name>reverse_iterator</name>
+      <anchorfile>classmolpro_1_1array.html</anchorfile>
+      <anchor>a18ed223f96ddbccd3778734a404ce890</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::reverse_iterator&lt; ConstIterator &gt;</type>
+      <name>const_reverse_iterator</name>
+      <anchorfile>classmolpro_1_1array.html</anchorfile>
+      <anchor>a46422bd3aef4c980965e56caa05f481c</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -816,45 +869,45 @@
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>iterator</type>
-      <name>rend</name>
+      <type>reverse_iterator</type>
+      <name>rbegin</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>ab66fb0843f644a9d09b109e65533decc</anchor>
+      <anchor>a38d40d516f50b0978f19ff73e61b0bb4</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
-      <type>const_iterator</type>
-      <name>rend</name>
-      <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a8449a4f36255cb71c6c062104bba9e44</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_iterator</type>
-      <name>crend</name>
-      <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a72fce750096e7f927382162fd621b13b</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
+      <type>const_reverse_iterator</type>
       <name>rbegin</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a6c4b1efcaa243ab14caf3be3cb2e4bcb</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_iterator</type>
-      <name>rbegin</name>
-      <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>ae234de5c7414aaf03f73d8a29025245f</anchor>
+      <anchor>ab286dd12aa29e942acc98dced3ddded8</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>const_iterator</type>
+      <type>const_reverse_iterator</type>
       <name>crbegin</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a75b6c013ff1b276684909b4d3ee2a191</anchor>
+      <anchor>ab71630b99d5252da2dd105424e7d94c0</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>reverse_iterator</type>
+      <name>rend</name>
+      <anchorfile>classmolpro_1_1array.html</anchorfile>
+      <anchor>a885d7fcc040a3f71880098024d38cb72</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const_reverse_iterator</type>
+      <name>rend</name>
+      <anchorfile>classmolpro_1_1array.html</anchorfile>
+      <anchor>aee794c1b00d6e76d7afb3c3cd685cd90</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const_reverse_iterator</type>
+      <name>crend</name>
+      <anchorfile>classmolpro_1_1array.html</anchorfile>
+      <anchor>a122faaab9a23648ed6f97b1c110d5e62</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -1017,6 +1070,381 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>molpro::array::MyIterator</name>
+    <filename>classmolpro_1_1array_1_1MyIterator.html</filename>
+    <templarg>IsConst</templarg>
+    <member kind="typedef">
+      <type>std::forward_iterator_tag</type>
+      <name>iterator_category</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a0510689dfb7b752d020a44ea96629a98</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>T</type>
+      <name>value_type</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a98e4cd11a3f777d76b7cc33203f8f995</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::ptrdiff_t</type>
+      <name>difference_type</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ab312c79c84ff48d41cedc8077aa23845</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>T *</type>
+      <name>pointer</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a9143a255fd918a354fda2620a9dd8cea</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>T &amp;</type>
+      <name>reference</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a4f66a03bec5061784243cee374cd8107</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>aae31476a8b3d6f400fc03fccb81db266</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>aa9c31f1f4c9ad0caba8bf0a66dcdfaf7</anchor>
+      <arglist>(pointer ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ac9cc1448b9fbb1e4df547a565d9f417f</anchor>
+      <arglist>(const MyIterator &amp;)=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>aa840a184e2be84a80170f5e94ad6266d</anchor>
+      <arglist>(const MyIterator&lt; false &gt; &amp;rhs)</arglist>
+    </member>
+    <member kind="function">
+      <type>reference</type>
+      <name>operator*</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>aa87f60abdb97c3143430db1be55244a8</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>pointer</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a9f9926abe7f143da6db11f649ad8dc1a</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator++</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a38d5fadb8cd21e8e997522ce1ac430b2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator++</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a365cf12ebbb25429ab237225e009a378</anchor>
+      <arglist>(int)</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator--</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a3b7d94d0dc9974015f78e578cc3154b8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator--</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ae65e8caffc39057168e7e07615146646</anchor>
+      <arglist>(int)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend class</type>
+      <name>MyIterator&lt; true &gt;</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>aa994fbfa2f35113829261b203072388a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend class</type>
+      <name>MyIterator&lt; false &gt;</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ac223f0f27ba0955878dd8100332c3c53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator==</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ab3184c5b2ee73e8c248e90212c447823</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator!=</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ac20abf02b27483d2a95b2e5e6e50255b</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&lt;</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ae3199281f4d5b5b46c242ca3d5347564</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&gt;</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a542f86c229f7cca49fd98e1159055044</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&lt;=</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a4335d6a63b8709b430688fd9a288ce47</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&gt;=</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a979457ed52a3a7eef09ecf9094b124c7</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>molpro::vector::MyIterator</name>
+    <filename>classmolpro_1_1vector_1_1MyIterator.html</filename>
+    <templarg>IsConst</templarg>
+    <base>pointer_holder&lt; T, _Alloc &gt;</base>
+    <member kind="typedef">
+      <type>std::forward_iterator_tag</type>
+      <name>iterator_category</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a47f7396894594d85215eb22b0c0331a9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>T</type>
+      <name>value_type</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a0292edcf2b5fd99ad00acbd9cb039015</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::ptrdiff_t</type>
+      <name>difference_type</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a599d58dffcd859ccb34e1a18ff2650c8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>T *</type>
+      <name>pointer</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>ad9d93947bf59bf712c51330c141e6e76</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>T &amp;</type>
+      <name>reference</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a83a363b35ac0a8d1495daa7981ee2a04</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a634a7ca62af470bcb2d588eb216bf1ad</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a934c6877328433b4ae05bff590288988</anchor>
+      <arglist>(pointer ptr)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a65ae26308160b763eb74d13b8e4ccac3</anchor>
+      <arglist>(const MyIterator &amp;)=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>MyIterator</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>ac9a1be1cf29d99d21e8e0d2942480cc9</anchor>
+      <arglist>(const MyIterator&lt; false &gt; &amp;rhs)</arglist>
+    </member>
+    <member kind="function">
+      <type>reference</type>
+      <name>operator*</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>aeead8745cb2f8d0a0b50df55acefed0e</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>pointer</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>aecefb63d8db3f3ca86b865450b330fd6</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator++</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>aedb1bf7fcef6bf894269fdf37ec9d1bc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator++</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a8e18d63e2f15627f015a54c146f8ade2</anchor>
+      <arglist>(int)</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator--</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a708fa7905277253e6bd5a2b953f4a1bb</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator--</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>abca16f8876ff2005af0fbb271030e2f2</anchor>
+      <arglist>(int)</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator+=</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a53e78924cd9db63b7870f286f3d9f0fb</anchor>
+      <arglist>(difference_type n)</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator-=</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a666f6c32f252873c74ebd9662b1024f3</anchor>
+      <arglist>(difference_type n)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend class</type>
+      <name>MyIterator&lt; true &gt;</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>aa994fbfa2f35113829261b203072388a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend class</type>
+      <name>MyIterator&lt; false &gt;</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>ac223f0f27ba0955878dd8100332c3c53</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend MyIterator</type>
+      <name>operator+</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>af7c34b09ca9b818939012ec2a54cfef9</anchor>
+      <arglist>(difference_type n, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend MyIterator</type>
+      <name>operator+</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a1a22f8292663fc822f409451116b753d</anchor>
+      <arglist>(const MyIterator &amp;rhs, difference_type n)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend MyIterator</type>
+      <name>operator-</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>af9ddcdffd9c8207a0f20aacb86810337</anchor>
+      <arglist>(difference_type n, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend MyIterator</type>
+      <name>operator-</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a2ae96d2063fa64e78801593f6c497575</anchor>
+      <arglist>(const MyIterator &amp;rhs, difference_type n)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator==</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>ab3184c5b2ee73e8c248e90212c447823</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator!=</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>ac20abf02b27483d2a95b2e5e6e50255b</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&lt;</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>ae3199281f4d5b5b46c242ca3d5347564</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&gt;</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a542f86c229f7cca49fd98e1159055044</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&lt;=</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a4335d6a63b8709b430688fd9a288ce47</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend bool</type>
+      <name>operator&gt;=</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a979457ed52a3a7eef09ecf9094b124c7</anchor>
+      <arglist>(const MyIterator &amp;lhs, const MyIterator &amp;rhs)</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>molpro::Options</name>
     <filename>classmolpro_1_1Options.html</filename>
     <member kind="function">
@@ -1125,6 +1553,44 @@
       <arglist>() const</arglist>
     </member>
   </compound>
+  <compound kind="class">
+    <name>molpro::pointer_holder</name>
+    <filename>classmolpro_1_1pointer__holder.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>pointer_holder</name>
+      <anchorfile>classmolpro_1_1pointer__holder.html</anchorfile>
+      <anchor>a6acc157dba03110241169ea509b0dae8</anchor>
+      <arglist>(T *const ptr)</arglist>
+    </member>
+    <member kind="variable">
+      <type>T *</type>
+      <name>m_ptr</name>
+      <anchorfile>classmolpro_1_1pointer__holder.html</anchorfile>
+      <anchor>aba99ab51dba083ac8ad576228ca242ef</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>pointer_holder&lt; T, _Alloc &gt;</name>
+    <filename>classmolpro_1_1pointer__holder.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>pointer_holder</name>
+      <anchorfile>classmolpro_1_1pointer__holder.html</anchorfile>
+      <anchor>a6acc157dba03110241169ea509b0dae8</anchor>
+      <arglist>(T *const ptr)</arglist>
+    </member>
+    <member kind="variable">
+      <type>T *</type>
+      <name>m_ptr</name>
+      <anchorfile>classmolpro_1_1pointer__holder.html</anchorfile>
+      <anchor>aba99ab51dba083ac8ad576228ca242ef</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="struct">
     <name>molpro::allocator_::rebind</name>
     <filename>structmolpro_1_1allocator___1_1rebind.html</filename>
@@ -1142,18 +1608,47 @@
     <filename>classmolpro_1_1vector.html</filename>
     <templarg></templarg>
     <templarg></templarg>
+    <class kind="class">molpro::vector::MyIterator</class>
     <member kind="typedef">
-      <type>T *</type>
-      <name>iterator</name>
+      <type>MyIterator&lt; false &gt;</type>
+      <name>Iterator</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a6960878881bb589d46b2fe04f6783fb7</anchor>
+      <anchor>a9e4acb3d9c31e3a7642694a80061f7f1</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
-      <type>const T *</type>
+      <type>MyIterator&lt; true &gt;</type>
+      <name>ConstIterator</name>
+      <anchorfile>classmolpro_1_1vector.html</anchorfile>
+      <anchor>a3d408acc087f967dd0a3f74a6c5a9674</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>Iterator</type>
+      <name>iterator</name>
+      <anchorfile>classmolpro_1_1vector.html</anchorfile>
+      <anchor>a2f3ee1c6be953a12510cdf511d257c4d</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>ConstIterator</type>
       <name>const_iterator</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a19729bb9fef6e2fb241427ddfa86e42e</anchor>
+      <anchor>a1b89cf2a5c12f8735fc99f72d4702c3b</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::reverse_iterator&lt; Iterator &gt;</type>
+      <name>reverse_iterator</name>
+      <anchorfile>classmolpro_1_1vector.html</anchorfile>
+      <anchor>a46814564340044ff309fc61fea75c4f5</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>std::reverse_iterator&lt; ConstIterator &gt;</type>
+      <name>const_reverse_iterator</name>
+      <anchorfile>classmolpro_1_1vector.html</anchorfile>
+      <anchor>a2285a84538efd21973a506ba6a3a89b5</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
@@ -1388,45 +1883,45 @@
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>iterator</type>
-      <name>rend</name>
+      <type>reverse_iterator</type>
+      <name>rbegin</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a6c0c7431fa22c99fa76b274ab21927a9</anchor>
+      <anchor>a475bee80227088d24369f70b90beb449</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
-      <type>const_iterator</type>
-      <name>rend</name>
-      <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>ae391436d7af4b4828ee447d3a3f78324</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_iterator</type>
-      <name>crend</name>
-      <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a6b4a615e577cbf555a124d380d930366</anchor>
-      <arglist>() const noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>iterator</type>
+      <type>const_reverse_iterator</type>
       <name>rbegin</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>acc5a9f6d6ffabc7ed770554a59a012c4</anchor>
-      <arglist>() noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type>const_iterator</type>
-      <name>rbegin</name>
-      <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a57c5e6cc62aa2ab1f1053882720624e4</anchor>
+      <anchor>abf136f0ec3f9c1c2125f1d069b4f4e79</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
-      <type>const_iterator</type>
+      <type>const_reverse_iterator</type>
       <name>crbegin</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>ad8888480fbf3a89ba8b598af8edab6f1</anchor>
+      <anchor>ae6c54bce2ad86c49f9797756a5c1b3c4</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>reverse_iterator</type>
+      <name>rend</name>
+      <anchorfile>classmolpro_1_1vector.html</anchorfile>
+      <anchor>a23ff39d5cff15cfaaba8d49c7206a71b</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const_reverse_iterator</type>
+      <name>rend</name>
+      <anchorfile>classmolpro_1_1vector.html</anchorfile>
+      <anchor>aeddfc7b3795961dba0fafcb0f7826908</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const_reverse_iterator</type>
+      <name>crend</name>
+      <anchorfile>classmolpro_1_1vector.html</anchorfile>
+      <anchor>af97d28649562011df8eab5912c1c2bda</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -1527,6 +2022,7 @@
     <namespace>molpro::mpi</namespace>
     <class kind="class">molpro::Options</class>
     <class kind="class">molpro::allocator_</class>
+    <class kind="class">molpro::pointer_holder</class>
     <class kind="class">molpro::vector</class>
     <class kind="class">molpro::array</class>
     <class kind="class">molpro::bytestream</class>
@@ -1557,6 +2053,27 @@
       <anchorfile>namespacemolpro.html</anchorfile>
       <anchor>ad6f4e48b18a910293f0fb426c126bc30</anchor>
       <arglist>(std::ostream &amp;os, vector&lt; T, _Alloc &gt; const &amp;obj)</arglist>
+    </member>
+    <member kind="function">
+      <type>std::ptrdiff_t</type>
+      <name>operator-</name>
+      <anchorfile>namespacemolpro.html</anchorfile>
+      <anchor>ab6cb0c31e2caae37e01214de4881d10b</anchor>
+      <arglist>(const pointer_holder&lt; T &gt; &amp;a, const pointer_holder&lt; T &gt; &amp;b)</arglist>
+    </member>
+    <member kind="function">
+      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
+      <name>operator+</name>
+      <anchorfile>namespacemolpro.html</anchorfile>
+      <anchor>aaebcdbe51848d95c74e25dc841b9f0c2</anchor>
+      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
+    </member>
+    <member kind="function">
+      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
+      <name>operator-</name>
+      <anchorfile>namespacemolpro.html</anchorfile>
+      <anchor>a2dbffc7773f84d83061ae974d90fb765</anchor>
+      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>
