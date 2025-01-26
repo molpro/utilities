@@ -9,8 +9,9 @@
 #include <mkl_cblas.h>
 #define HAVE_CBLAS
 #define HAVE_MKL
-#elif __has_include(<Accelerate/../Frameworks/vecLib.framework/Headers/cblas.h>)
-#include <Accelerate/../Frameworks/vecLib.framework/Headers/cblas.h>
+#elif __has_include(<Accelerate/Accelerate.h>)
+#define ACCELERATE_NEW_LAPACK
+#include <Accelerate/Accelerate.h>
 #define HAVE_CBLAS
 #define HAVE_ACCELERATE
 #elif __has_include(<cblas.h>)
