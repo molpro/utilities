@@ -77,20 +77,19 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mkl_cblas.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define HAVE_MKL</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#elif __has_include(&lt;Accelerate/Accelerate.h&gt;)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define ACCELERATE_NEW_LAPACK</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;Accelerate/Accelerate.h&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define HAVE_ACCELERATE</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#elif __has_include(&lt;cblas.h&gt;)</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="cblas_8h.html">cblas.h</a>&gt;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;cblas_generic.h&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="cblas_8h.html#a44285e5a3f17af0a5dc5b22de44805be">   22</a></span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MOLPRO_DEPENDENCIES_UTILITIES_SRC_MOLPRO_CBLAS_H_</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#elif __has_include(&lt;Accelerate/../Frameworks/vecLib.framework/Headers/cblas.h&gt;)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;Accelerate/../Frameworks/vecLib.framework/Headers/cblas.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define HAVE_ACCELERATE</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#elif __has_include(&lt;cblas.h&gt;)</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="cblas_8h.html">cblas.h</a>&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;cblas_generic.h&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="cblas_8h.html#a44285e5a3f17af0a5dc5b22de44805be">   21</a></span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//MOLPRO_DEPENDENCIES_UTILITIES_SRC_MOLPRO_CBLAS_H_</span></div>
 <div class="ttc" id="acblas_8h_html"><div class="ttname"><a href="cblas_8h.html">cblas.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
