@@ -16,7 +16,6 @@ LibraryManager_AppendExternal(${PROJECT_NAME}
 if (TARGET MPI::MPI_CXX)
     message(STATUS "molpro::utilities with MPI")
     target_link_libraries(${PROJECT_NAME} PUBLIC MPI::MPI_CXX)
-    target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_MPI_H)
 endif ()
 if (TARGET GA::GA)
     message(STATUS "molpro::utilities with GA")

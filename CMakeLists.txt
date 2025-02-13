@@ -8,7 +8,7 @@ FetchContent_Declare(
         GIT_TAG 0.13.0
 )
 FetchContent_MakeAvailable(LibraryManager)
-LibraryManager_Project()
+LibraryManager_Project(MPI_OPTION)
 
 add_subdirectory(dependencies)
 
