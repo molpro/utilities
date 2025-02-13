@@ -5,7 +5,7 @@ set(NameSpace "molpro")
 LibraryManager_Add(${PROJECT_NAME} NAMESPACE ${NameSpace})
 
 if (MPI)
-    find_package(MPI)
+    find_package(MPI REQUIRED)
 endif ()
 
 # Its source files are conventionally in directories named by C++ namespace

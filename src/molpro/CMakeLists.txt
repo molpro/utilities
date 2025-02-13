@@ -16,7 +16,7 @@ LibraryManager_AppendExternal(${PROJECT_NAME}
 if (TARGET MPI::MPI_CXX)
     message(STATUS "molpro::utilities with MPI")
     target_link_libraries(${PROJECT_NAME} PUBLIC MPI::MPI_CXX)
-    target_compile_definitions(${PROJECT_NAME} PUBLIC HAVE_MPI_H)
+#    target_compile_definitions(${PROJECT_NAME} PUBLIC HAVE_MPI_H) # still needed if C++ < 17
 endif ()
 if (TARGET GA::GA)
     message(STATUS "molpro::utilities with GA")
