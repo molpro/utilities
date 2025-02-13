@@ -7,6 +7,11 @@
 #if defined(OMPI_MPI_H) || defined(MPI_INCLUDED)
 #define HAVE_MPI_H
 #endif
+#if defined __has_include
+#if __has_include(<mpi.h>)
+#endif
+#define HAVE_MPI_H
+#endif
 #endif
 
 #ifdef HAVE_MPI_H
