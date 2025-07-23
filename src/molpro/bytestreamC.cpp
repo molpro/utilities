@@ -47,10 +47,11 @@ molpro::array<double> bytestream::doubles() {
 //    printf("\n");
 //    }
   molpro::array<double> result(md.length);
-  std::memcpy(&result[0], &((buffer)[pointer]), md.length * sizeof(result[0]));
-  pointer += md.length * sizeof(result[0]);
+  if (md.length > 0)
+    std::memcpy(&result[0], &((buffer)[pointer]), md.length * sizeof(double));
+  pointer += md.length * sizeof(double);
 //  molpro::cout << "bytestream::doubles() final pointer="<<pointer<<", size()="<<size()<<std::endl;
-  if (debug_bytestream) std::cout << "bytestream::doubles() " << md.length * sizeof(result[0]) << std::endl;
+  if (debug_bytestream) std::cout << "bytestream::doubles() " << md.length * sizeof(double) << std::endl;
   return result;
 }
 
@@ -59,11 +60,12 @@ molpro::array<fint> bytestream::ints() {
 //  molpro::cout << "bytestream::ints md.datatype="<<md.datatype<<", md.length="<<md.length<<", pointer="<<pointer<<std::endl;
   assert (md.datatype == datatype_int);
   molpro::array<fint> result(md.length);
-  std::memcpy(&result[0], &((buffer)[pointer]), md.length * sizeof(result[0]));
+  if (md.length > 0)
+    std::memcpy(&result[0], &((buffer)[pointer]), md.length * sizeof(fint));
 //  molpro::cout << "result[0]="<<result[0]<<std::endl;
-  pointer += md.length * sizeof(result[0]);
+  pointer += md.length * sizeof(fint);
 //  molpro::cout << "pointer advanced to "<<pointer<<std::endl;
-  if (debug_bytestream) std::cout << "bytestream::ints() " << md.length * sizeof(result[0]) << std::endl;
+  if (debug_bytestream) std::cout << "bytestream::ints() " << md.length * sizeof(fint) << std::endl;
   return result;
 }
 
@@ -74,9 +76,9 @@ molpro::array<char> bytestream::chars() {
 //  if (md.length>7){int64_t l; std::memcpy(&l,&buffer[pointer],8); printf("first 8 bytes %llX %lld\n",l,l);}
   molpro::array<char> result((char*) &((buffer)[pointer]), md.length);
 //  if (md.length>7){int64_t l; std::memcpy(&l,&result[0],8); printf("first 8 bytes %llX %lld\n",l,l);}
-  pointer += md.length * sizeof(result[0]);
+  pointer += md.length * sizeof(char);
 //  molpro::cout << "bytestream::chars() pointer advanced to "<<pointer<<std::endl;
-  if (debug_bytestream) std::cout << "bytestream::chars() " << md.length * sizeof(result[0]) << std::endl;
+  if (debug_bytestream) std::cout << "bytestream::chars() " << md.length * sizeof(char) << std::endl;
   return result;
 }
 

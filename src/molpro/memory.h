@@ -415,7 +415,7 @@ class vector {
   }
 
   T* data() noexcept { return &front(); }
-  const T* data() const noexcept { return &front(); }
+  const T* data() const noexcept { return m_stdvector.data(); }
 
   size_t max_size() const noexcept {
     return m_stdvector.max_size();
@@ -837,7 +837,7 @@ class array {
   }
 
   T* data() noexcept { return &front(); }
-  const T* data() const noexcept { return &front(); }
+  const T* data() const noexcept { return m_buffer; }
 
   size_t max_size() const noexcept {
     return m_length;
