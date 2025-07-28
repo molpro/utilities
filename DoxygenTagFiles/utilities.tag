@@ -1068,6 +1068,13 @@
       <anchor>a78ec1c40faa1e9e6e7e1d9390cb445ff</anchor>
       <arglist>() const</arglist>
     </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>position</name>
+      <anchorfile>classmolpro_1_1bytestream.html</anchorfile>
+      <anchor>aeb6873b7ec19a87fe37437a1813b7d44</anchor>
+      <arglist>()</arglist>
+    </member>
   </compound>
   <compound kind="class">
     <name>molpro::array::MyIterator</name>

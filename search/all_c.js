@@ -5,6 +5,6 @@ var searchData=
   ['pointer_5fholder_108',['pointer_holder',['../classmolpro_1_1pointer__holder.html',1,'molpro::pointer_holder&lt; T, _Alloc &gt;'],['../classmolpro_1_1pointer__holder.html#a6acc157dba03110241169ea509b0dae8',1,'molpro::pointer_holder::pointer_holder()']]],
   ['pointer_5fholder_3c_20t_2c_20_5falloc_20_3e_109',['pointer_holder&lt; T, _Alloc &gt;',['../classmolpro_1_1pointer__holder.html',1,'molpro']]],
   ['pop_5fback_110',['pop_back',['../classmolpro_1_1vector.html#aec13e6a6799105ca26efe98db1a39c4b',1,'molpro::vector']]],
-  ['position_111',['position',['../classmolpro_1_1bytestream.html#a5270ea6551237f711bcdb252dea5f3ce',1,'molpro::bytestream']]],
+  ['position_111',['position',['../classmolpro_1_1bytestream.html#a5270ea6551237f711bcdb252dea5f3ce',1,'molpro::bytestream::position() const'],['../classmolpro_1_1bytestream.html#aeb6873b7ec19a87fe37437a1813b7d44',1,'molpro::bytestream::position()']]],
   ['push_5fback_112',['push_back',['../classmolpro_1_1vector.html#a9ac9d81dbf7d0505a3c09461b0886ac1',1,'molpro::vector::push_back(const T &amp;value)'],['../classmolpro_1_1vector.html#a175b64ba93132abc9976a64d95e2121a',1,'molpro::vector::push_back(T &amp;&amp;value)']]]
 ];
