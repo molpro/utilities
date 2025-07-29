@@ -1,9 +1,8 @@
-#include "molpro/bytestreamC.h"
+#include "bytestreamC.h"
 #include <cstring>
 #include <cassert>
-#include <algorithm>
 #include <iostream>
-#include <molpro/iostream.h>
+//#include <molpro/iostream.h>
 
 bool debug_bytestream = false;
 using molpro::bytestream;
