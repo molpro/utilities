@@ -9,8 +9,7 @@
     <name>bytestreamC.cpp</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>bytestreamC_8cpp.html</filename>
-    <includes id="bytestreamC_8h" name="bytestreamC.h" local="yes" imported="no">molpro/bytestreamC.h</includes>
-    <includes id="iostream_8h" name="iostream.h" local="no" imported="no">molpro/iostream.h</includes>
+    <includes id="bytestreamC_8h" name="bytestreamC.h" local="yes" imported="no">bytestreamC.h</includes>
     <member kind="function">
       <type>size_t</type>
       <name>memory_bytestream_hash</name>
@@ -194,7 +193,7 @@
     <name>memoryC.cpp</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>memoryC_8cpp.html</filename>
-    <includes id="memory_8h" name="memory.h" local="no" imported="no">molpro/memory.h</includes>
+    <includes id="memory_8h" name="memory.h" local="yes" imported="no">memory.h</includes>
     <member kind="variable">
       <type>size_t</type>
       <name>_private_memory_used</name>
