@@ -420,8 +420,8 @@
       <type>pointer</type>
       <name>allocate</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ad7e84fc7cbd24b808dd06fdba3b943db</anchor>
-      <arglist>(size_type cnt, typename std::allocator&lt; void &gt;::const_pointer=nullptr)</arglist>
+      <anchor>adeec17ed75bf23cb443b0988e61621e8</anchor>
+      <arglist>(size_type cnt, typename std::allocator&lt; void &gt;::value_type *=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -536,8 +536,8 @@
       <type>pointer</type>
       <name>allocate</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ad7e84fc7cbd24b808dd06fdba3b943db</anchor>
-      <arglist>(size_type cnt, typename std::allocator&lt; void &gt;::const_pointer=nullptr)</arglist>
+      <anchor>adeec17ed75bf23cb443b0988e61621e8</anchor>
+      <arglist>(size_type cnt, typename std::allocator&lt; void &gt;::value_type *=nullptr)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
@@ -682,15 +682,15 @@
       <type></type>
       <name>array</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a047910594bdb36941224a474cf6d5afd</anchor>
-      <arglist>(const array&lt; T &gt; &amp;source)</arglist>
+      <anchor>ab3a79fc7b590a6c52c797b76a74b55b9</anchor>
+      <arglist>(const array &amp;source)</arglist>
     </member>
     <member kind="function">
-      <type>array&lt; T &gt; &amp;</type>
+      <type>array &amp;</type>
       <name>operator=</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a6d0252c7abb1d97301147d8b13c1b383</anchor>
-      <arglist>(const array&lt; T &gt; &amp;copy)</arglist>
+      <anchor>aedfcc5068e8601486a5b66c1d9b2e39c</anchor>
+      <arglist>(const array &amp;copy)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
       <type>virtual</type>
@@ -1693,10 +1693,10 @@
       <arglist>(const vector&lt; T, _Alloc &gt; &amp;source)</arglist>
     </member>
     <member kind="function">
-      <type>vector&lt; T, _Alloc &gt; &amp;</type>
+      <type>vector &amp;</type>
       <name>operator=</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>ae68505d48a6f851d20b1c5e4babc5afb</anchor>
+      <anchor>a412ea5f8e27d5f050463b9e2cb5fb1e1</anchor>
       <arglist>(const vector&lt; T, _Alloc &gt; &amp;copy)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
