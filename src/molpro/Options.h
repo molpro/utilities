@@ -40,6 +40,7 @@ public:
    * \brief Obtain a string parameter.
    * \param key The name of the parameter
    * \param def Default value if the parameter is not found.
+   * \param molpro_parameter Used only in the Molpro context
    * \return  The result as a vector of integers.
    */
   std::vector<std::string> parameter(const std::string &key, const std::vector<std::string> &def, bool molpro_parameter=false) const;

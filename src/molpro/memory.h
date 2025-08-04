@@ -165,7 +165,7 @@ class allocator_ : public A {
   const_pointer address(const_reference r) const { return &r; }
 
 #ifndef NOALLOCATE
-  pointer allocate(size_type cnt, typename std::allocator<void>::const_pointer = nullptr) {
+  pointer allocate(size_type cnt, typename std::allocator<void>::value_type* = nullptr) {
 #ifdef MOLPRO_MEMORY_FORTRAN
     if (memory_remaining() < cnt * sizeof(T))
 #else
@@ -292,7 +292,7 @@ class vector {
    * \brief Construct a vector of type T with managed storage.
    * \param length The number of elements of buffer.
    */
-  vector<T, _Alloc>(size_t const length = 0)
+  vector(size_t const length = 0)
       : m_stdvector(length), m_buffer(m_stdvector.data()) {}
 
 /*!
@@ -300,7 +300,7 @@ class vector {
  * \param length The number of elements of buffer.
  * \param value The value to assign to all elements of the buffer.
  */
-  vector<T, _Alloc>(size_t const length, const T& value)
+  vector(size_t const length, const T& value)
       : m_stdvector(length, value), m_buffer(m_stdvector.data()) {}
 
 /*!
@@ -309,20 +309,20 @@ class vector {
  * \param last Ending iterator of vector to copy
  */
   template<class InputIterator>
-  vector<T, _Alloc>(InputIterator first, InputIterator last)
+  vector(InputIterator first, InputIterator last)
       : m_stdvector(first, last), m_buffer(m_stdvector.data()) {}
 
 /*!
  * \brief Construct a vector of type T with managed storage.
  * \param il Initializer list
  */
-  vector<T, _Alloc>(std::initializer_list<T> il) : m_stdvector(il), m_buffer(m_stdvector.data()) {}
+  vector(std::initializer_list<T> il) : m_stdvector(il), m_buffer(m_stdvector.data()) {}
 
 /*!
  * \brief vector<T> Copy constructor
  * \param source An existing object. An element-by-element copy is made, i.e. the data buffer is allocated then copied from source.
  */
-  vector<T, _Alloc>(const vector<T, _Alloc>& source) {
+  vector(const vector<T, _Alloc>& source) {
     m_stdvector.insert(m_stdvector.begin(), source.begin(), source.end());
     m_buffer = m_stdvector.data();
   }
@@ -330,7 +330,7 @@ class vector {
 /*!
  * \brief Copy assignment operator
  */
-  vector<T, _Alloc>& operator=(const vector<T, _Alloc>& copy) {
+  vector& operator=(const vector<T, _Alloc>& copy) {
     if (&copy == this) return *this;
     resize(copy.size());
     std::copy(copy.begin(), copy.end(), this->begin());
@@ -680,7 +680,7 @@ class array {
    * \brief Construct an array of type T with managed storage.
    * \param length The number of elements of buffer.
    */
-  explicit array<T>(size_t const length = 0)
+  explicit array(size_t const length = 0)
       : m_allocator(), m_length(length), m_owned(true)
 //      , m_buffer(reinterpret_cast<T*>(new void*[length * sizeof(T)]))
       , m_buffer(m_allocator.allocate(length)) {
@@ -692,7 +692,7 @@ class array {
  * \param length The number of elements of buffer.
  * \param value The value to assign to all elements of the buffer.
  */
-  array<T>(size_t const length, const T& value)
+  array(size_t const length, const T& value)
       : m_allocator(), m_length(length), m_owned(true), m_buffer(m_allocator.allocate(length)) { assign(value); }
 
 /*!
@@ -701,7 +701,7 @@ class array {
  * \param last Ending iterator of array to copy
  */
   template<class InputIterator>
-  array<T>(InputIterator
+  array(InputIterator
            first,
            InputIterator last
   )
@@ -711,7 +711,7 @@ class array {
  * \brief Construct a vector of type T with managed storage.
  * \param il Initializer list
  */
-  array<T>(std::initializer_list<T>
+  array(std::initializer_list<T>
            il)
       : m_allocator(), m_length(il.size()),
         m_buffer(m_allocator.allocate(il.size())), m_owned(true) { std::copy(il.begin(), il.end(), begin()); }
@@ -721,7 +721,7 @@ class array {
  * \param buffer Pointer to an existing array of type T.
  * \param length The number of elements of buffer.
  */
-  array<T>(T* const buffer, size_t const length)
+  array(T* const buffer, size_t const length)
       :
       m_length(length), m_owned(false), m_buffer(buffer) {}
 
@@ -730,21 +730,21 @@ class array {
  * \param array Existing std::array of type T whose buffer will be used.
  */
   template<std::size_t N>
-  explicit array<T>(std::array<T, N>& array)
+  explicit array(std::array<T, N>& array)
       : m_length(array.size()), m_owned(false), m_buffer(array.data()) {}
 
 /*!
  * \brief Construct an array of type T by attaching to an existing buffer.
  * \param array Existing std::vector of type T whose buffer will be used. Any subsequent external reallocation of array will cause chaos.
  */
-  explicit array<T>(std::vector<T>& array)
+  explicit array(std::vector<T>& array)
       : m_length(array.size()), m_owned(false), m_buffer(array.data()) {}
 
 /*!
- * \brief array<T> Copy constructor
+ * \brief array Copy constructor
  * \param source An existing object. An element-by-element copy is made, i.e. the data buffer is allocated then copied from source.
  */
-  array<T>(const array<T>& source)
+  array(const array& source)
       : m_allocator(), m_length(source.size()), m_owned(true), m_buffer(m_allocator.allocate(source.size())) {
     std::copy(source.begin(), source.end(), begin());
   }
@@ -752,7 +752,7 @@ class array {
 /*!
  * \brief Copy assignment operator
  */
-  array<T>& operator=(const array<T>& copy) {
+  array& operator=(const array& copy) {
     if (&copy == this) return *this;
     if (copy.size() != m_length) throw std::runtime_error("Unequal length copy not supported");
     std::copy(copy.begin(), copy.end(), this->begin());
