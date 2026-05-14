@@ -85,7 +85,7 @@ inline MPI_Comm comm_global() {
   int flag;
   MPI_Initialized(&flag);
   if (!flag) {
-    MPI_Init(0, nullptr);
+    MPI_Init(nullptr, nullptr);
     return MPI_COMM_WORLD;
   }
 #else
@@ -138,7 +138,10 @@ inline int rank_global() {
  */
 inline int init() {
 #ifdef HAVE_MPI_H
-  return MPI_Init(0, nullptr);
+  int flag;
+  MPI_Initialized(&flag);
+  if (flag) return MPI_SUCCESS;
+  return MPI_Init(nullptr, nullptr);
 #else
   return 0;
 #endif
