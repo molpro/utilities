@@ -425,10 +425,14 @@ class vector {
  * \brief Exchange the content of the container by the content of x, which is another object of the same type.
  * \param x Another vector of the same type.
  */
-  void swap(vector<T, _Alloc>& x) { swap(*this, x); }
+  void swap(vector<T, _Alloc>& x) noexcept {
+    using std::swap;
+    swap(m_stdvector, x.m_stdvector);
+    swap(m_buffer, x.m_buffer);
+  }
 
-  friend void swap(vector<T, _Alloc>& a, vector<T, _Alloc>& b) {
-    std::swap(a.m_stdvector, b.m_stdvector);
+  friend void swap(vector<T, _Alloc>& a, vector<T, _Alloc>& b) noexcept {
+    a.swap(b);
   }
 
   template <bool IsConst>
@@ -851,12 +855,15 @@ class array {
  * \brief Exchange the content of the container by the content of x, which is another object of the same type.
  * \param x Another array of the same type.
  */
-  void swap(array<T>& x) { swap(*this, x); }
+  void swap(array<T>& x) noexcept {
+    using std::swap;
+    swap(m_buffer, x.m_buffer);
+    swap(m_length, x.m_length);
+    swap(m_owned, x.m_owned);
+  }
 
-  friend void swap(array<T>& a, array<T>& b) {
-    std::swap(a.m_buffer, b.m_buffer);
-    std::swap(a.m_length, b.m_length);
-    std::swap(a.m_owned, b.m_owned);
+  friend void swap(array<T>& a, array<T>& b) noexcept {
+    a.swap(b);
   }
 
   template <bool IsConst>
