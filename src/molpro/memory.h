@@ -1,25 +1,21 @@
 #ifndef MOLPRO_MEMORY_H
 #define MOLPRO_MEMORY_H
+#include <algorithm>
+#include <array>
+#include <cassert> // assumed that NDEBUG is set properly for optimised compilation
+#include <climits>
 #include <cstddef>
 #include <cstdint>
-#include <sstream>
-#include <iostream>
-#include <limits>
-#include <string>
-#include <unordered_map>
-#include <new>
-#include <vector>
-#include <array>
-#include <stdexcept>
-#include <cassert> // assumed that NDEBUG is set properly for optimised compilation
+#include <initializer_list>
 #include <iostream>
 #include <iterator>
-#include <algorithm>
-#include <initializer_list>
-#ifdef __cplusplus
-#include <climits>
-#endif
 #include <limits>
+#include <new>
+#include <sstream>
+#include <stdexcept>
+#include <string>
+#include <unordered_map>
+#include <vector>
 #include <molpro/memory/memory-config.h>
 
 #ifdef MOLPRO_MEMORY_FORTRAN
@@ -226,8 +222,8 @@ class allocator_ : public A {
                    ptr, std::forward<Args>(args)...);
   }
 
-  bool operator==(allocator_ const&) { return true; }
-  bool operator!=(allocator_ const& a) { return !operator==(a); }
+  bool operator==(allocator_ const&) const { return true; }
+  bool operator!=(allocator_ const& a) const { return !operator==(a); }
 };
 template<typename T>
 using allocator = allocator_<T, std::allocator<T> >;
