@@ -19,6 +19,7 @@
 #else
 /// \cond DO_NOT_DOCUMENT
 #define MPI_Comm_c2f(x) x
+#define MPI_Comm_f2c(x) x
 using MPI_Comm = int64_t;
 #define MPI_COMM_NULL 0
 #define MPI_WIN_NULL 0
