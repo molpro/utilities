@@ -3,7 +3,7 @@
 #include <cassert>
 #include <iostream>
 #include <stdexcept>
-//#include <molpro/iostream.h>
+#include <molpro/iostream.h>
 
 bool debug_bytestream = false;
 using molpro::bytestream;
@@ -15,7 +15,7 @@ bytestream::bytestream() {
 }
 
 bytestream::bytestream(const char* buffer) {
-  int64_t length64;
+  uint64_t length64;
   std::memcpy(&length64, buffer, 8);
   size_t length = length64;
 //  molpro::cout <<"bytestream constructor from buffer length "<<length<<std::endl;
