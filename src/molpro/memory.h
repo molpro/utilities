@@ -582,8 +582,10 @@ class vector {
 
   template<class... Args>
   iterator emplace(const_iterator pos, Args&& ... args) {
-    m_stdvector.emplace(pos, std::forward<Args>(args)...);
+    auto it = m_stdvector.emplace(m_stdvector.begin() + (&(*pos) - data()),
+                                  std::forward<Args>(args)...);
     m_buffer = m_stdvector.data();
+    return &(*it);
   }
 
 };
@@ -705,7 +707,9 @@ class array {
            first,
            InputIterator last
   )
-      : m_allocator(), m_length(last - first), m_buffer(m_allocator.allocate(last - first)), m_owned(true) {}
+      : m_allocator(), m_length(last - first), m_owned(true), m_buffer(m_allocator.allocate(last - first)) {
+    std::copy(first, last, begin());
+  }
 
 /*!
  * \brief Construct a vector of type T with managed storage.
@@ -764,11 +768,11 @@ class array {
   }
 
   T& operator[](size_t n) {
-    assert(m_length == 0 || (n <= m_length));
+    assert(n < m_length);
     return m_buffer[n];
   }
   const T& operator[](size_t n) const {
-    assert(m_length == 0 || (n <= m_length));
+    assert(n < m_length);
     return m_buffer[n];
   }
 /*!
