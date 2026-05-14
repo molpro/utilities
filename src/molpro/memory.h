@@ -193,9 +193,11 @@ class allocator_ : public A {
 #ifdef MOLPRO_MEMORY_FORTRAN
     memory_release((char*) p, 0);
 #else
-    _private_memory_used -= _private_memory_lengths[reinterpret_cast<char*>(p)];
-//    std::cout << "decrementing used to " << _private_memory_used << std::endl;
-    _private_memory_lengths.erase(reinterpret_cast<char*>(p));
+    auto it = _private_memory_lengths.find(reinterpret_cast<char*>(p));
+    if (it != _private_memory_lengths.end()) {
+      _private_memory_used -= it->second;
+      _private_memory_lengths.erase(it);
+    }
 #ifdef MEMORY_MALLOC
     free(reinterpret_cast<char*>(p));
 #else
@@ -255,7 +257,7 @@ using stdvector = std::vector<T, A>;
  * \code
  * #include "memory.h"
  * int main() {
- * molpro::memory_initialize(40); // bytes
+ * memory_initialize(40); // bytes
  * {
  *   molpro::vector<> arr(5);
  *   for (size_t i=0; i<arr.size(); i++) arr[i]=100*i;
@@ -445,11 +447,11 @@ class vector {
     using difference_type = std::ptrdiff_t;
     using pointer = T*;
     using reference = T&;
-    MyIterator() noexcept : pointer_holder<T>(nullptr) {}
-    MyIterator(pointer ptr) : pointer_holder<T>(ptr) {}
+    MyIterator() noexcept : pointer_holder<T,_Alloc>(nullptr) {}
+    MyIterator(pointer ptr) : pointer_holder<T,_Alloc>(ptr) {}
     MyIterator(const MyIterator&) = default;
     template<bool IsConst_ = IsConst, class = std::enable_if_t<IsConst_>>
-    MyIterator(const MyIterator<false>& rhs) : pointer_holder<T>(rhs.m_ptr) {}
+    MyIterator(const MyIterator<false>& rhs) : pointer_holder<T,_Alloc>(rhs.m_ptr) {}
 
     reference operator*() const noexcept { return *(this->m_ptr); }
     pointer operator->() const noexcept { return (this->m_ptr); }
