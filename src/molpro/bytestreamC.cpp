@@ -14,13 +14,12 @@ bytestream::bytestream() {
   reset();
 }
 
-bytestream::bytestream(const char* buffer) {
+bytestream::bytestream(const char* src) {
   uint64_t length64;
-  std::memcpy(&length64, buffer, 8);
+  std::memcpy(&length64, src, 8);
   size_t length = length64;
-//  molpro::cout <<"bytestream constructor from buffer length "<<length<<std::endl;
-  this->buffer.resize(length);
-  if (length > 0) std::memcpy(this->buffer.data(), buffer, length);
+  buffer.resize(length);
+  if (length > 0) std::memcpy(buffer.data(), src, length);
   reset();
 }
 

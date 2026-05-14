@@ -718,15 +718,15 @@ class array {
  * \param array Existing std::array of type T whose buffer will be used.
  */
   template<std::size_t N>
-  explicit array(std::array<T, N>& array)
-      : m_length(array.size()), m_owned(false), m_buffer(array.data()) {}
+  explicit array(std::array<T, N>& source)
+      : m_length(source.size()), m_owned(false), m_buffer(source.data()) {}
 
 /*!
  * \brief Construct an array of type T by attaching to an existing buffer.
- * \param array Existing std::vector of type T whose buffer will be used. Any subsequent external reallocation of array will cause chaos.
+ * \param source Existing std::vector of type T whose buffer will be used. Any subsequent external reallocation of source will cause chaos.
  */
-  explicit array(std::vector<T>& array)
-      : m_length(array.size()), m_owned(false), m_buffer(array.data()) {}
+  explicit array(std::vector<T>& source)
+      : m_length(source.size()), m_owned(false), m_buffer(source.data()) {}
 
 /*!
  * \brief array Copy constructor
