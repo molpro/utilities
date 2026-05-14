@@ -150,8 +150,6 @@ class bytestream {
   void put_metadata(size_t length, enum datatypes datatype);
   std::vector<char> buffer;
   size_t pointer;
-public:
-  size_t position() { return pointer; }
 };
 }
 
