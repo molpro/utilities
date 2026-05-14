@@ -9,8 +9,8 @@
 #endif
 #if defined __has_include
 #if __has_include(<mpi.h>)
-#endif
 #define HAVE_MPI_H
+#endif
 #endif
 #endif
 
