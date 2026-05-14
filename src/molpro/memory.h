@@ -538,7 +538,7 @@ class vector {
 
 /*!
  * \brief Resize the buffer.
- * \param n New length in bytes.
+ * \param n New number of elements.
  */
   void resize(size_t n) {
     m_stdvector.resize(n);
@@ -547,7 +547,7 @@ class vector {
 
 /*!
  * \brief Resize the buffer, and assign a value to any new elements if it grows.
- * \param n New length in bytes.
+ * \param n New number of elements.
  * \param val Value to assign to new elements.
  */
   void resize(size_t n, const T& val) {
@@ -600,26 +600,6 @@ std::ptrdiff_t operator-(const pointer_holder<T>& a,
 {
   return a.m_ptr - b.m_ptr;
 }
-
-template <typename T, typename _Alloc>
-typename vector<T, _Alloc>::Iterator operator+(const typename vector<T, _Alloc>::Iterator& a,
-                                               int increment)
-{
-  auto result = vector<T, _Alloc>::Iterator(a);
-  result += increment;
-  return result;
-}
-
-template <typename T, typename _Alloc>
-typename vector<T, _Alloc>::Iterator operator-(const typename vector<T, _Alloc>::Iterator& a,
-                                               int increment)
-{
-  auto result = vector<T, _Alloc>::Iterator(a);
-  result -= increment;
-  return result;
-}
-
-
 
 /*!
  * @brief A template for a container class like std::array<T> but with the following features.
@@ -717,8 +697,8 @@ class array {
  */
   array(std::initializer_list<T>
            il)
-      : m_allocator(), m_length(il.size()),
-        m_buffer(m_allocator.allocate(il.size())), m_owned(true) { std::copy(il.begin(), il.end(), begin()); }
+      : m_allocator(), m_length(il.size()), m_owned(true),
+        m_buffer(m_allocator.allocate(il.size())) { std::copy(il.begin(), il.end(), begin()); }
 
 /*!
  * \brief Construct an array of type T by attaching to an existing buffer.
