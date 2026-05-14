@@ -107,10 +107,11 @@ class bytestream {
   }
 
   template<class T>
-  void append(const std::vector<T> array) {
+  void append(const std::vector<T>& array) {
     std::vector<fint> o;
-    for (auto& i : array) o.push_back(i);
-    append(&o[0], o.size());
+    o.reserve(array.size());
+    for (const auto& i : array) o.push_back(i);
+    append(o.data(), o.size());
   }
 
   /*!

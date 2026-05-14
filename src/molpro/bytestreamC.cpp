@@ -20,7 +20,7 @@ bytestream::bytestream(const char* buffer) {
   size_t length = length64;
 //  molpro::cout <<"bytestream constructor from buffer length "<<length<<std::endl;
   this->buffer.resize(length);
-  for (size_t k = 0; k < length; k++) this->buffer[k] = buffer[k];
+  if (length > 0) std::memcpy(this->buffer.data(), buffer, length);
   reset();
 }
 
