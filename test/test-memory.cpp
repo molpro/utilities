@@ -14,7 +14,7 @@ struct thing {
 };
 
 TEST(utilities_memory, construct_chars) {
-#ifdef MEMORY_FORTRAN
+#ifdef MOLPRO_MEMORY_FORTRAN
   std::vector<char> q(400000000);
   memory_initialize(q.data(), q.size());
 #endif
