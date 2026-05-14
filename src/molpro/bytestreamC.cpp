@@ -2,6 +2,7 @@
 #include <cstring>
 #include <cassert>
 #include <iostream>
+#include <stdexcept>
 //#include <molpro/iostream.h>
 
 bool debug_bytestream = false;
@@ -166,9 +167,8 @@ void bytestream::put_metadata(size_t length, enum datatypes datatype) {
     int tester = 1;
     bigend = (*(char*) &tester != 1);
   } // bigendian or littlendian
-  assert (not bigend);
-//  molpro::cout << "put_metadata pointer="<<pointer<<", datatype="<<datatype<<std::endl;memory_print_status();
-  if (bigend) return; // to keep compiler happy
+  if (bigend)
+    throw std::runtime_error("bytestream::put_metadata: big-endian hosts are not supported");
   (buffer)[pointer++] =
       datatype | (length > 2147483647 ? 0x20 : (length > 32767 ? 0xC0 : (length > 127 ? 0x40 : 0x80)));
   size_t l = (length > 2147483647 ? 8 : (length > 32767 ? 4 : (length > 127 ? 2 : 1)));
