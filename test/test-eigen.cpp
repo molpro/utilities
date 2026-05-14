@@ -29,8 +29,8 @@ TEST(LibraryManager, eigen) {
   std::vector<double> mb(n * n, 1);
   std::vector<double> mc(n * n, 0);
   Eigen::Map<Eigen::MatrixXd> mma(ma.data(), n, n);
-  Eigen::Map<Eigen::MatrixXd> mmb(ma.data(), n, n);
-  Eigen::Map<Eigen::MatrixXd> mmc(ma.data(), n, n);
+  Eigen::Map<Eigen::MatrixXd> mmb(mb.data(), n, n);
+  Eigen::Map<Eigen::MatrixXd> mmc(mc.data(), n, n);
   auto start = std::chrono::system_clock::now();
   for (size_t rep = 0; rep < repeat; ++rep)
     //    cblas_dgemm(CblasColMajor, CblasNoTrans, CblasNoTrans, n, n, n, 1,
