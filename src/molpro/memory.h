@@ -348,8 +348,8 @@ class vector {
  */
   template<class InputIterator>
   void assign(InputIterator first, InputIterator last) {
-    if (last - first != m_stdvector.size()) resize(last - first);
-    std::copy(first, last, begin());
+    m_stdvector.assign(first, last);
+    m_buffer = m_stdvector.data();
   }
 /*!
  * \brief Assign new contents to the vector, replacing its current contents
@@ -365,6 +365,7 @@ class vector {
  */
   void assign(size_t n, const T& value) {
     m_stdvector.assign(n, value);
+    m_buffer = m_stdvector.data();
   }
 /*!
  * \brief Assign new contents to the vector, replacing its current contents
@@ -372,6 +373,7 @@ class vector {
  */
   void assign(std::initializer_list<T> il) {
     m_stdvector.assign(il);
+    m_buffer = m_stdvector.data();
   }
 
   T& at(size_t n) {
@@ -410,7 +412,7 @@ class vector {
     return m_stdvector.front();
   }
 
-  T* data() noexcept { return &front(); }
+  T* data() noexcept { return m_stdvector.data(); }
   const T* data() const noexcept { return m_stdvector.data(); }
 
   size_t max_size() const noexcept {
@@ -820,7 +822,7 @@ class array {
     return m_buffer[0];
   }
 
-  T* data() noexcept { return &front(); }
+  T* data() noexcept { return m_buffer; }
   const T* data() const noexcept { return m_buffer; }
 
   size_t max_size() const noexcept {
