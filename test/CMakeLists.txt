@@ -32,7 +32,7 @@ print_target_properties(BLAS::BLAS)
 print_target_properties(LAPACK::LAPACK)
 
 
-find_package(Eigen3 3.3 NO_MODULE)
+find_package(Eigen3 3.3...<6 NO_MODULE)
 if (TARGET Eigen3::Eigen)
     print_target_properties(Eigen3::Eigen)
     add_executable(test-eigen test-eigen.cpp)
