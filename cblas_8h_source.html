@@ -73,7 +73,7 @@ $(function() {
 <a href="cblas_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MOLPRO_DEPENDENCIES_UTILITIES_SRC_MOLPRO_CBLAS_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MOLPRO_DEPENDENCIES_UTILITIES_SRC_MOLPRO_CBLAS_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#if __has_include(&lt;mkl_lapacke.h&gt;) &amp;&amp; ! defined(NO_USE_MKL)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#if __has_include(&lt;mkl_cblas.h&gt;) &amp;&amp; ! defined(NO_USE_MKL)</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;mkl_cblas.h&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define HAVE_CBLAS</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define HAVE_MKL</span></div>

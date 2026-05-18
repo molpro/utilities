@@ -110,7 +110,7 @@ class molpro::pointer_holder&lt; T, _Alloc &gt;</h3>
 </dl>
 <p>Example: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="memory_8h.html">memory.h</a>&quot;</span></div>
 <div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line"><a class="code" href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">molpro::memory_initialize</a>(40); <span class="comment">// bytes</span></div>
+<div class="line"><a class="code" href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">memory_initialize</a>(40); <span class="comment">// bytes</span></div>
 <div class="line">{</div>
 <div class="line">  <a class="code" href="classmolpro_1_1vector.html">molpro::vector&lt;&gt;</a> arr(5);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;arr.size(); i++) arr[i]=100*i;</div>
@@ -118,10 +118,10 @@ class molpro::pointer_holder&lt; T, _Alloc &gt;</h3>
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;array element &quot;</span>&lt;&lt;*el&lt;&lt;std::endl;</div>
 <div class="line">} <span class="comment">// arr will release its buffer and be destroyed on going out of scope</span></div>
 <div class="line"><span class="keywordflow">return</span> 0; }</div>
-<div class="ttc" id="aclassmolpro_1_1vector_1_1MyIterator_html"><div class="ttname"><a href="classmolpro_1_1vector_1_1MyIterator.html">molpro::vector::MyIterator</a></div><div class="ttdef"><b>Definition:</b> memory.h:439</div></div>
-<div class="ttc" id="aclassmolpro_1_1vector_html"><div class="ttname"><a href="classmolpro_1_1vector.html">molpro::vector</a></div><div class="ttdef"><b>Definition:</b> memory.h:279</div></div>
+<div class="ttc" id="aclassmolpro_1_1vector_1_1MyIterator_html"><div class="ttname"><a href="classmolpro_1_1vector_1_1MyIterator.html">molpro::vector::MyIterator</a></div><div class="ttdef"><b>Definition:</b> memory.h:443</div></div>
+<div class="ttc" id="aclassmolpro_1_1vector_html"><div class="ttname"><a href="classmolpro_1_1vector.html">molpro::vector</a></div><div class="ttdef"><b>Definition:</b> memory.h:277</div></div>
 <div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
-<div class="ttc" id="amemory_8h_html_a17843591b3971a2603f88bd29f56e057"><div class="ttname"><a href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">memory_initialize</a></div><div class="ttdeci">size_t memory_initialize(char *buffer, size_t max)</div><div class="ttdef"><b>Definition:</b> memory.h:104</div></div>
+<div class="ttc" id="amemory_8h_html_a17843591b3971a2603f88bd29f56e057"><div class="ttname"><a href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">memory_initialize</a></div><div class="ttdeci">size_t memory_initialize(char *buffer, size_t max)</div><div class="ttdef"><b>Definition:</b> memory.h:100</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6acc157dba03110241169ea509b0dae8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6acc157dba03110241169ea509b0dae8">&#9670;&nbsp;</a></span>pointer_holder()</h2>

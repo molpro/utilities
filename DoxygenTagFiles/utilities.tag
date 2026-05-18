@@ -10,6 +10,7 @@
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>bytestreamC_8cpp.html</filename>
     <includes id="bytestreamC_8h" name="bytestreamC.h" local="yes" imported="no">bytestreamC.h</includes>
+    <includes id="iostream_8h" name="iostream.h" local="no" imported="no">molpro/iostream.h</includes>
     <member kind="function">
       <type>size_t</type>
       <name>memory_bytestream_hash</name>
@@ -145,20 +146,6 @@
       <anchorfile>namespacemolpro.html</anchorfile>
       <anchor>ab6cb0c31e2caae37e01214de4881d10b</anchor>
       <arglist>(const pointer_holder&lt; T &gt; &amp;a, const pointer_holder&lt; T &gt; &amp;b)</arglist>
-    </member>
-    <member kind="function">
-      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
-      <name>operator+</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>aaebcdbe51848d95c74e25dc841b9f0c2</anchor>
-      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
-    </member>
-    <member kind="function">
-      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
-      <name>operator-</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a2dbffc7773f84d83061ae974d90fb765</anchor>
-      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>
@@ -455,15 +442,15 @@
       <type>bool</type>
       <name>operator==</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a87aedd11537ab631b2338ae97fcfd6af</anchor>
-      <arglist>(allocator_ const &amp;)</arglist>
+      <anchor>aa960c1c4b967a4a6b739691bdad055de</anchor>
+      <arglist>(allocator_ const &amp;) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>operator!=</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ac1582dc120a5f053c572d57eb41f8e56</anchor>
-      <arglist>(allocator_ const &amp;a)</arglist>
+      <anchor>a0ac1b9ff84eee1285d0353fdfdf3ac09</anchor>
+      <arglist>(allocator_ const &amp;a) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -571,15 +558,15 @@
       <type>bool</type>
       <name>operator==</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a87aedd11537ab631b2338ae97fcfd6af</anchor>
-      <arglist>(allocator_ const &amp;)</arglist>
+      <anchor>aa960c1c4b967a4a6b739691bdad055de</anchor>
+      <arglist>(allocator_ const &amp;) const</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
       <name>operator!=</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ac1582dc120a5f053c572d57eb41f8e56</anchor>
-      <arglist>(allocator_ const &amp;a)</arglist>
+      <anchor>a0ac1b9ff84eee1285d0353fdfdf3ac09</anchor>
+      <arglist>(allocator_ const &amp;a) const</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -668,15 +655,15 @@
       <type></type>
       <name>array</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a0ba08afaa538364e365221b4b723abd3</anchor>
-      <arglist>(std::array&lt; T, N &gt; &amp;array)</arglist>
+      <anchor>ae9d2c5f49b8cf32ed8f95ac0e255f8ca</anchor>
+      <arglist>(std::array&lt; T, N &gt; &amp;source)</arglist>
     </member>
     <member kind="function">
       <type></type>
       <name>array</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a56f7a9313c3ac42abc9a931f4b18b05e</anchor>
-      <arglist>(std::vector&lt; T &gt; &amp;array)</arglist>
+      <anchor>a53ec9dd383377307296b458c8c8a231f</anchor>
+      <arglist>(std::vector&lt; T &gt; &amp;source)</arglist>
     </member>
     <member kind="function">
       <type></type>
@@ -822,8 +809,8 @@
       <type>void</type>
       <name>swap</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a2fcff67604bb9917820335df57ea31d8</anchor>
-      <arglist>(array&lt; T &gt; &amp;x)</arglist>
+      <anchor>ab6c8a8c20bdc5b57fb0339ddf979e6fd</anchor>
+      <arglist>(array&lt; T &gt; &amp;x) noexcept</arglist>
     </member>
     <member kind="function">
       <type>iterator</type>
@@ -920,8 +907,8 @@
       <type>friend void</type>
       <name>swap</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a35c7147db0cbaa80af0adc4544286bf6</anchor>
-      <arglist>(array&lt; T &gt; &amp;a, array&lt; T &gt; &amp;b)</arglist>
+      <anchor>a097c4790e97742cf5cd0d0da4a8555d6</anchor>
+      <arglist>(array&lt; T &gt; &amp;a, array&lt; T &gt; &amp;b) noexcept</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1029,8 +1016,8 @@
       <type>void</type>
       <name>append</name>
       <anchorfile>classmolpro_1_1bytestream.html</anchorfile>
-      <anchor>a159256b3e0597c22c868597d572da698</anchor>
-      <arglist>(const std::vector&lt; T &gt; array)</arglist>
+      <anchor>adfc0248b8f95707bf796c676a40968bd</anchor>
+      <arglist>(const std::vector&lt; T &gt; &amp;array)</arglist>
     </member>
     <member kind="function">
       <type>size_t</type>
@@ -1066,13 +1053,6 @@
       <anchorfile>classmolpro_1_1bytestream.html</anchorfile>
       <anchor>a78ec1c40faa1e9e6e7e1d9390cb445ff</anchor>
       <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>size_t</type>
-      <name>position</name>
-      <anchorfile>classmolpro_1_1bytestream.html</anchorfile>
-      <anchor>aeb6873b7ec19a87fe37437a1813b7d44</anchor>
-      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -1843,8 +1823,8 @@
       <type>void</type>
       <name>swap</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>ac65d6119a43d75f23ee1b0ce308e9f77</anchor>
-      <arglist>(vector&lt; T, _Alloc &gt; &amp;x)</arglist>
+      <anchor>a1afe287e1999046207863ee2a51218a4</anchor>
+      <arglist>(vector&lt; T, _Alloc &gt; &amp;x) noexcept</arglist>
     </member>
     <member kind="function">
       <type>iterator</type>
@@ -2018,8 +1998,8 @@
       <type>friend void</type>
       <name>swap</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>aca86dde53b32846278d04606fa9b2f57</anchor>
-      <arglist>(vector&lt; T, _Alloc &gt; &amp;a, vector&lt; T, _Alloc &gt; &amp;b)</arglist>
+      <anchor>a4e207ab81b1c8d2b4e7b3b690be8fcb7</anchor>
+      <arglist>(vector&lt; T, _Alloc &gt; &amp;a, vector&lt; T, _Alloc &gt; &amp;b) noexcept</arglist>
     </member>
   </compound>
   <compound kind="namespace">
@@ -2066,20 +2046,6 @@
       <anchorfile>namespacemolpro.html</anchorfile>
       <anchor>ab6cb0c31e2caae37e01214de4881d10b</anchor>
       <arglist>(const pointer_holder&lt; T &gt; &amp;a, const pointer_holder&lt; T &gt; &amp;b)</arglist>
-    </member>
-    <member kind="function">
-      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
-      <name>operator+</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>aaebcdbe51848d95c74e25dc841b9f0c2</anchor>
-      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
-    </member>
-    <member kind="function">
-      <type>vector&lt; T, _Alloc &gt;::Iterator</type>
-      <name>operator-</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a2dbffc7773f84d83061ae974d90fb765</anchor>
-      <arglist>(const typename vector&lt; T, _Alloc &gt;::Iterator &amp;a, int increment)</arglist>
     </member>
     <member kind="function">
       <type>std::ostream &amp;</type>

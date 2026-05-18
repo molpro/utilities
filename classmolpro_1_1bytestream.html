@@ -121,9 +121,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac4b675e3181e3e588cef0c9db26f5db7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ac4b675e3181e3e588cef0c9db26f5db7"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmolpro_1_1bytestream.html#ac4b675e3181e3e588cef0c9db26f5db7">append</a> (const T *<a class="el" href="classmolpro_1_1array.html">array</a>, size_t length=1)</td></tr>
 <tr class="separator:ac4b675e3181e3e588cef0c9db26f5db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a159256b3e0597c22c868597d572da698"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a159256b3e0597c22c868597d572da698"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmolpro_1_1bytestream.html#a159256b3e0597c22c868597d572da698">append</a> (const std::vector&lt; T &gt; <a class="el" href="classmolpro_1_1array.html">array</a>)</td></tr>
-<tr class="separator:a159256b3e0597c22c868597d572da698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc0248b8f95707bf796c676a40968bd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:adfc0248b8f95707bf796c676a40968bd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmolpro_1_1bytestream.html#adfc0248b8f95707bf796c676a40968bd">append</a> (const std::vector&lt; T &gt; &amp;<a class="el" href="classmolpro_1_1array.html">array</a>)</td></tr>
+<tr class="separator:adfc0248b8f95707bf796c676a40968bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9339728da9a0b2fc8efe3e866c6b76a5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1bytestream.html#a9339728da9a0b2fc8efe3e866c6b76a5">size</a> () const</td></tr>
 <tr class="memdesc:a9339728da9a0b2fc8efe3e866c6b76a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The size of the bytestream data.  <a href="classmolpro_1_1bytestream.html#a9339728da9a0b2fc8efe3e866c6b76a5">More...</a><br /></td></tr>
 <tr class="separator:a9339728da9a0b2fc8efe3e866c6b76a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +137,6 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba1a2f2755311fb9a063852a9527a8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78ec1c40faa1e9e6e7e1d9390cb445ff"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1bytestream.html#a78ec1c40faa1e9e6e7e1d9390cb445ff">hash</a> () const</td></tr>
 <tr class="separator:a78ec1c40faa1e9e6e7e1d9390cb445ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb6873b7ec19a87fe37437a1813b7d44"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1bytestream.html#aeb6873b7ec19a87fe37437a1813b7d44">position</a> ()</td></tr>
-<tr class="separator:aeb6873b7ec19a87fe37437a1813b7d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The bytestream class provides a container for data to be serialised, and subsequently unpacked. </p>
@@ -335,8 +333,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a159256b3e0597c22c868597d572da698"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a159256b3e0597c22c868597d572da698">&#9670;&nbsp;</a></span>append() <span class="overload">[5/7]</span></h2>
+<a id="adfc0248b8f95707bf796c676a40968bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc0248b8f95707bf796c676a40968bd">&#9670;&nbsp;</a></span>append() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -349,7 +347,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void molpro::bytestream::append </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; T &gt;&#160;</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>array</em></td><td>)</td>
           <td></td>
         </tr>
@@ -569,33 +567,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="aeb6873b7ec19a87fe37437a1813b7d44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb6873b7ec19a87fe37437a1813b7d44">&#9670;&nbsp;</a></span>position() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t molpro::bytestream::position </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a5270ea6551237f711bcdb252dea5f3ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5270ea6551237f711bcdb252dea5f3ce">&#9670;&nbsp;</a></span>position() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5270ea6551237f711bcdb252dea5f3ce">&#9670;&nbsp;</a></span>position()</h2>
 
 <div class="memitem">
 <div class="memproto">
