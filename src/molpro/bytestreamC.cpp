@@ -23,9 +23,6 @@ bytestream::bytestream(const char* src) {
   reset();
 }
 
-bytestream::~bytestream() {
-}
-
 molpro::array<double> bytestream::doubles() {
   bytestream::metadata md = get_metadata();
 //  uint64_t mdd[2]; memcpy(&mdd,&md,16); printf("metadata: %16X %16X\n",mdd[0],mdd[1]);

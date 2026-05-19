@@ -29,7 +29,6 @@ class bytestream {
    * \param buffer The data obtained from a previous construction of a bytestream.
    */
   bytestream(const char* buffer);
-  ~bytestream();
   /*!
    * \brief Interpret the next array in the object as an array of doubles,
    * advance the pointer to the following object, and return the array.
