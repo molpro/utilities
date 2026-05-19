@@ -1,4 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classmolpro_1_1pointer__holder.html" title=" " alt="" coords="5,13,176,54"/>
-<area shape="rect" id="node2" href="$classmolpro_1_1vector_1_1MyIterator.html" title=" " alt="" coords="224,5,380,61"/>
+<area shape="rect" id="Node000000" href="$classmolpro_1_1pointer__holder.html" title=" " alt="" coords="5,99,175,144"/>
+<area shape="rect" id="Node000001" href="$classmolpro_1_1vector_1_1MyIterator.html" title=" " alt="" coords="223,5,378,67"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="160,91,225,66,220,69,162,95"/>
+<area shape="rect" id="Node000002" href="$classmolpro_1_1vector_1_1MyIterator.html" title=" " alt="" coords="223,91,378,152"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="190,119,225,121,220,122,191,124"/>
+<area shape="rect" id="Node000003" href="$classmolpro_1_1vector_1_1MyIterator.html" title=" " alt="" coords="223,176,378,238"/>
+<area shape="poly" id="edge3_Node000000_Node000003" title=" " alt="" coords="161,147,225,175,220,176,161,153"/>
 </map>

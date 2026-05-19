@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
-<tagfile doxygen_version="1.9.1">
+<tagfile doxygen_version="1.15.0">
   <compound kind="file">
     <name>README.md</name>
     <path>/__w/utilities/utilities/</path>
@@ -9,8 +9,16 @@
     <name>bytestreamC.cpp</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>bytestreamC_8cpp.html</filename>
-    <includes id="bytestreamC_8h" name="bytestreamC.h" local="yes" imported="no">bytestreamC.h</includes>
-    <includes id="iostream_8h" name="iostream.h" local="no" imported="no">molpro/iostream.h</includes>
+    <includes id="bytestreamC_8h" name="bytestreamC.h" local="yes" import="no" module="no" objc="no">bytestreamC.h</includes>
+    <includes id="iostream_8h" name="iostream.h" local="no" import="no" module="no" objc="no">molpro/iostream.h</includes>
+    <class kind="class">bytestream</class>
+    <member kind="typedef">
+      <type>int32_t</type>
+      <name>fint</name>
+      <anchorfile>bytestreamC_8cpp.html</anchorfile>
+      <anchor>a966c08c826366d2c898fbfa573d43699</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="function">
       <type>size_t</type>
       <name>memory_bytestream_hash</name>
@@ -30,16 +38,9 @@
     <name>bytestreamC.h</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>bytestreamC_8h.html</filename>
-    <includes id="memory_8h" name="memory.h" local="no" imported="no">molpro/memory.h</includes>
+    <includes id="memory_8h" name="memory.h" local="no" import="no" module="no" objc="no">molpro/memory.h</includes>
     <class kind="class">molpro::bytestream</class>
     <namespace>molpro</namespace>
-    <member kind="typedef">
-      <type>int32_t</type>
-      <name>fint</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a966c08c826366d2c898fbfa573d43699</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="function">
       <type>size_t</type>
       <name>memory_bytestream_hash</name>
@@ -75,7 +76,7 @@
     <name>memory.h</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>memory_8h.html</filename>
-    <includes id="memory-config_8h" name="memory-config.h" local="no" imported="no">molpro/memory/memory-config.h</includes>
+    <includes id="memory-config_8h" name="memory-config.h" local="no" import="no" module="no" objc="no">molpro/memory/memory-config.h</includes>
     <class kind="class">molpro::allocator_</class>
     <class kind="struct">molpro::allocator_::rebind</class>
     <class kind="class">molpro::pointer_holder</class>
@@ -84,20 +85,6 @@
     <class kind="class">molpro::array</class>
     <class kind="class">molpro::array::MyIterator</class>
     <namespace>molpro</namespace>
-    <member kind="typedef">
-      <type>allocator_&lt; T, std::allocator&lt; T &gt; &gt;</type>
-      <name>allocator</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a1d92c5863cb8d5a044b491344aa102ec</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::vector&lt; T, A &gt;</type>
-      <name>stdvector</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac4b0f2b8178218c4e7b46b36b21bc745</anchor>
-      <arglist></arglist>
-    </member>
     <member kind="function">
       <type>size_t</type>
       <name>memory_initialize</name>
@@ -133,27 +120,6 @@
       <anchor>ad0e4375eab3f07c5ea41d1a155e1f659</anchor>
       <arglist>(int64_t level)</arglist>
     </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ad6f4e48b18a910293f0fb426c126bc30</anchor>
-      <arglist>(std::ostream &amp;os, vector&lt; T, _Alloc &gt; const &amp;obj)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::ptrdiff_t</type>
-      <name>operator-</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ab6cb0c31e2caae37e01214de4881d10b</anchor>
-      <arglist>(const pointer_holder&lt; T &gt; &amp;a, const pointer_holder&lt; T &gt; &amp;b)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::ostream &amp;</type>
-      <name>operator&lt;&lt;</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a25bbb58956838b7151d98e019f9f0bfb</anchor>
-      <arglist>(std::ostream &amp;os, array&lt; T &gt; const &amp;obj)</arglist>
-    </member>
     <member kind="variable">
       <type>size_t</type>
       <name>_private_memory_used</name>
@@ -180,7 +146,7 @@
     <name>memoryC.cpp</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>memoryC_8cpp.html</filename>
-    <includes id="memory_8h" name="memory.h" local="yes" imported="no">memory.h</includes>
+    <includes id="memory_8h" name="memory.h" local="yes" import="no" module="no" objc="no">memory.h</includes>
     <member kind="variable">
       <type>size_t</type>
       <name>_private_memory_used</name>
@@ -209,48 +175,6 @@
     <filename>mpi_8h.html</filename>
     <namespace>molpro</namespace>
     <namespace>molpro::mpi</namespace>
-    <member kind="function">
-      <type>MPI_Comm</type>
-      <name>comm_self</name>
-      <anchorfile>namespacemolpro_1_1mpi.html</anchorfile>
-      <anchor>a47547d4cda8dce46ff57c70fe1587cc8</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>MPI_Comm</type>
-      <name>comm_global</name>
-      <anchorfile>namespacemolpro_1_1mpi.html</anchorfile>
-      <anchor>abce7e703339ee4ffdc2062219fa206ce</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>size_global</name>
-      <anchorfile>namespacemolpro_1_1mpi.html</anchorfile>
-      <anchor>aecf7017ca7ecdd4e8228167f721c09cc</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>rank_global</name>
-      <anchorfile>namespacemolpro_1_1mpi.html</anchorfile>
-      <anchor>a93ec5ec29948bca90660e2140ff63a40</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>init</name>
-      <anchorfile>namespacemolpro_1_1mpi.html</anchorfile>
-      <anchor>adedbdd68795cb1a6142c412bf34bbc4f</anchor>
-      <arglist>()</arglist>
-    </member>
-    <member kind="function">
-      <type>int</type>
-      <name>finalize</name>
-      <anchorfile>namespacemolpro_1_1mpi.html</anchorfile>
-      <anchor>a116d1a866287c06ca0fbd07ad4c35788</anchor>
-      <arglist>()</arglist>
-    </member>
     <member kind="function">
       <type>int64_t</type>
       <name>mpicomm_global</name>
@@ -298,7 +222,7 @@
     <name>Options.cpp</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>Options_8cpp.html</filename>
-    <includes id="Options_8h" name="Options.h" local="yes" imported="no">Options.h</includes>
+    <includes id="Options_8h" name="Options.h" local="yes" import="no" module="no" objc="no">Options.h</includes>
     <namespace>molpro</namespace>
     <member kind="define">
       <type>#define</type>
@@ -306,20 +230,6 @@
       <anchorfile>Options_8cpp.html</anchorfile>
       <anchor>a369266c24eacffb87046522897a570d5</anchor>
       <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>std::string</type>
-      <name>args</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac71f769930e14778d178cec645519b90</anchor>
-      <arglist>(int argc, char **argv)</arglist>
-    </member>
-    <member kind="function">
-      <type>std::string</type>
-      <name>upcase</name>
-      <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac8e0c66cd41d789b8fdc257dd445a5ea</anchor>
-      <arglist>(const std::string &amp;s)</arglist>
     </member>
   </compound>
   <compound kind="file">
@@ -337,8 +247,8 @@
   <compound kind="class">
     <name>molpro::allocator_</name>
     <filename>classmolpro_1_1allocator__.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename T</templarg>
+    <templarg>typename A</templarg>
     <class kind="struct">molpro::allocator_::rebind</class>
     <member kind="typedef">
       <type>T</type>
@@ -454,125 +364,9 @@
     </member>
   </compound>
   <compound kind="class">
-    <name>allocator_&lt; double &gt;</name>
-    <filename>classmolpro_1_1allocator__.html</filename>
-    <member kind="typedef">
-      <type>double</type>
-      <name>value_type</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ab48b3605c9098c7ecc727bb044791493</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>value_type *</type>
-      <name>pointer</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a58a6ab7a3cf198c9414b77ca6d4f6990</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>const value_type *</type>
-      <name>const_pointer</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a89d0d82162b08ecb46f31c0332f8e6f0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>value_type &amp;</type>
-      <name>reference</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a44e57e688a4108dcbda82f8eabcefa55</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>const value_type &amp;</type>
-      <name>const_reference</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ab8768bbd8e9e8462dc381c602697c4b9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::size_t</type>
-      <name>size_type</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a86308ca07f74a0d800ae208c8a97b399</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::ptrdiff_t</type>
-      <name>difference_type</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a81baf623a3a73bc7170b31b24c529f5b</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="function">
-      <type>pointer</type>
-      <name>address</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a68bfadd9290aeeb3842b1195113b8be5</anchor>
-      <arglist>(reference r)</arglist>
-    </member>
-    <member kind="function">
-      <type>const_pointer</type>
-      <name>address</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a9a57c0453b0e2a605a42af4385899949</anchor>
-      <arglist>(const_reference r) const</arglist>
-    </member>
-    <member kind="function">
-      <type>pointer</type>
-      <name>allocate</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>adeec17ed75bf23cb443b0988e61621e8</anchor>
-      <arglist>(size_type cnt, typename std::allocator&lt; void &gt;::value_type *=nullptr)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>deallocate</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a8085c1dcbb11bc770fb8afabd7401aa2</anchor>
-      <arglist>(pointer p, size_type)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_type</type>
-      <name>max_size</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a0f8ec07b4197df33ab21b4ce0149567d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>construct</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a9193b3604d84bc76465f37339b23fbee</anchor>
-      <arglist>(U *ptr) noexcept(std::is_nothrow_default_constructible&lt; U &gt;::value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>construct</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>af68ff2c1b53d4b63879c66cad0303c30</anchor>
-      <arglist>(U *ptr, Args &amp;&amp;... args)</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>operator==</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>aa960c1c4b967a4a6b739691bdad055de</anchor>
-      <arglist>(allocator_ const &amp;) const</arglist>
-    </member>
-    <member kind="function">
-      <type>bool</type>
-      <name>operator!=</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a0ac1b9ff84eee1285d0353fdfdf3ac09</anchor>
-      <arglist>(allocator_ const &amp;a) const</arglist>
-    </member>
-  </compound>
-  <compound kind="class">
     <name>molpro::array</name>
     <filename>classmolpro_1_1array.html</filename>
-    <templarg></templarg>
+    <templarg>typename T</templarg>
     <class kind="class">molpro::array::MyIterator</class>
     <member kind="typedef">
       <type>MyIterator&lt; false &gt;</type>
@@ -676,7 +470,7 @@
       <type>array &amp;</type>
       <name>operator=</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>aedfcc5068e8601486a5b66c1d9b2e39c</anchor>
+      <anchor>a5601c4f1e0e9b78ca0d1545dba6611a0</anchor>
       <arglist>(const array &amp;copy)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -690,14 +484,14 @@
       <type>T &amp;</type>
       <name>operator[]</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>ab05ace295c0318e6913e5da8b08dc380</anchor>
+      <anchor>a645d59e4120467ac321ab8c1aabc1fe6</anchor>
       <arglist>(size_t n)</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>operator[]</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a0d34ea5b40317723783d3c0b1b1eb14d</anchor>
+      <anchor>a98c11cabac3e26009d313fbf8c943b8a</anchor>
       <arglist>(size_t n) const</arglist>
     </member>
     <member kind="function">
@@ -732,28 +526,28 @@
       <type>T &amp;</type>
       <name>at</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a65bcdb7a660246e72497a1f13ae02063</anchor>
+      <anchor>a4342410e4502c30cb9e648b6b0a7fe81</anchor>
       <arglist>(size_t n)</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>at</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>aa1ddb2905979e2617e32ed79318e596a</anchor>
+      <anchor>a4ed2495b6590326c8195a70622155890</anchor>
       <arglist>(size_t n) const</arglist>
     </member>
     <member kind="function">
       <type>T &amp;</type>
       <name>back</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a23a2f263b9ecd33b603a1e6e5cfaed90</anchor>
+      <anchor>a9e52ad18160ad4d01fd30fb1002c68f3</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>back</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a8c60020ce34203d4a2277fd190ec9797</anchor>
+      <anchor>a6e1ca1bddc7c9a4ff193d371a1dfd4f7</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -767,28 +561,28 @@
       <type>T &amp;</type>
       <name>front</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a8e35751b3ab44beadcee4764d5125b0b</anchor>
+      <anchor>ae2aa1ff90b6ea127d9999917c5d47940</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>front</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a7de98b439fd0118663741aeb764ebcd4</anchor>
+      <anchor>aac9c7cbf6a7a024b436c6cc4364194b6</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>data</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a7dd4f05d882d7aaa068a9abfabeb5645</anchor>
+      <anchor>afbe68a6a83aa7ebcc8f3ba99e47d38fa</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
       <type>const T *</type>
       <name>data</name>
       <anchorfile>classmolpro_1_1array.html</anchorfile>
-      <anchor>a3cfb1dd8c71f0ce4908125f52a05a84d</anchor>
+      <anchor>a792a341be28d6d313692ca148e62d34d</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -912,6 +706,143 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>bytestream</name>
+    <filename>classbytestream.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>bytestream</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>aa3ce3e4f5071835ee0fc203a6e6c15c8</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>bytestream</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a1ce99e37c0c901fdfeddaa8aef501a04</anchor>
+      <arglist>(const char *buffer)</arglist>
+    </member>
+    <member kind="function">
+      <type>molpro::array&lt; double &gt;</type>
+      <name>doubles</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>acffa7ce56f0f8fe82e06bfa02bcb91fc</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>molpro::array&lt; fint &gt;</type>
+      <name>ints</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a2116269c05f58d62746ffb5bb151521d</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>molpro::array&lt; char &gt;</type>
+      <name>chars</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a6adf3f3e7dc1f952f0ab6ac9a7344a11</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bytestream</type>
+      <name>byteStream</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a38e9cd3e7aa464105d69887f4b56ecc9</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>reset</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a8a06348759d5d39195c3bea8839598d2</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>append</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>ac83482d8f93efd332a25415619bb5f54</anchor>
+      <arglist>(const double *array, size_t length=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>append</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a59c9080da6c288af288ae27234972b05</anchor>
+      <arglist>(const fint *array, size_t length=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>append</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>ac18a1ae610ed92deb811a4e2df514b86</anchor>
+      <arglist>(const char *array, size_t length=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>append</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>ae15d4457b65d22bcfa5d6fb6dc73d349</anchor>
+      <arglist>(const bytestream &amp;bs)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>append</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a832ac257c555ca62502781a7776270c7</anchor>
+      <arglist>(size_t i)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>append</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>ac4b675e3181e3e588cef0c9db26f5db7</anchor>
+      <arglist>(const T *array, size_t length=1)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>append</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>adfc0248b8f95707bf796c676a40968bd</anchor>
+      <arglist>(const std::vector&lt; T &gt; &amp;array)</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>size</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a9339728da9a0b2fc8efe3e866c6b76a5</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>position</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a5270ea6551237f711bcdb252dea5f3ce</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const std::vector&lt; char &gt; &amp;</type>
+      <name>data</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a0a246cbf575ce15ec3d210cd4febb1c9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>dump</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>aba1a2f2755311fb9a063852a9527a8b7</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>hash</name>
+      <anchorfile>classbytestream.html</anchorfile>
+      <anchor>a78ec1c40faa1e9e6e7e1d9390cb445ff</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>molpro::bytestream</name>
     <filename>classmolpro_1_1bytestream.html</filename>
     <member kind="function">
@@ -927,13 +858,6 @@
       <anchorfile>classmolpro_1_1bytestream.html</anchorfile>
       <anchor>a1ce99e37c0c901fdfeddaa8aef501a04</anchor>
       <arglist>(const char *buffer)</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>~bytestream</name>
-      <anchorfile>classmolpro_1_1bytestream.html</anchorfile>
-      <anchor>adb8bfd6e6e4ba31aaa7d9f9c34da7fce</anchor>
-      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>molpro::array&lt; double &gt;</type>
@@ -1037,7 +961,7 @@
       <type>const std::vector&lt; char &gt; &amp;</type>
       <name>data</name>
       <anchorfile>classmolpro_1_1bytestream.html</anchorfile>
-      <anchor>ac92eb31ba73ef5b9481bf912d6f63546</anchor>
+      <anchor>a0a246cbf575ce15ec3d210cd4febb1c9</anchor>
       <arglist>() const</arglist>
     </member>
     <member kind="function">
@@ -1058,7 +982,7 @@
   <compound kind="class">
     <name>molpro::array::MyIterator</name>
     <filename>classmolpro_1_1array_1_1MyIterator.html</filename>
-    <templarg>IsConst</templarg>
+    <templarg>bool IsConst</templarg>
     <member kind="typedef">
       <type>std::forward_iterator_tag</type>
       <name>iterator_category</name>
@@ -1140,7 +1064,7 @@
       <type>MyIterator &amp;</type>
       <name>operator++</name>
       <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
-      <anchor>a38d5fadb8cd21e8e997522ce1ac430b2</anchor>
+      <anchor>aabebf20852c9380de44602757deea3a3</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -1154,7 +1078,7 @@
       <type>MyIterator &amp;</type>
       <name>operator--</name>
       <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
-      <anchor>a3b7d94d0dc9974015f78e578cc3154b8</anchor>
+      <anchor>a13db39637fa898d1c5f7237a320c215a</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -1224,8 +1148,8 @@
   <compound kind="class">
     <name>molpro::vector::MyIterator</name>
     <filename>classmolpro_1_1vector_1_1MyIterator.html</filename>
-    <templarg>IsConst</templarg>
-    <base>pointer_holder&lt; T, _Alloc &gt;</base>
+    <templarg>bool IsConst</templarg>
+    <base>molpro::pointer_holder&lt; T, _Alloc &gt;</base>
     <member kind="typedef">
       <type>std::forward_iterator_tag</type>
       <name>iterator_category</name>
@@ -1307,7 +1231,7 @@
       <type>MyIterator &amp;</type>
       <name>operator++</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>aedb1bf7fcef6bf894269fdf37ec9d1bc</anchor>
+      <anchor>aa4598c5f7b9989fbca8c1f6425f66051</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -1321,7 +1245,7 @@
       <type>MyIterator &amp;</type>
       <name>operator--</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>a708fa7905277253e6bd5a2b953f4a1bb</anchor>
+      <anchor>ad40f465d0719f4b3b8ae1bd6d5b3559e</anchor>
       <arglist>()</arglist>
     </member>
     <member kind="function">
@@ -1335,14 +1259,14 @@
       <type>MyIterator &amp;</type>
       <name>operator+=</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>a53e78924cd9db63b7870f286f3d9f0fb</anchor>
+      <anchor>a7a019ba091d1630457b8021b905197b5</anchor>
       <arglist>(difference_type n)</arglist>
     </member>
     <member kind="function">
       <type>MyIterator &amp;</type>
       <name>operator-=</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>a666f6c32f252873c74ebd9662b1024f3</anchor>
+      <anchor>a84996b4a51efdab07c2a21bbd968eb67</anchor>
       <arglist>(difference_type n)</arglist>
     </member>
     <member kind="friend">
@@ -1542,26 +1466,8 @@
   <compound kind="class">
     <name>molpro::pointer_holder</name>
     <filename>classmolpro_1_1pointer__holder.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
-    <member kind="function">
-      <type></type>
-      <name>pointer_holder</name>
-      <anchorfile>classmolpro_1_1pointer__holder.html</anchorfile>
-      <anchor>a6acc157dba03110241169ea509b0dae8</anchor>
-      <arglist>(T *const ptr)</arglist>
-    </member>
-    <member kind="variable">
-      <type>T *</type>
-      <name>m_ptr</name>
-      <anchorfile>classmolpro_1_1pointer__holder.html</anchorfile>
-      <anchor>aba99ab51dba083ac8ad576228ca242ef</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
-  <compound kind="class">
-    <name>pointer_holder&lt; T, _Alloc &gt;</name>
-    <filename>classmolpro_1_1pointer__holder.html</filename>
+    <templarg>typename T</templarg>
+    <templarg>typename _Alloc</templarg>
     <member kind="function">
       <type></type>
       <name>pointer_holder</name>
@@ -1580,7 +1486,7 @@
   <compound kind="struct">
     <name>molpro::allocator_::rebind</name>
     <filename>structmolpro_1_1allocator___1_1rebind.html</filename>
-    <templarg></templarg>
+    <templarg>typename U</templarg>
     <member kind="typedef">
       <type>allocator_&lt; U, typename a_t::template rebind_alloc&lt; U &gt; &gt;</type>
       <name>other</name>
@@ -1592,8 +1498,8 @@
   <compound kind="class">
     <name>molpro::vector</name>
     <filename>classmolpro_1_1vector.html</filename>
-    <templarg></templarg>
-    <templarg></templarg>
+    <templarg>typename T</templarg>
+    <templarg>typename _Alloc</templarg>
     <class kind="class">molpro::vector::MyIterator</class>
     <member kind="typedef">
       <type>MyIterator&lt; false &gt;</type>
@@ -1676,7 +1582,7 @@
       <type>vector &amp;</type>
       <name>operator=</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a412ea5f8e27d5f050463b9e2cb5fb1e1</anchor>
+      <anchor>a0c9a4df7c88de84dc799d7043f25ef9f</anchor>
       <arglist>(const vector&lt; T, _Alloc &gt; &amp;copy)</arglist>
     </member>
     <member kind="function" virtualness="virtual">
@@ -1690,14 +1596,14 @@
       <type>T &amp;</type>
       <name>operator[]</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>af984688a4cd1838a3e8c3d8cde83ba2b</anchor>
+      <anchor>ad080b4e0f3c5c889c2eef2fe0442497e</anchor>
       <arglist>(size_t n)</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>operator[]</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a6ecdd4d2eecd914836c6794dc2ec6ab4</anchor>
+      <anchor>ac6b33f2aeed6b9d097f8729307d0f0d4</anchor>
       <arglist>(size_t n) const</arglist>
     </member>
     <member kind="function">
@@ -1732,28 +1638,28 @@
       <type>T &amp;</type>
       <name>at</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a6e20ab0ef8eb1f7aec77c5719892fa12</anchor>
+      <anchor>ae281f0c01bb3892684d919ccbd0ac2bf</anchor>
       <arglist>(size_t n)</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>at</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>add79cfb29621cb90bf28dbaa3c939ea9</anchor>
+      <anchor>ae03688a59ccf5eb60d2427375b39c264</anchor>
       <arglist>(size_t n) const</arglist>
     </member>
     <member kind="function">
       <type>T &amp;</type>
       <name>back</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a70a78004fec9b245e108dd47db5fabff</anchor>
+      <anchor>a929d0f65ce6f6c51fe2bbe6e30d4811f</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>back</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a91f4451490cf518881443297a8e7ed5a</anchor>
+      <anchor>a93dec80dad048cd8339fdaccda00bd04</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -1781,28 +1687,28 @@
       <type>T &amp;</type>
       <name>front</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>aaada7da52fc4d0ee147927d34e208bf1</anchor>
+      <anchor>a56a2f0e872de31a1b72ef64f153ad88c</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
       <type>const T &amp;</type>
       <name>front</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a35646b9392b0dc30e270abbb4656d208</anchor>
+      <anchor>af59acc1e928d788db771f620ed03ac5a</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
       <type>T *</type>
       <name>data</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a14333f02338a2062b97c19d124fdba80</anchor>
+      <anchor>a3609dc53b26319f6d11cc0244767a337</anchor>
       <arglist>() noexcept</arglist>
     </member>
     <member kind="function">
       <type>const T *</type>
       <name>data</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a690c74a2e9d6ee95e9b5629d403478cf</anchor>
+      <anchor>a9711fc1b9f5d076cd745e7acc6639745</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
@@ -2016,14 +1922,14 @@
       <type>allocator_&lt; T, std::allocator&lt; T &gt; &gt;</type>
       <name>allocator</name>
       <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a1d92c5863cb8d5a044b491344aa102ec</anchor>
+      <anchor>ae5efe22044624d5a1d4f5d6714266cfb</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
       <type>std::vector&lt; T, A &gt;</type>
       <name>stdvector</name>
       <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ac4b0f2b8178218c4e7b46b36b21bc745</anchor>
+      <anchor>a37b62503c8a32175b5963558c7b29173</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -2037,7 +1943,7 @@
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ad6f4e48b18a910293f0fb426c126bc30</anchor>
+      <anchor>ab3ceb92ca3a8843bdbed20494e040d6c</anchor>
       <arglist>(std::ostream &amp;os, vector&lt; T, _Alloc &gt; const &amp;obj)</arglist>
     </member>
     <member kind="function">
@@ -2051,7 +1957,7 @@
       <type>std::ostream &amp;</type>
       <name>operator&lt;&lt;</name>
       <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>a25bbb58956838b7151d98e019f9f0bfb</anchor>
+      <anchor>a3006216675549d7aac6a8f30134c1367</anchor>
       <arglist>(std::ostream &amp;os, array&lt; T &gt; const &amp;obj)</arglist>
     </member>
     <member kind="function">
@@ -2115,10 +2021,61 @@
       <arglist>()</arglist>
     </member>
   </compound>
-  <compound kind="page">
-    <name>index</name>
-    <title>Molpro utilities library</title>
-    <filename>index.html</filename>
-    <docanchor file="index.html">md____w_utilities_utilities_README</docanchor>
+  <compound kind="dir">
+    <name>/__w</name>
+    <path>/__w/</path>
+    <filename>dir_3a0534501ca4be4079425efd3c8ffab8.html</filename>
+    <dir>/__w/utilities</dir>
+  </compound>
+  <compound kind="dir">
+    <name>/home/runner/work/utilities/utilities/build/src/molpro/memory</name>
+    <path>/home/runner/work/utilities/utilities/build/src/molpro/memory/</path>
+    <filename>dir_591580345ece921c54765e5245d2c662.html</filename>
+    <file>memory-config.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>/__w/utilities/utilities/src/molpro</name>
+    <path>/__w/utilities/utilities/src/molpro/</path>
+    <filename>dir_b7f09782393db6b6e812fa9cfba5b32f.html</filename>
+    <file>bytestreamC.cpp</file>
+    <file>bytestreamC.h</file>
+    <file>cblas.h</file>
+    <file>iostream.h</file>
+    <file>lapacke.h</file>
+    <file>memory.h</file>
+    <file>memoryC.cpp</file>
+    <file>mpi.h</file>
+    <file>Options.cpp</file>
+    <file>Options.h</file>
+  </compound>
+  <compound kind="dir">
+    <name>/home/runner/work/utilities/utilities/build/src/molpro</name>
+    <path>/home/runner/work/utilities/utilities/build/src/molpro/</path>
+    <filename>dir_e10268cf193aca5502aa6c8910e3741b.html</filename>
+    <dir>/home/runner/work/utilities/utilities/build/src/molpro/memory</dir>
+  </compound>
+  <compound kind="dir">
+    <name>/__w/utilities/utilities/src</name>
+    <path>/__w/utilities/utilities/src/</path>
+    <filename>dir_64359fa6a44350e94b4e2e5b1e766613.html</filename>
+    <dir>/__w/utilities/utilities/src/molpro</dir>
+  </compound>
+  <compound kind="dir">
+    <name>/home/runner/work/utilities/utilities/build/src</name>
+    <path>/home/runner/work/utilities/utilities/build/src/</path>
+    <filename>dir_f1b4c3c9d4497c305bc4069d03d8d4ec.html</filename>
+    <dir>/home/runner/work/utilities/utilities/build/src/molpro</dir>
+  </compound>
+  <compound kind="dir">
+    <name>/__w/utilities</name>
+    <path>/__w/utilities/</path>
+    <filename>dir_3a226b0dd7878ac8cf20da0c06f05947.html</filename>
+    <dir>/__w/utilities/utilities</dir>
+  </compound>
+  <compound kind="dir">
+    <name>/__w/utilities/utilities</name>
+    <path>/__w/utilities/utilities/</path>
+    <filename>dir_49596074060651a736bb4ff8232adf25.html</filename>
+    <dir>/__w/utilities/utilities/src</dir>
   </compound>
 </tagfile>

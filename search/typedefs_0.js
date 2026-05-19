@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['allocator_249',['allocator',['../namespacemolpro.html#a1d92c5863cb8d5a044b491344aa102ec',1,'molpro']]]
+  ['allocator_0',['allocator',['../namespacemolpro.html#ae5efe22044624d5a1d4f5d6714266cfb',1,'molpro']]]
 ];
