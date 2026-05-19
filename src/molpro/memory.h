@@ -290,7 +290,7 @@ class vector {
    * \brief Construct a vector of type T with managed storage.
    * \param length The number of elements of buffer.
    */
-  vector(size_t const length = 0)
+explicit vector(size_t const length = 0)
       : m_stdvector(length), m_buffer(m_stdvector.data()) {}
 
 /*!
