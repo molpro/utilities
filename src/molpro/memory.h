@@ -805,10 +805,12 @@ class array {
   }
 
   T& back() noexcept {
+    if (empty()) throw std::out_of_range("array::back() called on empty array");
     return m_buffer[size() - 1];
   }
 
   const T& back() const noexcept {
+    if (empty()) throw std::out_of_range("array::back() called on empty array");
     return m_buffer[size() - 1];
   }
 
@@ -817,10 +819,12 @@ class array {
   }
 
   T& front() noexcept {
+    if (empty()) throw std::out_of_range("array::front() called on empty array");
     return m_buffer[0];
   }
 
   const T& front() const noexcept {
+    if (empty()) throw std::out_of_range("array::front() called on empty array");
     return m_buffer[0];
   }
 
