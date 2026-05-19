@@ -66,6 +66,8 @@ int Options::parameter(const std::string &key, int def) const {
 
 double Options::parameter(const std::string &key, double def) const {
 #ifdef MOLPRO
+  // Molpro's get_inpf_c aborts on a missing key rather than returning a sentinel,
+  // so `def` is intentionally unused in this branch (cf. int / string siblings).
   double r = get_inpf_c(upcase(key).c_str(), upcase(m_program).c_str());
   return r;
 #endif
