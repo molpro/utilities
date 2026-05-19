@@ -97,13 +97,17 @@ extern size_t _private_memory_used;
 extern size_t _private_memory_maximum_allocatable;
 extern std::unordered_map<char*, size_t> _private_memory_lengths;
 
+/*!
+ * \brief Initialize the memory system
+ * \param buffer is ignored. Present for compatibility with the enhanced interface in the Molpro environment
+ * \param max The number of bytes to be reserved for the stack
+ */
 inline size_t memory_initialize(char *buffer, size_t max) {
   return (_private_memory_maximum_allocatable = max);
 } // more checks
 /*!
- * \brief memory_used Report used memory
- * \param maximum if true (default is false), report the maximum
- * memory allocated to date, in bytes.
+ * \brief memory_used Report currently used memory
+ * \param maximum is ignored. Present for compatibility with the enhanced interface in the Molpro environment
  * \return
  */
 inline size_t memory_used(int maximum = 0) { return _private_memory_used; }
@@ -120,10 +124,7 @@ inline void memory_print_status() {
   std::cout << "Memory remaining: " << memory_remaining() << std::endl;
 }
 /*!
- * \brief memory_reset_maximum_stack  Reset the maximum stack used
- * statistic to the currently-used stack
- * \param level if non-negative, the stack position desired; default is
- * current stack size in bytes
+ * \brief memory_reset_maximum_stack is a no-op. Present for compatibility with the enhanced interface in the Molpro environment
  */
 inline void memory_reset_maximum_stack(int64_t level) {
 
