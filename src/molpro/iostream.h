@@ -8,7 +8,7 @@ extern std::ostream& EXTERN_OSTREAM_COUT;
 #define EXTERN_OSTREAM_COUT_DEF 1
 #endif
 namespace molpro {
-static auto& cout = EXTERN_OSTREAM_COUT;
+inline auto& cout = EXTERN_OSTREAM_COUT;
 }
 #else
 namespace molpro {
