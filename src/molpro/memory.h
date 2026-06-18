@@ -151,12 +151,6 @@ class allocator_ : public A {
   typedef std::ptrdiff_t difference_type;
 
  public :
-  template<typename U>
-  struct rebind {
-    typedef allocator_<U, typename a_t::template rebind_alloc<U> > other;
-  };
-
- public :
 
   pointer address(reference r) { return &r; }
   const_pointer address(const_reference r) const { return &r; }
