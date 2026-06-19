@@ -132,59 +132,62 @@ inline void memory_reset_maximum_stack(int64_t level) {
 #endif // MOLPRO_MEMORY_FORTRAN
 
 namespace molpro {
+
+struct _EmptyBase_ {};
+
 /*!
    * An allocator suitable for use with STL, that monitors usage
    * If the symbol MOLPRO_MEMORY_FORTRAN is defined, allocation is outsourced to the
    * fortran memory allocator, otherwise it is done with malloc().
    */
-template<typename T, typename A = std::allocator<T> >
+template<typename T, typename A =
+#ifdef NOALLOCATE
+	std::allocator<T>
+#else
+	_EmptyBase_
+#endif
+>
 class allocator_ : public A {
-  using a_t = std::allocator_traits<A>;
  public :
-//  using A::A;
-  typedef T value_type;
-  typedef value_type* pointer;
-  typedef const value_type* const_pointer;
-  typedef value_type& reference;
-  typedef const value_type& const_reference;
-  typedef std::size_t size_type;
-  typedef std::ptrdiff_t difference_type;
+  using value_type = T;
 
- public :
+  allocator_() noexcept = default;
+  allocator_(const allocator_ &) noexcept = default;
+  allocator_(allocator_ &&) noexcept = default;
 
-  pointer address(reference r) { return &r; }
-  const_pointer address(const_reference r) const { return &r; }
+  // But provide a custom rebind copy constructor as the one of A returns
+  // an instance of A instead an instance of allocator_
+  template<typename U>
+  allocator_(const allocator_<U> &other) noexcept : A(other) {}
 
 #ifndef NOALLOCATE
-  pointer allocate(size_type cnt, typename std::allocator<void>::value_type* = nullptr) {
+  T *allocate(std::size_t cnt) {
 #ifdef MOLPRO_MEMORY_FORTRAN
     if (memory_remaining() < cnt * sizeof(T))
 #else
-      //    std::cout << "hello from allocate" << std::endl;
-          if (_private_memory_maximum_allocatable == 0) _private_memory_maximum_allocatable = memory_initialize(nullptr, std::numeric_limits<size_t>::max());
-          if ((_private_memory_maximum_allocatable - _private_memory_used) < (cnt * sizeof(T)))
+    if (_private_memory_maximum_allocatable == 0) _private_memory_maximum_allocatable = memory_initialize(nullptr, std::numeric_limits<size_t>::max());
+    if ((_private_memory_maximum_allocatable - _private_memory_used) < (cnt * sizeof(T)))
 #endif
       throw std::runtime_error(std::string("molpro::allocate: insufficient remaining stack memory; remaining=")
                                    + std::to_string(static_cast<unsigned long long>(memory_remaining()))
                                    + std::string(", requested=")
                                    + std::to_string(static_cast<unsigned long long>(cnt * sizeof(T))));
 #ifdef MOLPRO_MEMORY_FORTRAN
-    return reinterpret_cast<pointer>(memory_allocate(cnt * sizeof(T)));
+    return reinterpret_cast<T *>(memory_allocate(cnt * sizeof(T)));
 #else
     _private_memory_used += cnt * sizeof(T);
-//    std::cout << "incrementing used by " << cnt * sizeof(T) << " to " << _private_memory_used << std::endl;
-#ifdef MEMORY_MALLOC
-    auto result = reinterpret_cast<pointer>( malloc(cnt * sizeof (T)));
-#else
+    #ifdef MEMORY_MALLOC
+    auto result = reinterpret_cast<T *>( malloc(cnt * sizeof (T)));
+    #else
     void* pp = ::operator new[](cnt * sizeof(T));
-    auto result = reinterpret_cast<pointer>( pp);
-#endif
+    auto result = reinterpret_cast<T *>( pp);
+    #endif
     _private_memory_lengths[reinterpret_cast<char*>(result)] = cnt * sizeof(T);
     return result;
 #endif
   }
 
-  void deallocate(pointer p, size_type) {
+  void deallocate(T *p, std::size_t) {
 #ifdef MOLPRO_MEMORY_FORTRAN
     memory_release((char*) p, 0);
 #else
@@ -193,37 +196,31 @@ class allocator_ : public A {
       _private_memory_used -= it->second;
       _private_memory_lengths.erase(it);
     }
-#ifdef MEMORY_MALLOC
+    #ifdef MEMORY_MALLOC
     free(reinterpret_cast<char*>(p));
-#else
+    #else
     delete[] reinterpret_cast<char*>(p);
-#endif
+    #endif
 #endif
   }
-#endif
-
-  size_type max_size() const {
-    return std::numeric_limits<size_type>::max();
-  }
-
-//    void construct(pointer p, const T& t) { new(p) T(t); }
-//    void destroy(pointer p) { p->~T(); }
+#else
+  // A might have a rebind member and we need to shadow it as A's
+  // rebind doesn't return allocator_ which however is required
+  // in rebind semantics.
+  // Normally std::allocator_traits takes care of this but only
+  // if the allocator class doesn't expose this struct (which A might)
   template<typename U>
-  void construct(U* ptr)
-  noexcept(std::is_nothrow_default_constructible<U>::value) {
-    ::new(static_cast<void*>(ptr)) U; // no initialisation
-  }
-  template<typename U, typename...Args>
-  void construct(U* ptr, Args&& ... args) {
-    a_t::construct(static_cast<A&>(*this),
-                   ptr, std::forward<Args>(args)...);
-  }
+  struct rebind {
+	  using other = allocator_<U>;
+  };
+#endif
 
   bool operator==(allocator_ const&) const { return true; }
   bool operator!=(allocator_ const& a) const { return !operator==(a); }
 };
+
 template<typename T>
-using allocator = allocator_<T, std::allocator<T> >;
+using allocator = allocator_<T>;
 }
 
 namespace molpro {
