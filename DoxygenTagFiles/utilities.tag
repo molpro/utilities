@@ -77,8 +77,8 @@
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>memory_8h.html</filename>
     <includes id="memory-config_8h" name="memory-config.h" local="no" import="no" module="no" objc="no">molpro/memory/memory-config.h</includes>
+    <class kind="struct">molpro::_EmptyBase_</class>
     <class kind="class">molpro::allocator_</class>
-    <class kind="struct">molpro::allocator_::rebind</class>
     <class kind="class">molpro::pointer_holder</class>
     <class kind="class">molpro::vector</class>
     <class kind="class">molpro::vector::MyIterator</class>
@@ -244,109 +244,64 @@
     <path>/home/runner/work/utilities/utilities/build/src/molpro/memory/</path>
     <filename>memory-config_8h.html</filename>
   </compound>
+  <compound kind="struct">
+    <name>molpro::_EmptyBase_</name>
+    <filename>structmolpro_1_1__EmptyBase__.html</filename>
+  </compound>
   <compound kind="class">
     <name>molpro::allocator_</name>
     <filename>classmolpro_1_1allocator__.html</filename>
     <templarg>typename T</templarg>
     <templarg>typename A</templarg>
-    <class kind="struct">molpro::allocator_::rebind</class>
+    <base>molpro::_EmptyBase_</base>
     <member kind="typedef">
       <type>T</type>
       <name>value_type</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ab48b3605c9098c7ecc727bb044791493</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>value_type *</type>
-      <name>pointer</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a58a6ab7a3cf198c9414b77ca6d4f6990</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>const value_type *</type>
-      <name>const_pointer</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a89d0d82162b08ecb46f31c0332f8e6f0</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>value_type &amp;</type>
-      <name>reference</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a44e57e688a4108dcbda82f8eabcefa55</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>const value_type &amp;</type>
-      <name>const_reference</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>ab8768bbd8e9e8462dc381c602697c4b9</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::size_t</type>
-      <name>size_type</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a86308ca07f74a0d800ae208c8a97b399</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="typedef">
-      <type>std::ptrdiff_t</type>
-      <name>difference_type</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a81baf623a3a73bc7170b31b24c529f5b</anchor>
+      <anchor>a053fd7bec95dba6bb5ed37dd88619807</anchor>
       <arglist></arglist>
     </member>
     <member kind="function">
-      <type>pointer</type>
-      <name>address</name>
+      <type></type>
+      <name>allocator_</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a68bfadd9290aeeb3842b1195113b8be5</anchor>
-      <arglist>(reference r)</arglist>
+      <anchor>a06ff0cc67d7b78c3b0324aae0220a817</anchor>
+      <arglist>() noexcept=default</arglist>
     </member>
     <member kind="function">
-      <type>const_pointer</type>
-      <name>address</name>
+      <type></type>
+      <name>allocator_</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a9a57c0453b0e2a605a42af4385899949</anchor>
-      <arglist>(const_reference r) const</arglist>
+      <anchor>a442a2a7d4cf50df578ddc85e3ca06533</anchor>
+      <arglist>(const allocator_ &amp;) noexcept=default</arglist>
     </member>
     <member kind="function">
-      <type>pointer</type>
+      <type></type>
+      <name>allocator_</name>
+      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
+      <anchor>a66c7754fc20dba4266078def9c824609</anchor>
+      <arglist>(allocator_ &amp;&amp;) noexcept=default</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>allocator_</name>
+      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
+      <anchor>a8023312387533b2165d9f5e648639456</anchor>
+      <arglist>(const allocator_&lt; U &gt; &amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>T *</type>
       <name>allocate</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>adeec17ed75bf23cb443b0988e61621e8</anchor>
-      <arglist>(size_type cnt, typename std::allocator&lt; void &gt;::value_type *=nullptr)</arglist>
+      <anchor>ab71d100edbd6e6c6cc582b0128f1c25b</anchor>
+      <arglist>(std::size_t cnt)</arglist>
     </member>
     <member kind="function">
       <type>void</type>
       <name>deallocate</name>
       <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a8085c1dcbb11bc770fb8afabd7401aa2</anchor>
-      <arglist>(pointer p, size_type)</arglist>
-    </member>
-    <member kind="function">
-      <type>size_type</type>
-      <name>max_size</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a0f8ec07b4197df33ab21b4ce0149567d</anchor>
-      <arglist>() const</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>construct</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>a9193b3604d84bc76465f37339b23fbee</anchor>
-      <arglist>(U *ptr) noexcept(std::is_nothrow_default_constructible&lt; U &gt;::value)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>construct</name>
-      <anchorfile>classmolpro_1_1allocator__.html</anchorfile>
-      <anchor>af68ff2c1b53d4b63879c66cad0303c30</anchor>
-      <arglist>(U *ptr, Args &amp;&amp;... args)</arglist>
+      <anchor>abd7bea8c6fa6800268f029b466f69d09</anchor>
+      <arglist>(T *p, std::size_t)</arglist>
     </member>
     <member kind="function">
       <type>bool</type>
@@ -1483,18 +1438,6 @@
       <arglist></arglist>
     </member>
   </compound>
-  <compound kind="struct">
-    <name>molpro::allocator_::rebind</name>
-    <filename>structmolpro_1_1allocator___1_1rebind.html</filename>
-    <templarg>typename U</templarg>
-    <member kind="typedef">
-      <type>allocator_&lt; U, typename a_t::template rebind_alloc&lt; U &gt; &gt;</type>
-      <name>other</name>
-      <anchorfile>structmolpro_1_1allocator___1_1rebind.html</anchorfile>
-      <anchor>acd655fd0de629f8a25843b7bdbfa8046</anchor>
-      <arglist></arglist>
-    </member>
-  </compound>
   <compound kind="class">
     <name>molpro::vector</name>
     <filename>classmolpro_1_1vector.html</filename>
@@ -1913,16 +1856,17 @@
     <filename>namespacemolpro.html</filename>
     <namespace>molpro::mpi</namespace>
     <class kind="class">molpro::Options</class>
+    <class kind="struct">molpro::_EmptyBase_</class>
     <class kind="class">molpro::allocator_</class>
     <class kind="class">molpro::pointer_holder</class>
     <class kind="class">molpro::vector</class>
     <class kind="class">molpro::array</class>
     <class kind="class">molpro::bytestream</class>
     <member kind="typedef">
-      <type>allocator_&lt; T, std::allocator&lt; T &gt; &gt;</type>
+      <type>allocator_&lt; T &gt;</type>
       <name>allocator</name>
       <anchorfile>namespacemolpro.html</anchorfile>
-      <anchor>ae5efe22044624d5a1d4f5d6714266cfb</anchor>
+      <anchor>abdffe5c2e1901050cdb4dcc4e23d72f6</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['max_5fsize_0',['max_size',['../classmolpro_1_1allocator__.html#a0f8ec07b4197df33ab21b4ce0149567d',1,'molpro::allocator_::max_size()'],['../classmolpro_1_1vector.html#acf97ebed0bf6156b8093213c0653a7a4',1,'molpro::vector::max_size()'],['../classmolpro_1_1array.html#afdc58fde532c1362469af1a7331c528c',1,'molpro::array::max_size()']]],
+  ['max_5fsize_0',['max_size',['../classmolpro_1_1vector.html#acf97ebed0bf6156b8093213c0653a7a4',1,'molpro::vector::max_size()'],['../classmolpro_1_1array.html#afdc58fde532c1362469af1a7331c528c',1,'molpro::array::max_size()']]],
   ['memory_5fbytestream_5fhash_1',['memory_bytestream_hash',['../bytestreamC_8h.html#a6a2bee24d702e1fc509e77c9807e63e4',1,'memory_bytestream_hash(const char *s, size_t n):&#160;bytestreamC.cpp'],['../bytestreamC_8cpp.html#a6a2bee24d702e1fc509e77c9807e63e4',1,'memory_bytestream_hash(const char *s, size_t n):&#160;bytestreamC.cpp']]],
   ['memory_5finitialize_2',['memory_initialize',['../memory_8h.html#a17843591b3971a2603f88bd29f56e057',1,'memory.h']]],
   ['memory_5fprint_5fstatus_3',['memory_print_status',['../memory_8h.html#a963f09ca1733fb5608eabb11d2b8de91',1,'memory.h']]],

@@ -181,7 +181,7 @@ Friends</h2></td></tr>
 class molpro::array&lt; T &gt;</div><p>A template for a container class like std::array&lt;T&gt; but with the following features. </p>
 <ul>
 <li>Memory is provided from one of the following.<ul>
-<li>allocated internally using <a class="el" href="namespacemolpro.html#ae5efe22044624d5a1d4f5d6714266cfb">molpro::allocator&lt;T&gt;</a> which uses a managed stack</li>
+<li>allocated internally using <a class="el" href="namespacemolpro.html#abdffe5c2e1901050cdb4dcc4e23d72f6">molpro::allocator&lt;T&gt;</a> which uses a managed stack</li>
 <li>attached to an existing raw array T[], std::vector&lt;T&gt; or std::array&lt;T,N&gt;, allowing one to optionally attach the container to existing data structures, and use the same syntax as std::array&lt;T,N&gt; to access it. In this case, the buffer is not deallocated on destruction of this object. It is the user's responsibility to ensure, in the case of std::vector&lt;T&gt; source, that the source is not subsequently resized or otherwise changed in a way that its data is moved.</li>
 </ul>
 </li>
@@ -213,8 +213,8 @@ class molpro::array&lt; T &gt;</div><p>A template for a container class like std
 <div class="line">} <span class="comment">// arr is destroyed, but (modified) v survives</span></div>
 <div class="line">std::cout &lt;&lt; v[0] &lt;&lt; std::endl;</div>
 <div class="line"><span class="keywordflow">return</span> 0; }</div>
-<div class="ttc" id="aclassmolpro_1_1array_html"><div class="ttname"><a href="classmolpro_1_1array.html">molpro::array</a></div><div class="ttdoc">A template for a container class like std::array&lt;T&gt; but with the following features.</div><div class="ttdef"><b>Definition</b> memory.h:653</div></div>
-<div class="ttc" id="aclassmolpro_1_1array_html_a923b7a903fd3b8c69056d41931950f0a"><div class="ttname"><a href="#a923b7a903fd3b8c69056d41931950f0a">molpro::array::iterator</a></div><div class="ttdeci">Iterator iterator</div><div class="ttdef"><b>Definition</b> memory.h:893</div></div>
+<div class="ttc" id="aclassmolpro_1_1array_html"><div class="ttname"><a href="classmolpro_1_1array.html">molpro::array</a></div><div class="ttdoc">A template for a container class like std::array&lt;T&gt; but with the following features.</div><div class="ttdef"><b>Definition</b> memory.h:644</div></div>
+<div class="ttc" id="aclassmolpro_1_1array_html_a923b7a903fd3b8c69056d41931950f0a"><div class="ttname"><a href="#a923b7a903fd3b8c69056d41931950f0a">molpro::array::iterator</a></div><div class="ttdeci">Iterator iterator</div><div class="ttdef"><b>Definition</b> memory.h:884</div></div>
 <div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
 <div class="ttc" id="amemory_8h_html_a17843591b3971a2603f88bd29f56e057"><div class="ttname"><a href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">memory_initialize</a></div><div class="ttdeci">size_t memory_initialize(char *buffer, size_t max)</div><div class="ttdoc">Initialize the memory system.</div><div class="ttdef"><b>Definition</b> memory.h:105</div></div>
 </div><!-- fragment --> </div><a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Member Typedef Documentation</h2>

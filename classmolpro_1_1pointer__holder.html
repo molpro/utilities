@@ -109,7 +109,7 @@ Public Attributes</h2></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt;<br />
 class molpro::pointer_holder&lt; T, _Alloc &gt;</div><p>A template for a container class like std::vector&lt;T&gt; but with the following features. </p>
 <ul>
-<li>the default allocator is <a class="el" href="namespacemolpro.html#ae5efe22044624d5a1d4f5d6714266cfb">molpro::allocator&lt;T&gt;</a> which uses a managed stack. One should use resize() and reserve() with care, bearing in mind that memory allocation is from a stack. So if the array being resized is not at the top of the stack, and the resize causes it to grow, then it will be moved.</li>
+<li>the default allocator is <a class="el" href="namespacemolpro.html#abdffe5c2e1901050cdb4dcc4e23d72f6">molpro::allocator&lt;T&gt;</a> which uses a managed stack. One should use resize() and reserve() with care, bearing in mind that memory allocation is from a stack. So if the array being resized is not at the top of the stack, and the resize causes it to grow, then it will be moved.</li>
 <li>The class is inheritable.</li>
 <li>A string representation function is provided for easy printing</li>
 </ul>
@@ -131,8 +131,8 @@ class molpro::pointer_holder&lt; T, _Alloc &gt;</div><p>A template for a contain
 <div class="line">    std::cout &lt;&lt; <span class="stringliteral">&quot;array element &quot;</span>&lt;&lt;*el&lt;&lt;std::endl;</div>
 <div class="line">} <span class="comment">// arr will release its buffer and be destroyed on going out of scope</span></div>
 <div class="line"><span class="keywordflow">return</span> 0; }</div>
-<div class="ttc" id="aclassmolpro_1_1vector_html"><div class="ttname"><a href="classmolpro_1_1vector.html">molpro::vector</a></div><div class="ttdef"><b>Definition</b> memory.h:278</div></div>
-<div class="ttc" id="aclassmolpro_1_1vector_html_a2f3ee1c6be953a12510cdf511d257c4d"><div class="ttname"><a href="classmolpro_1_1vector.html#a2f3ee1c6be953a12510cdf511d257c4d">molpro::vector::iterator</a></div><div class="ttdeci">Iterator iterator</div><div class="ttdef"><b>Definition</b> memory.h:486</div></div>
+<div class="ttc" id="aclassmolpro_1_1vector_html"><div class="ttname"><a href="classmolpro_1_1vector.html">molpro::vector</a></div><div class="ttdef"><b>Definition</b> memory.h:269</div></div>
+<div class="ttc" id="aclassmolpro_1_1vector_html_a2f3ee1c6be953a12510cdf511d257c4d"><div class="ttname"><a href="classmolpro_1_1vector.html#a2f3ee1c6be953a12510cdf511d257c4d">molpro::vector::iterator</a></div><div class="ttdeci">Iterator iterator</div><div class="ttdef"><b>Definition</b> memory.h:477</div></div>
 <div class="ttc" id="amemory_8h_html"><div class="ttname"><a href="memory_8h.html">memory.h</a></div></div>
 <div class="ttc" id="amemory_8h_html_a17843591b3971a2603f88bd29f56e057"><div class="ttname"><a href="memory_8h.html#a17843591b3971a2603f88bd29f56e057">memory_initialize</a></div><div class="ttdeci">size_t memory_initialize(char *buffer, size_t max)</div><div class="ttdoc">Initialize the memory system.</div><div class="ttdef"><b>Definition</b> memory.h:105</div></div>
 </div><!-- fragment --> </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>

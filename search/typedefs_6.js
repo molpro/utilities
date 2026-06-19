@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pointer_0',['pointer',['../classmolpro_1_1allocator__.html#a58a6ab7a3cf198c9414b77ca6d4f6990',1,'molpro::allocator_::pointer'],['../classmolpro_1_1vector_1_1MyIterator.html#ad9d93947bf59bf712c51330c141e6e76',1,'molpro::vector::MyIterator::pointer'],['../classmolpro_1_1array_1_1MyIterator.html#a9143a255fd918a354fda2620a9dd8cea',1,'molpro::array::MyIterator::pointer']]]
+  ['reference_0',['reference',['../classmolpro_1_1vector_1_1MyIterator.html#a83a363b35ac0a8d1495daa7981ee2a04',1,'molpro::vector::MyIterator::reference'],['../classmolpro_1_1array_1_1MyIterator.html#a4f66a03bec5061784243cee374cd8107',1,'molpro::array::MyIterator::reference']]],
+  ['reverse_5fiterator_1',['reverse_iterator',['../classmolpro_1_1vector.html#a46814564340044ff309fc61fea75c4f5',1,'molpro::vector::reverse_iterator'],['../classmolpro_1_1array.html#a18ed223f96ddbccd3778734a404ce890',1,'molpro::array::reverse_iterator']]]
 ];

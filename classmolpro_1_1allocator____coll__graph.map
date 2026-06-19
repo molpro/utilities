@@ -1,5 +1,5 @@
 <map id="molpro::allocator_&lt; T, A &gt;" name="molpro::allocator_&lt; T, A &gt;">
-<area shape="rect" id="Node000001" title=" " alt="" coords="8,81,147,126"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,150,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,47,80,81,75,80,76,51"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="17,81,157,126"/>
+<area shape="rect" id="Node000002" href="$structmolpro_1_1__EmptyBase__.html" title=" " alt="" coords="5,5,169,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,47,90,81,84,80,85,51"/>
 </map>

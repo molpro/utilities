@@ -7,7 +7,6 @@ var searchData=
   ['clear_4',['clear',['../classmolpro_1_1vector.html#a393a0facda0a79e1c2b064acbaedba90',1,'molpro::vector']]],
   ['comm_5fglobal_5',['comm_global',['../namespacemolpro_1_1mpi.html#abce7e703339ee4ffdc2062219fa206ce',1,'molpro::mpi']]],
   ['comm_5fself_6',['comm_self',['../namespacemolpro_1_1mpi.html#a47547d4cda8dce46ff57c70fe1587cc8',1,'molpro::mpi']]],
-  ['construct_7',['construct',['../classmolpro_1_1allocator__.html#a9193b3604d84bc76465f37339b23fbee',1,'molpro::allocator_::construct(U *ptr) noexcept(std::is_nothrow_default_constructible&lt; U &gt;::value)'],['../classmolpro_1_1allocator__.html#af68ff2c1b53d4b63879c66cad0303c30',1,'molpro::allocator_::construct(U *ptr, Args &amp;&amp;... args)']]],
-  ['crbegin_8',['crbegin',['../classmolpro_1_1vector.html#ae6c54bce2ad86c49f9797756a5c1b3c4',1,'molpro::vector::crbegin()'],['../classmolpro_1_1array.html#ab71630b99d5252da2dd105424e7d94c0',1,'molpro::array::crbegin()']]],
-  ['crend_9',['crend',['../classmolpro_1_1vector.html#af97d28649562011df8eab5912c1c2bda',1,'molpro::vector::crend()'],['../classmolpro_1_1array.html#a122faaab9a23648ed6f97b1c110d5e62',1,'molpro::array::crend()']]]
+  ['crbegin_7',['crbegin',['../classmolpro_1_1vector.html#ae6c54bce2ad86c49f9797756a5c1b3c4',1,'molpro::vector::crbegin()'],['../classmolpro_1_1array.html#ab71630b99d5252da2dd105424e7d94c0',1,'molpro::array::crbegin()']]],
+  ['crend_8',['crend',['../classmolpro_1_1vector.html#af97d28649562011df8eab5912c1c2bda',1,'molpro::vector::crend()'],['../classmolpro_1_1array.html#a122faaab9a23648ed6f97b1c110d5e62',1,'molpro::array::crend()']]]
 ];

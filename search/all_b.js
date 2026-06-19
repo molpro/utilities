@@ -19,6 +19,5 @@ var searchData=
   ['operator_5b_5d_16',['operator[]',['../classmolpro_1_1vector.html#ad080b4e0f3c5c889c2eef2fe0442497e',1,'molpro::vector::operator[](size_t n)'],['../classmolpro_1_1vector.html#ac6b33f2aeed6b9d097f8729307d0f0d4',1,'molpro::vector::operator[](size_t n) const'],['../classmolpro_1_1array.html#a645d59e4120467ac321ab8c1aabc1fe6',1,'molpro::array::operator[](size_t n)'],['../classmolpro_1_1array.html#a98c11cabac3e26009d313fbf8c943b8a',1,'molpro::array::operator[](size_t n) const']]],
   ['options_17',['Options',['../classmolpro_1_1Options.html',1,'molpro::Options'],['../classmolpro_1_1Options.html#a7e2224a866b3107fe23a1cdf53122d6f',1,'molpro::Options::Options(std::string program, std::string input=&quot;&quot;)'],['../classmolpro_1_1Options.html#a9206817eaa278e2129641f53e81234d2',1,'molpro::Options::Options(std::string program, int argc, char *argv[])']]],
   ['options_2ecpp_18',['Options.cpp',['../Options_8cpp.html',1,'']]],
-  ['options_2eh_19',['Options.h',['../Options_8h.html',1,'']]],
-  ['other_20',['other',['../structmolpro_1_1allocator___1_1rebind.html#acd655fd0de629f8a25843b7bdbfa8046',1,'molpro::allocator_::rebind']]]
+  ['options_2eh_19',['Options.h',['../Options_8h.html',1,'']]]
 ];
