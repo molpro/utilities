@@ -18,6 +18,9 @@ jobs:
     permissions:
       contents: write
       packages: write
+    strategy:
+      matrix:
+        cxx-standard: [17, 20, 23]
     container:
       # relies on repository name being all lower case
       image: ghcr.io/${{ github.repository }}
@@ -39,11 +42,11 @@ jobs:
 
     - name: Configure CMake
       if: steps.check_configuration.outputs.files_exists == 'true'
-      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.CMAKE_BUILD_TYPE}} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+      run: cmake -B ${{github.workspace}}/build -DCMAKE_BUILD_TYPE=${{env.CMAKE_BUILD_TYPE}} -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_STANDARD=${{matrix.cxx-standard}}
 
     - name: Build
       if: steps.check_configuration.outputs.files_exists == 'true'
-      run: cmake --build ${{github.workspace}}/build --config ${{env.CMAKE_BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/build --config ${{env.CMAKE_BUILD_TYPE}} --verbose
 
     - name: Test
       if: steps.check_configuration.outputs.files_exists == 'true'
