@@ -46,7 +46,7 @@ jobs:
 
     - name: Build
       if: steps.check_configuration.outputs.files_exists == 'true'
-      run: cmake --build ${{github.workspace}}/build --config ${{env.CMAKE_BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/build --config ${{env.CMAKE_BUILD_TYPE}} --verbose
 
     - name: Test
       if: steps.check_configuration.outputs.files_exists == 'true'
