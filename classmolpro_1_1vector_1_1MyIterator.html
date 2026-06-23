@@ -116,8 +116,9 @@ Collaboration diagram for molpro::vector&lt; T, _Alloc &gt;::MyIterator&lt; IsCo
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a47f7396894594d85215eb22b0c0331a9" id="r_a47f7396894594d85215eb22b0c0331a9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a47f7396894594d85215eb22b0c0331a9">iterator_category</a> = std::forward_iterator_tag</td></tr>
+<tr class="memitem:a78a087f86d53465e1230e84a646b7e12" id="r_a78a087f86d53465e1230e84a646b7e12"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78a087f86d53465e1230e84a646b7e12">iterator_category</a> = std::bidirectional_iterator_tag</td></tr>
 <tr class="memitem:a0292edcf2b5fd99ad00acbd9cb039015" id="r_a0292edcf2b5fd99ad00acbd9cb039015"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0292edcf2b5fd99ad00acbd9cb039015">value_type</a> = T</td></tr>
+<tr class="memitem:a13d55a86fb2ea74c45f6ba9ce8f6dccb" id="r_a13d55a86fb2ea74c45f6ba9ce8f6dccb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13d55a86fb2ea74c45f6ba9ce8f6dccb">element_type</a> = T</td></tr>
 <tr class="memitem:a599d58dffcd859ccb34e1a18ff2650c8" id="r_a599d58dffcd859ccb34e1a18ff2650c8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> = std::ptrdiff_t</td></tr>
 <tr class="memitem:ad9d93947bf59bf712c51330c141e6e76" id="r_ad9d93947bf59bf712c51330c141e6e76"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9d93947bf59bf712c51330c141e6e76">pointer</a> = T*</td></tr>
 <tr class="memitem:a83a363b35ac0a8d1495daa7981ee2a04" id="r_a83a363b35ac0a8d1495daa7981ee2a04"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83a363b35ac0a8d1495daa7981ee2a04">reference</a> = T&amp;</td></tr>
@@ -179,8 +180,8 @@ template&lt;bool IsConst&gt; </div>
 
 </div>
 </div>
-<a id="a47f7396894594d85215eb22b0c0331a9" name="a47f7396894594d85215eb22b0c0331a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a47f7396894594d85215eb22b0c0331a9">&#9670;&#160;</a></span>iterator_category</h2>
+<a id="a13d55a86fb2ea74c45f6ba9ce8f6dccb" name="a13d55a86fb2ea74c45f6ba9ce8f6dccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13d55a86fb2ea74c45f6ba9ce8f6dccb">&#9670;&#160;</a></span>element_type</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,7 +191,25 @@ template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt
 template&lt;bool IsConst&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::iterator_category = std::forward_iterator_tag</td>
+          <td class="memname">using <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::element_type = T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78a087f86d53465e1230e84a646b7e12" name="a78a087f86d53465e1230e84a646b7e12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78a087f86d53465e1230e84a646b7e12">&#9670;&#160;</a></span>iterator_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;bool IsConst&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::iterator_category = std::bidirectional_iterator_tag</td>
         </tr>
       </table>
 </div><div class="memdoc">

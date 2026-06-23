@@ -85,6 +85,8 @@
     <class kind="class">molpro::array</class>
     <class kind="class">molpro::array::MyIterator</class>
     <namespace>molpro</namespace>
+    <namespace>molpro::memory</namespace>
+    <namespace>molpro::memory::detail</namespace>
     <member kind="function">
       <type>size_t</type>
       <name>memory_initialize</name>
@@ -120,54 +122,15 @@
       <anchor>ad0e4375eab3f07c5ea41d1a155e1f659</anchor>
       <arglist>(int64_t level)</arglist>
     </member>
-    <member kind="variable">
-      <type>size_t</type>
-      <name>_private_memory_used</name>
-      <anchorfile>memory_8h.html</anchorfile>
-      <anchor>a5aa5d0cea4ab2a00bdd26f65e37a0ce8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>size_t</type>
-      <name>_private_memory_maximum_allocatable</name>
-      <anchorfile>memory_8h.html</anchorfile>
-      <anchor>a5a1c8111c94239a9fa2daabdb81e34ee</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::unordered_map&lt; char *, size_t &gt;</type>
-      <name>_private_memory_lengths</name>
-      <anchorfile>memory_8h.html</anchorfile>
-      <anchor>a2aec6f858bf6a64ecabaa7f43c5ef5a4</anchor>
-      <arglist></arglist>
-    </member>
   </compound>
   <compound kind="file">
     <name>memoryC.cpp</name>
     <path>/__w/utilities/utilities/src/molpro/</path>
     <filename>memoryC_8cpp.html</filename>
     <includes id="memory_8h" name="memory.h" local="yes" import="no" module="no" objc="no">memory.h</includes>
-    <member kind="variable">
-      <type>size_t</type>
-      <name>_private_memory_used</name>
-      <anchorfile>memoryC_8cpp.html</anchorfile>
-      <anchor>a5aa5d0cea4ab2a00bdd26f65e37a0ce8</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>size_t</type>
-      <name>_private_memory_maximum_allocatable</name>
-      <anchorfile>memoryC_8cpp.html</anchorfile>
-      <anchor>a5a1c8111c94239a9fa2daabdb81e34ee</anchor>
-      <arglist></arglist>
-    </member>
-    <member kind="variable">
-      <type>std::unordered_map&lt; char *, size_t &gt;</type>
-      <name>_private_memory_lengths</name>
-      <anchorfile>memoryC_8cpp.html</anchorfile>
-      <anchor>a2aec6f858bf6a64ecabaa7f43c5ef5a4</anchor>
-      <arglist></arglist>
-    </member>
+    <namespace>molpro</namespace>
+    <namespace>molpro::memory</namespace>
+    <namespace>molpro::memory::detail</namespace>
   </compound>
   <compound kind="file">
     <name>mpi.h</name>
@@ -939,10 +902,10 @@
     <filename>classmolpro_1_1array_1_1MyIterator.html</filename>
     <templarg>bool IsConst</templarg>
     <member kind="typedef">
-      <type>std::forward_iterator_tag</type>
+      <type>std::random_access_iterator_tag</type>
       <name>iterator_category</name>
       <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
-      <anchor>a0510689dfb7b752d020a44ea96629a98</anchor>
+      <anchor>aae1140699c8649311cb710c4ab0fcb4c</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -1043,6 +1006,55 @@
       <anchor>ae65e8caffc39057168e7e07615146646</anchor>
       <arglist>(int)</arglist>
     </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator+=</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>ada82ab37771f889968439361b4bb937b</anchor>
+      <arglist>(difference_type n)</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator &amp;</type>
+      <name>operator-=</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>aca4b8684b5ffad73daab86b8333cb45b</anchor>
+      <arglist>(difference_type n)</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator+</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a481ae7af6a43e414d4d9622bcfdd85ae</anchor>
+      <arglist>(difference_type n) const</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator-</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a2cabc644b6bd4e9f4d78bc4e00e5f602</anchor>
+      <arglist>(difference_type n) const</arglist>
+    </member>
+    <member kind="function">
+      <type>difference_type</type>
+      <name>operator-</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a0d6fb6bff227eb465266b2d062e3a454</anchor>
+      <arglist>(const MyIterator &amp;rhs) const</arglist>
+    </member>
+    <member kind="function">
+      <type>value_type &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a148cc493793df65ec77bf6527e3047fb</anchor>
+      <arglist>(difference_type n) const</arglist>
+    </member>
+    <member kind="variable" protection="protected">
+      <type>pointer</type>
+      <name>m_ptr</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>a72610b31739129f6d074e7fdd7110e8d</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="friend">
       <type>friend class</type>
       <name>MyIterator&lt; true &gt;</name>
@@ -1056,6 +1068,20 @@
       <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
       <anchor>ac223f0f27ba0955878dd8100332c3c53</anchor>
       <arglist></arglist>
+    </member>
+    <member kind="friend">
+      <type>friend MyIterator</type>
+      <name>operator+</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>af7c34b09ca9b818939012ec2a54cfef9</anchor>
+      <arglist>(difference_type n, const MyIterator &amp;rhs)</arglist>
+    </member>
+    <member kind="friend">
+      <type>friend MyIterator</type>
+      <name>operator-</name>
+      <anchorfile>classmolpro_1_1array_1_1MyIterator.html</anchorfile>
+      <anchor>af9ddcdffd9c8207a0f20aacb86810337</anchor>
+      <arglist>(difference_type n, const MyIterator &amp;rhs)</arglist>
     </member>
     <member kind="friend">
       <type>friend bool</type>
@@ -1106,10 +1132,10 @@
     <templarg>bool IsConst</templarg>
     <base>molpro::pointer_holder&lt; T, _Alloc &gt;</base>
     <member kind="typedef">
-      <type>std::forward_iterator_tag</type>
+      <type>std::bidirectional_iterator_tag</type>
       <name>iterator_category</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>a47f7396894594d85215eb22b0c0331a9</anchor>
+      <anchor>a78a087f86d53465e1230e84a646b7e12</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -1117,6 +1143,13 @@
       <name>value_type</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
       <anchor>a0292edcf2b5fd99ad00acbd9cb039015</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>T</type>
+      <name>element_type</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a13d55a86fb2ea74c45f6ba9ce8f6dccb</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -1504,7 +1537,7 @@
       <type></type>
       <name>vector</name>
       <anchorfile>classmolpro_1_1vector.html</anchorfile>
-      <anchor>a3f7b8dba2174a8838ddac3cb4e43707d</anchor>
+      <anchor>a2d7ce29c6ec93ac2fb9eb01f5d7d2b42</anchor>
       <arglist>(InputIterator first, InputIterator last)</arglist>
     </member>
     <member kind="function">
@@ -1855,6 +1888,7 @@
     <name>molpro</name>
     <filename>namespacemolpro.html</filename>
     <namespace>molpro::mpi</namespace>
+    <namespace>molpro::memory</namespace>
     <class kind="class">molpro::Options</class>
     <class kind="struct">molpro::_EmptyBase_</class>
     <class kind="class">molpro::allocator_</class>
@@ -1917,6 +1951,36 @@
       <anchorfile>namespacemolpro.html</anchorfile>
       <anchor>ac8e0c66cd41d789b8fdc257dd445a5ea</anchor>
       <arglist>(const std::string &amp;s)</arglist>
+    </member>
+  </compound>
+  <compound kind="namespace">
+    <name>molpro::memory</name>
+    <filename>namespacemolpro_1_1memory.html</filename>
+    <namespace>molpro::memory::detail</namespace>
+  </compound>
+  <compound kind="namespace">
+    <name>molpro::memory::detail</name>
+    <filename>namespacemolpro_1_1memory_1_1detail.html</filename>
+    <member kind="function">
+      <type>size_t &amp;</type>
+      <name>used</name>
+      <anchorfile>namespacemolpro_1_1memory_1_1detail.html</anchorfile>
+      <anchor>ac4351a0f3532e6feff11d4095b3c1206</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t &amp;</type>
+      <name>maximum_allocatable</name>
+      <anchorfile>namespacemolpro_1_1memory_1_1detail.html</anchorfile>
+      <anchor>aacebd2733c6471d0a6b10034a4d7148c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>std::unordered_map&lt; char *, size_t &gt; &amp;</type>
+      <name>lengths</name>
+      <anchorfile>namespacemolpro_1_1memory_1_1detail.html</anchorfile>
+      <anchor>a8751f754c53f37d472cce858f5d766b4</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="namespace">

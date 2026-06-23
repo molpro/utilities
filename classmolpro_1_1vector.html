@@ -113,9 +113,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6e7b8d78f24e0e59081619507305bf81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector of type T with managed storage.  <br /></td></tr>
 <tr class="memitem:a0b72962083da77f22222ab49fc2b09cc" id="r_a0b72962083da77f22222ab49fc2b09cc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b72962083da77f22222ab49fc2b09cc">vector</a> (size_t const length, const T &amp;value)</td></tr>
 <tr class="memdesc:a0b72962083da77f22222ab49fc2b09cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector of type T with managed storage.  <br /></td></tr>
-<tr class="memitem:a3f7b8dba2174a8838ddac3cb4e43707d" id="r_a3f7b8dba2174a8838ddac3cb4e43707d"><td class="memTemplParams" colspan="2">template&lt;class InputIterator&gt; </td></tr>
-<tr class="memitem:a3f7b8dba2174a8838ddac3cb4e43707d template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f7b8dba2174a8838ddac3cb4e43707d">vector</a> (InputIterator first, InputIterator last)</td></tr>
-<tr class="memdesc:a3f7b8dba2174a8838ddac3cb4e43707d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector of type T with managed storage.  <br /></td></tr>
+<tr class="memitem:a2d7ce29c6ec93ac2fb9eb01f5d7d2b42" id="r_a2d7ce29c6ec93ac2fb9eb01f5d7d2b42"><td class="memTemplParams" colspan="2">template&lt;class InputIterator, typename = decltype(*std::declval&lt;InputIterator&amp;&gt;(), ++std::declval&lt;InputIterator&amp;&gt;())&gt; </td></tr>
+<tr class="memitem:a2d7ce29c6ec93ac2fb9eb01f5d7d2b42 template"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d7ce29c6ec93ac2fb9eb01f5d7d2b42">vector</a> (InputIterator first, InputIterator last)</td></tr>
+<tr class="memdesc:a2d7ce29c6ec93ac2fb9eb01f5d7d2b42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector of type T with managed storage.  <br /></td></tr>
 <tr class="memitem:a0f612f9a8c74e85d5308df927bae1a95" id="r_a0f612f9a8c74e85d5308df927bae1a95"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f612f9a8c74e85d5308df927bae1a95">vector</a> (std::initializer_list&lt; T &gt; il)</td></tr>
 <tr class="memdesc:a0f612f9a8c74e85d5308df927bae1a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a vector of type T with managed storage.  <br /></td></tr>
 <tr class="memitem:acc06d6ac6ac531350e8e2249b2c25ef6" id="r_acc06d6ac6ac531350e8e2249b2c25ef6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc06d6ac6ac531350e8e2249b2c25ef6">vector</a> (const vector&lt; T, _Alloc &gt; &amp;source)</td></tr>
@@ -356,15 +356,15 @@ template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt
 
 </div>
 </div>
-<a id="a3f7b8dba2174a8838ddac3cb4e43707d" name="a3f7b8dba2174a8838ddac3cb4e43707d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f7b8dba2174a8838ddac3cb4e43707d">&#9670;&#160;</a></span>vector() <span class="overload">[3/5]</span></h2>
+<a id="a2d7ce29c6ec93ac2fb9eb01f5d7d2b42" name="a2d7ce29c6ec93ac2fb9eb01f5d7d2b42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d7ce29c6ec93ac2fb9eb01f5d7d2b42">&#9670;&#160;</a></span>vector() <span class="overload">[3/5]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
 <div class="memtemplate">
-template&lt;class InputIterator&gt; </div>
+template&lt;class InputIterator, typename = decltype(*std::declval&lt;InputIterator&amp;&gt;(), ++std::declval&lt;InputIterator&amp;&gt;())&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

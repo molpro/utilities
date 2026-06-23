@@ -8,6 +8,7 @@ var namespacemolpro =
       [ "rank_global", "namespacemolpro_1_1mpi.html#a93ec5ec29948bca90660e2140ff63a40", null ],
       [ "size_global", "namespacemolpro_1_1mpi.html#aecf7017ca7ecdd4e8228167f721c09cc", null ]
     ] ],
+    [ "memory", "namespacemolpro_1_1memory.html", "namespacemolpro_1_1memory" ],
     [ "Options", "classmolpro_1_1Options.html", "classmolpro_1_1Options" ],
     [ "_EmptyBase_", "structmolpro_1_1__EmptyBase__.html", null ],
     [ "allocator_", "classmolpro_1_1allocator__.html", "classmolpro_1_1allocator__" ],

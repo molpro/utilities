@@ -1,7 +1,8 @@
 var classmolpro_1_1vector_1_1MyIterator =
 [
     [ "difference_type", "classmolpro_1_1vector_1_1MyIterator.html#a599d58dffcd859ccb34e1a18ff2650c8", null ],
-    [ "iterator_category", "classmolpro_1_1vector_1_1MyIterator.html#a47f7396894594d85215eb22b0c0331a9", null ],
+    [ "element_type", "classmolpro_1_1vector_1_1MyIterator.html#a13d55a86fb2ea74c45f6ba9ce8f6dccb", null ],
+    [ "iterator_category", "classmolpro_1_1vector_1_1MyIterator.html#a78a087f86d53465e1230e84a646b7e12", null ],
     [ "pointer", "classmolpro_1_1vector_1_1MyIterator.html#ad9d93947bf59bf712c51330c141e6e76", null ],
     [ "reference", "classmolpro_1_1vector_1_1MyIterator.html#a83a363b35ac0a8d1495daa7981ee2a04", null ],
     [ "value_type", "classmolpro_1_1vector_1_1MyIterator.html#a0292edcf2b5fd99ad00acbd9cb039015", null ],
