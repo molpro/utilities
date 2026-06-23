@@ -5,12 +5,10 @@
 #include <cassert> // assumed that NDEBUG is set properly for optimised compilation
 #include <climits>
 #include <cstddef>
-#include <cstdint>
 #include <initializer_list>
 #include <iostream>
 #include <iterator>
 #include <limits>
-#include <new>
 #include <sstream>
 #include <stdexcept>
 #include <string>
@@ -94,9 +92,11 @@ void memory_module_test_fortran(int printlevel);
 }
 
 #else // MOLPRO_MEMORY_FORTRAN
-extern size_t _private_memory_used;
-extern size_t _private_memory_maximum_allocatable;
-extern std::unordered_map<char*, size_t> _private_memory_lengths;
+namespace molpro::memory::detail{
+  size_t& used();
+  size_t& maximum_allocatable();
+  std::unordered_map<char*, size_t>& lengths();
+}
 
 /*!
  * \brief Initialize the memory system
@@ -104,19 +104,19 @@ extern std::unordered_map<char*, size_t> _private_memory_lengths;
  * \param max The number of bytes to be reserved for the stack
  */
 inline size_t memory_initialize(char *buffer, size_t max) {
-  return (_private_memory_maximum_allocatable = max);
+  return (molpro::memory::detail::maximum_allocatable() = max);
 } // more checks
 /*!
  * \brief memory_used Report currently used memory
  * \param maximum is ignored. Present for compatibility with the enhanced interface in the Molpro environment
  * \return
  */
-inline size_t memory_used(int maximum = 0) { return _private_memory_used; }
+inline size_t memory_used(int maximum = 0) { return molpro::memory::detail::used(); }
 /*!
  * \brief memory_remaining Report used memory
  * \return remaining memory in bytes
  */
-inline size_t memory_remaining() { return _private_memory_maximum_allocatable - _private_memory_used; }
+inline size_t memory_remaining() { return molpro::memory::detail::maximum_allocatable() - molpro::memory::detail::used(); }
 /*!
  * \brief memory_print_status Print the state of the memory
  */
@@ -166,8 +166,8 @@ class allocator_ : public A {
 #ifdef MOLPRO_MEMORY_FORTRAN
     if (memory_remaining() < cnt * sizeof(T))
 #else
-    if (_private_memory_maximum_allocatable == 0) _private_memory_maximum_allocatable = memory_initialize(nullptr, std::numeric_limits<size_t>::max());
-    if ((_private_memory_maximum_allocatable - _private_memory_used) < (cnt * sizeof(T)))
+    if (molpro::memory::detail::maximum_allocatable() == 0) molpro::memory::detail::maximum_allocatable() = memory_initialize(nullptr, std::numeric_limits<size_t>::max());
+    if ((molpro::memory::detail::maximum_allocatable() - molpro::memory::detail::used()) < (cnt * sizeof(T)))
 #endif
       throw std::runtime_error(std::string("molpro::allocate: insufficient remaining stack memory; remaining=")
                                    + std::to_string(static_cast<unsigned long long>(memory_remaining()))
@@ -176,14 +176,14 @@ class allocator_ : public A {
 #ifdef MOLPRO_MEMORY_FORTRAN
     return reinterpret_cast<T *>(memory_allocate(cnt * sizeof(T)));
 #else
-    _private_memory_used += cnt * sizeof(T);
+    molpro::memory::detail::used() += cnt * sizeof(T);
     #ifdef MEMORY_MALLOC
     auto result = reinterpret_cast<T *>( malloc(cnt * sizeof (T)));
     #else
     void* pp = ::operator new[](cnt * sizeof(T));
     auto result = reinterpret_cast<T *>( pp);
     #endif
-    _private_memory_lengths[reinterpret_cast<char*>(result)] = cnt * sizeof(T);
+    molpro::memory::detail::lengths()[reinterpret_cast<char*>(result)] = cnt * sizeof(T);
     return result;
 #endif
   }
@@ -192,10 +192,10 @@ class allocator_ : public A {
 #ifdef MOLPRO_MEMORY_FORTRAN
     memory_release((char*) p, 0);
 #else
-    auto it = _private_memory_lengths.find(reinterpret_cast<char*>(p));
-    if (it != _private_memory_lengths.end()) {
-      _private_memory_used -= it->second;
-      _private_memory_lengths.erase(it);
+    auto it = molpro::memory::detail::lengths().find(reinterpret_cast<char*>(p));
+    if (it != molpro::memory::detail::lengths().end()) {
+      molpro::memory::detail::used() -= it->second;
+      molpro::memory::detail::lengths().erase(it);
     }
     #ifdef MEMORY_MALLOC
     free(reinterpret_cast<char*>(p));
