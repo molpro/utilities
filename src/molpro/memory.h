@@ -508,7 +508,7 @@ explicit vector(size_t const length = 0)
 
   iterator erase(const_iterator first, const_iterator last) {
     return &(*m_stdvector.erase(m_stdvector.begin() + (&(*first) - data()),
-                                m_stdvector.begin() + (&(*last) - data())));
+                                m_stdvector.begin() + (last == end() ? size() : (&(*last) - data()))));
   }
 
 /*!
