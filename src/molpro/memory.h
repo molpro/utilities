@@ -299,7 +299,7 @@ explicit vector(size_t const length = 0)
  * \param first Starting iterator of vector to copy
  * \param last Ending iterator of vector to copy
  */
-  template<class InputIterator>
+  template<class InputIterator, typename = decltype(*std::declval<InputIterator&>(), ++std::declval<InputIterator&>())>
   vector(InputIterator first, InputIterator last)
       : m_stdvector(first, last), m_buffer(m_stdvector.data()) {}
 
