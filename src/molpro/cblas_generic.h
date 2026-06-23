@@ -11,9 +11,9 @@ extern "C" {            /* Assume C declarations for C++ */
  * Enumerated and derived types
  */
 #ifdef WeirdNEC
-   #define CBLAS_INDEX long
+   using CBLAS_INDEX = long;
 #else
-   #define CBLAS_INDEX int
+   using CBLAS_INDEX = int;
 #endif
 
 typedef enum CBLAS_LAYOUT {CblasRowMajor=101, CblasColMajor=102} CBLAS_LAYOUT;
