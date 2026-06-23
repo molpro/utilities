@@ -17,6 +17,7 @@
 #include <unordered_map>
 #include <vector>
 #include <molpro/memory/memory-config.h>
+#include <ranges>
 
 #ifdef MOLPRO_MEMORY_FORTRAN
 extern "C" {
@@ -434,8 +435,9 @@ explicit vector(size_t const length = 0)
   template <bool IsConst>
   class MyIterator : public pointer_holder<T,_Alloc> {
   public:
-    using iterator_category = std::forward_iterator_tag;
+    using iterator_category = std::bidirectional_iterator_tag;
     using value_type = T;
+    using element_type = T;
     using difference_type = std::ptrdiff_t;
     using pointer = T*;
     using reference = T&;
@@ -463,6 +465,7 @@ explicit vector(size_t const length = 0)
     friend bool operator>(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr > rhs.m_ptr;}
     friend bool operator<=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr <= rhs.m_ptr;}
     friend bool operator>=(const MyIterator& lhs, const MyIterator& rhs) { return lhs.m_ptr >= rhs.m_ptr; }
+    // bool operator==(const MyIterator& rhs) const noexcept { return this->m_ptr == rhs.m_ptr; }
     friend class MyIterator<true>;
     friend class MyIterator<false>;
     // friend MyIterator erase(MyIterator first, MyIterator last) ;
@@ -470,6 +473,11 @@ explicit vector(size_t const length = 0)
   // private:
     // pointer m_ptr;
   };
+#ifdef _cpp_concepts
+  static_assert(std::default_initializable<MyIterator<false>>);
+  static_assert(std::bidirectional_iterator<MyIterator<false>>);
+  static_assert(std::bidirectional_iterator<MyIterator<true>>);
+#endif
 
   using Iterator = MyIterator<false>;
   using ConstIterator = MyIterator<true>;
@@ -849,7 +857,7 @@ class array {
   template <bool IsConst>
   class MyIterator {
   public:
-    using iterator_category = std::forward_iterator_tag;
+    using iterator_category = std::random_access_iterator_tag;
     using value_type = T;
     using difference_type = std::ptrdiff_t;
     using pointer = T*;
@@ -866,6 +874,14 @@ class array {
     MyIterator operator++(int) {MyIterator tmp = *this; ++(*this); return tmp; }
     MyIterator& operator--() {m_ptr--; return *this; }
     MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
+    MyIterator& operator+=(difference_type n) {m_ptr += n; return *this; }
+    MyIterator& operator-=(difference_type n) {m_ptr -= n; return *this; }
+    MyIterator operator+(difference_type n) const {return MyIterator(m_ptr + n);}
+    MyIterator operator-(difference_type n) const {return MyIterator(m_ptr - n);}
+    friend MyIterator operator+(difference_type n, const MyIterator& rhs) {return MyIterator(rhs.m_ptr + n);}
+    friend MyIterator operator-(difference_type n, const MyIterator& rhs) {return MyIterator(rhs.m_ptr - n);}
+    difference_type operator-(const MyIterator& rhs) const {return m_ptr - rhs.m_ptr;}
+    value_type& operator[](difference_type n) const {return m_ptr[n];}
     friend bool operator==(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr == rhs.m_ptr;}
     friend bool operator!=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr != rhs.m_ptr;}
     friend bool operator<(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr < rhs.m_ptr;}
@@ -874,7 +890,7 @@ class array {
     friend bool operator>=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr >= rhs.m_ptr;}
     friend class MyIterator<true>;
     friend class MyIterator<false>;
-  private:
+  protected:
     pointer m_ptr;
   };
 
@@ -926,6 +942,14 @@ class array {
     return s.str();
   }
 };
+
+#ifdef _cpp_concepts
+static_assert(std::default_initializable<molpro::array<int>::MyIterator<true>>);
+static_assert(std::forward_iterator<molpro::array<int>::MyIterator<true>>);
+static_assert(std::ranges::forward_range<molpro::array<int>>);
+static_assert(std::random_access_iterator<molpro::array<int>::Iterator>);
+static_assert(std::bidirectional_iterator<molpro::array<int>::MyIterator<true>>);
+#endif
 
 template<class T>
 std::ostream& operator<<(std::ostream& os, array<T> const& obj) {
