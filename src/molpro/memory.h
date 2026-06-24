@@ -229,7 +229,15 @@ namespace molpro {
 template<typename T=double, typename A=molpro::allocator<T> >
 using stdvector = std::vector<T, A>;
 
-/*!
+
+template<typename T=double, typename _Alloc=molpro::allocator<T>>
+class pointer_holder {
+public:
+  pointer_holder(T* const ptr) : m_ptr(ptr) {}
+  T* m_ptr;
+};
+template<typename T=double, typename _Alloc=molpro::allocator<T>>
+  /*!
  * @brief A template for a container class like std::vector<T> but with the following features.
  *
  * - the default allocator is molpro::allocator<T> which uses a managed stack.
@@ -260,13 +268,6 @@ using stdvector = std::vector<T, A>;
  * return 0; }
  * \endcode
  */
-template<typename T=double, typename _Alloc=molpro::allocator<T>>
-class pointer_holder {
-public:
-  pointer_holder(T* const ptr) : m_ptr(ptr) {}
-  T* m_ptr;
-};
-template<typename T=double, typename _Alloc=molpro::allocator<T>>
 class vector {
 /* The _Alloc template argument is provided to let molpro::vector have
    the same signature as std::vector. They must have same signature if you
