@@ -436,7 +436,7 @@ explicit vector(size_t const length = 0)
   template <bool IsConst>
   class MyIterator : public pointer_holder<T,_Alloc> {
   public:
-    using iterator_category = std::bidirectional_iterator_tag;
+    using iterator_category = std::random_access_iterator_tag;
     using value_type = T;
     using element_type = T;
     using difference_type = std::ptrdiff_t;
@@ -456,10 +456,12 @@ explicit vector(size_t const length = 0)
     MyIterator operator--(int) {MyIterator tmp = *this; --(*this); return tmp; }
     MyIterator& operator+=(difference_type n) {(this->m_ptr) += n; return *this; }
     MyIterator& operator-=(difference_type n) {(this->m_ptr) -= n; return *this; }
-    friend MyIterator operator+(difference_type n, const MyIterator& rhs) {MyIterator tmp(rhs); return tmp += n; }
-    friend MyIterator operator+( const MyIterator& rhs,difference_type n) {MyIterator tmp(rhs); return tmp += n; }
-    friend MyIterator operator-(difference_type n, const MyIterator& rhs) {MyIterator tmp(rhs); return tmp -= n; }
-    friend MyIterator operator-( const MyIterator& rhs,difference_type n) {MyIterator tmp(rhs); return tmp -= n; }
+    MyIterator operator+(difference_type n) const {return MyIterator(this->m_ptr + n);}
+    MyIterator operator-(difference_type n) const {return MyIterator(this->m_ptr - n);}
+    friend MyIterator operator+(difference_type n, const MyIterator& rhs) {return MyIterator(rhs.m_ptr + n);}
+    friend MyIterator operator-(difference_type n, const MyIterator& rhs) {return MyIterator(rhs.m_ptr - n);}
+    difference_type operator-(const MyIterator& rhs) const {return this->m_ptr - rhs.m_ptr;}
+    value_type& operator[](difference_type n) const {return this->m_ptr[n];}
     friend bool operator==(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr == rhs.m_ptr;}
     friend bool operator!=(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr != rhs.m_ptr;}
     friend bool operator<(const MyIterator& lhs, const MyIterator& rhs) {return lhs.m_ptr < rhs.m_ptr;}
@@ -474,10 +476,10 @@ explicit vector(size_t const length = 0)
   // private:
     // pointer m_ptr;
   };
-#ifdef _cpp_concepts
+#ifdef __cpp_concepts
   static_assert(std::default_initializable<MyIterator<false>>);
-  static_assert(std::bidirectional_iterator<MyIterator<false>>);
-  static_assert(std::bidirectional_iterator<MyIterator<true>>);
+  static_assert(std::random_access_iterator<MyIterator<false>>);
+  static_assert(std::random_access_iterator<MyIterator<true>>);
 #endif
 
   using Iterator = MyIterator<false>;
@@ -944,7 +946,7 @@ class array {
   }
 };
 
-#ifdef _cpp_concepts
+#ifdef __cpp_concepts
 static_assert(std::default_initializable<molpro::array<int>::MyIterator<true>>);
 static_assert(std::forward_iterator<molpro::array<int>::MyIterator<true>>);
 static_assert(std::ranges::forward_range<molpro::array<int>>);
