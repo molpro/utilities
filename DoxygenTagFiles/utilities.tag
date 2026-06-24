@@ -1132,10 +1132,10 @@
     <templarg>bool IsConst</templarg>
     <base>molpro::pointer_holder&lt; T, _Alloc &gt;</base>
     <member kind="typedef">
-      <type>std::bidirectional_iterator_tag</type>
+      <type>std::random_access_iterator_tag</type>
       <name>iterator_category</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>a78a087f86d53465e1230e84a646b7e12</anchor>
+      <anchor>aeb68b82b997f2bf73a20ecd94066139c</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -1257,6 +1257,34 @@
       <anchor>a84996b4a51efdab07c2a21bbd968eb67</anchor>
       <arglist>(difference_type n)</arglist>
     </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator+</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a28b59bcdfb1a33dde8a49250dafa98cc</anchor>
+      <arglist>(difference_type n) const</arglist>
+    </member>
+    <member kind="function">
+      <type>MyIterator</type>
+      <name>operator-</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a9ad97f4b5f192ac834aadfa68b6bfb53</anchor>
+      <arglist>(difference_type n) const</arglist>
+    </member>
+    <member kind="function">
+      <type>difference_type</type>
+      <name>operator-</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a08fd02baec9d445c198f4c73debf3f85</anchor>
+      <arglist>(const MyIterator &amp;rhs) const</arglist>
+    </member>
+    <member kind="function">
+      <type>value_type &amp;</type>
+      <name>operator[]</name>
+      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
+      <anchor>a3203f045bad88c716c6c0b83d3a3ba1d</anchor>
+      <arglist>(difference_type n) const</arglist>
+    </member>
     <member kind="friend">
       <type>friend class</type>
       <name>MyIterator&lt; true &gt;</name>
@@ -1280,24 +1308,10 @@
     </member>
     <member kind="friend">
       <type>friend MyIterator</type>
-      <name>operator+</name>
-      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>a1a22f8292663fc822f409451116b753d</anchor>
-      <arglist>(const MyIterator &amp;rhs, difference_type n)</arglist>
-    </member>
-    <member kind="friend">
-      <type>friend MyIterator</type>
       <name>operator-</name>
       <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
       <anchor>af9ddcdffd9c8207a0f20aacb86810337</anchor>
       <arglist>(difference_type n, const MyIterator &amp;rhs)</arglist>
-    </member>
-    <member kind="friend">
-      <type>friend MyIterator</type>
-      <name>operator-</name>
-      <anchorfile>classmolpro_1_1vector_1_1MyIterator.html</anchorfile>
-      <anchor>a2ae96d2063fa64e78801593f6c497575</anchor>
-      <arglist>(const MyIterator &amp;rhs, difference_type n)</arglist>
     </member>
     <member kind="friend">
       <type>friend bool</type>

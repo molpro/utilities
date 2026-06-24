@@ -116,7 +116,7 @@ Collaboration diagram for molpro::vector&lt; T, _Alloc &gt;::MyIterator&lt; IsCo
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a78a087f86d53465e1230e84a646b7e12" id="r_a78a087f86d53465e1230e84a646b7e12"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78a087f86d53465e1230e84a646b7e12">iterator_category</a> = std::bidirectional_iterator_tag</td></tr>
+<tr class="memitem:aeb68b82b997f2bf73a20ecd94066139c" id="r_aeb68b82b997f2bf73a20ecd94066139c"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb68b82b997f2bf73a20ecd94066139c">iterator_category</a> = std::random_access_iterator_tag</td></tr>
 <tr class="memitem:a0292edcf2b5fd99ad00acbd9cb039015" id="r_a0292edcf2b5fd99ad00acbd9cb039015"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0292edcf2b5fd99ad00acbd9cb039015">value_type</a> = T</td></tr>
 <tr class="memitem:a13d55a86fb2ea74c45f6ba9ce8f6dccb" id="r_a13d55a86fb2ea74c45f6ba9ce8f6dccb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13d55a86fb2ea74c45f6ba9ce8f6dccb">element_type</a> = T</td></tr>
 <tr class="memitem:a599d58dffcd859ccb34e1a18ff2650c8" id="r_a599d58dffcd859ccb34e1a18ff2650c8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> = std::ptrdiff_t</td></tr>
@@ -138,6 +138,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abca16f8876ff2005af0fbb271030e2f2" id="r_abca16f8876ff2005af0fbb271030e2f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abca16f8876ff2005af0fbb271030e2f2">operator--</a> (int)</td></tr>
 <tr class="memitem:a7a019ba091d1630457b8021b905197b5" id="r_a7a019ba091d1630457b8021b905197b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a019ba091d1630457b8021b905197b5">operator+=</a> (<a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n)</td></tr>
 <tr class="memitem:a84996b4a51efdab07c2a21bbd968eb67" id="r_a84996b4a51efdab07c2a21bbd968eb67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84996b4a51efdab07c2a21bbd968eb67">operator-=</a> (<a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n)</td></tr>
+<tr class="memitem:a28b59bcdfb1a33dde8a49250dafa98cc" id="r_a28b59bcdfb1a33dde8a49250dafa98cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28b59bcdfb1a33dde8a49250dafa98cc">operator+</a> (<a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n) const</td></tr>
+<tr class="memitem:a9ad97f4b5f192ac834aadfa68b6bfb53" id="r_a9ad97f4b5f192ac834aadfa68b6bfb53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ad97f4b5f192ac834aadfa68b6bfb53">operator-</a> (<a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n) const</td></tr>
+<tr class="memitem:a08fd02baec9d445c198f4c73debf3f85" id="r_a08fd02baec9d445c198f4c73debf3f85"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08fd02baec9d445c198f4c73debf3f85">operator-</a> (const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs) const</td></tr>
+<tr class="memitem:a3203f045bad88c716c6c0b83d3a3ba1d" id="r_a3203f045bad88c716c6c0b83d3a3ba1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a0292edcf2b5fd99ad00acbd9cb039015">value_type</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3203f045bad88c716c6c0b83d3a3ba1d">operator[]</a> (<a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n) const</td></tr>
 <tr class="inherit_header pub_methods_classmolpro_1_1pointer__holder"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classmolpro_1_1pointer__holder')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="classmolpro_1_1pointer__holder.html">molpro::pointer_holder&lt; T, _Alloc &gt;</a></td></tr>
 <tr class="memitem:a6acc157dba03110241169ea509b0dae8 inherit pub_methods_classmolpro_1_1pointer__holder" id="r_a6acc157dba03110241169ea509b0dae8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmolpro_1_1pointer__holder.html#a6acc157dba03110241169ea509b0dae8">pointer_holder</a> (T *const ptr)</td></tr>
 </table><table class="memberdecls">
@@ -146,9 +150,7 @@ Friends</h2></td></tr>
 <tr class="memitem:aa994fbfa2f35113829261b203072388a" id="r_aa994fbfa2f35113829261b203072388a"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa994fbfa2f35113829261b203072388a">MyIterator&lt; true &gt;</a></td></tr>
 <tr class="memitem:ac223f0f27ba0955878dd8100332c3c53" id="r_ac223f0f27ba0955878dd8100332c3c53"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac223f0f27ba0955878dd8100332c3c53">MyIterator&lt; false &gt;</a></td></tr>
 <tr class="memitem:af7c34b09ca9b818939012ec2a54cfef9" id="r_af7c34b09ca9b818939012ec2a54cfef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af7c34b09ca9b818939012ec2a54cfef9">operator+</a> (<a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n, const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs)</td></tr>
-<tr class="memitem:a1a22f8292663fc822f409451116b753d" id="r_a1a22f8292663fc822f409451116b753d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a22f8292663fc822f409451116b753d">operator+</a> (const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs, <a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n)</td></tr>
 <tr class="memitem:af9ddcdffd9c8207a0f20aacb86810337" id="r_af9ddcdffd9c8207a0f20aacb86810337"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9ddcdffd9c8207a0f20aacb86810337">operator-</a> (<a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n, const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs)</td></tr>
-<tr class="memitem:a2ae96d2063fa64e78801593f6c497575" id="r_a2ae96d2063fa64e78801593f6c497575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ae96d2063fa64e78801593f6c497575">operator-</a> (const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs, <a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> n)</td></tr>
 <tr class="memitem:ab3184c5b2ee73e8c248e90212c447823" id="r_ab3184c5b2ee73e8c248e90212c447823"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3184c5b2ee73e8c248e90212c447823">operator==</a> (const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;lhs, const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs)</td></tr>
 <tr class="memitem:ac20abf02b27483d2a95b2e5e6e50255b" id="r_ac20abf02b27483d2a95b2e5e6e50255b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac20abf02b27483d2a95b2e5e6e50255b">operator!=</a> (const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;lhs, const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs)</td></tr>
 <tr class="memitem:ae3199281f4d5b5b46c242ca3d5347564" id="r_ae3199281f4d5b5b46c242ca3d5347564"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae3199281f4d5b5b46c242ca3d5347564">operator&lt;</a> (const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;lhs, const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> &amp;rhs)</td></tr>
@@ -198,8 +200,8 @@ template&lt;bool IsConst&gt; </div>
 
 </div>
 </div>
-<a id="a78a087f86d53465e1230e84a646b7e12" name="a78a087f86d53465e1230e84a646b7e12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78a087f86d53465e1230e84a646b7e12">&#9670;&#160;</a></span>iterator_category</h2>
+<a id="aeb68b82b997f2bf73a20ecd94066139c" name="aeb68b82b997f2bf73a20ecd94066139c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb68b82b997f2bf73a20ecd94066139c">&#9670;&#160;</a></span>iterator_category</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +211,7 @@ template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt
 template&lt;bool IsConst&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::iterator_category = std::bidirectional_iterator_tag</td>
+          <td class="memname">using <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::iterator_category = std::random_access_iterator_tag</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -419,6 +421,35 @@ template&lt;bool IsConst&gt; </div>
 
 </div>
 </div>
+<a id="a28b59bcdfb1a33dde8a49250dafa98cc" name="a28b59bcdfb1a33dde8a49250dafa98cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28b59bcdfb1a33dde8a49250dafa98cc">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aa4598c5f7b9989fbca8c1f6425f66051" name="aa4598c5f7b9989fbca8c1f6425f66051"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa4598c5f7b9989fbca8c1f6425f66051">&#9670;&#160;</a></span>operator++() <span class="overload">[1/2]</span></h2>
 
@@ -495,6 +526,64 @@ template&lt;bool IsConst&gt; </div>
           <td>(</td>
           <td class="paramtype"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a08fd02baec9d445c198f4c73debf3f85" name="a08fd02baec9d445c198f4c73debf3f85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08fd02baec9d445c198f4c73debf3f85">&#9670;&#160;</a></span>operator-() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a> <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&lt; IsConst &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9ad97f4b5f192ac834aadfa68b6bfb53" name="a9ad97f4b5f192ac834aadfa68b6bfb53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ad97f4b5f192ac834aadfa68b6bfb53">&#9670;&#160;</a></span>operator-() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -622,6 +711,35 @@ template&lt;bool IsConst&gt; </div>
 
 </div>
 </div>
+<a id="a3203f045bad88c716c6c0b83d3a3ba1d" name="a3203f045bad88c716c6c0b83d3a3ba1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3203f045bad88c716c6c0b83d3a3ba1d">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;bool IsConst&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a0292edcf2b5fd99ad00acbd9cb039015">value_type</a> &amp; <a class="el" href="classmolpro_1_1vector.html">molpro::vector</a>&lt; T, _Alloc &gt;<a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">::MyIterator</a>&lt; IsConst &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a name="doc-related-members" id="doc-related-members"></a><h2 id="header-doc-related-members" class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="ac223f0f27ba0955878dd8100332c3c53" name="ac223f0f27ba0955878dd8100332c3c53"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac223f0f27ba0955878dd8100332c3c53">&#9670;&#160;</a></span>MyIterator&lt; false &gt;</h2>
@@ -708,41 +826,8 @@ template&lt;bool IsConst&gt; </div>
 
 </div>
 </div>
-<a id="a1a22f8292663fc822f409451116b753d" name="a1a22f8292663fc822f409451116b753d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a22f8292663fc822f409451116b753d">&#9670;&#160;</a></span>operator+ <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;bool IsConst&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> operator+ </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&lt; IsConst &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="af7c34b09ca9b818939012ec2a54cfef9" name="af7c34b09ca9b818939012ec2a54cfef9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af7c34b09ca9b818939012ec2a54cfef9">&#9670;&#160;</a></span>operator+ <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c34b09ca9b818939012ec2a54cfef9">&#9670;&#160;</a></span>operator+</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -774,41 +859,8 @@ template&lt;bool IsConst&gt; </div>
 
 </div>
 </div>
-<a id="a2ae96d2063fa64e78801593f6c497575" name="a2ae96d2063fa64e78801593f6c497575"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ae96d2063fa64e78801593f6c497575">&#9670;&#160;</a></span>operator- <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T = double, typename _Alloc = molpro::allocator&lt;T&gt;&gt; </div>
-<div class="memtemplate">
-template&lt;bool IsConst&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a> operator- </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="#a634a7ca62af470bcb2d588eb216bf1ad">MyIterator</a>&lt; IsConst &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>rhs</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="#a599d58dffcd859ccb34e1a18ff2650c8">difference_type</a></td>          <td class="paramname"><span class="paramname"><em>n</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel friend">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="af9ddcdffd9c8207a0f20aacb86810337" name="af9ddcdffd9c8207a0f20aacb86810337"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af9ddcdffd9c8207a0f20aacb86810337">&#9670;&#160;</a></span>operator- <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af9ddcdffd9c8207a0f20aacb86810337">&#9670;&#160;</a></span>operator-</h2>
 
 <div class="memitem">
 <div class="memproto">
