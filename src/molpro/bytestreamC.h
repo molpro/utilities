@@ -2,6 +2,7 @@
 #define BYTESTREAM_H
 #include <molpro/memory.h>
 #include <cstdint>
+#include <vector>
 
 namespace molpro {
 /*!

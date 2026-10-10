@@ -5,14 +5,19 @@
 #include <cassert> // assumed that NDEBUG is set properly for optimised compilation
 #include <climits>
 #include <cstddef>
+#include <cstdint>
+#include <cstdlib>
 #include <initializer_list>
 #include <iostream>
 #include <iterator>
 #include <limits>
+#include <memory>
 #include <sstream>
 #include <stdexcept>
 #include <string>
+#include <type_traits>
 #include <unordered_map>
+#include <utility>
 #include <vector>
 #include <molpro/memory/memory-config.h>
 #include <ranges>
