@@ -3,7 +3,13 @@
 
 #include <cstdint>
 
-#ifndef HAVE_MPI_H
+// A build configured without MPI can define MOLPRO_NO_MPI_H to force the serial stubs
+// below. The __has_include probe only tells us whether an MPI header exists on this
+// machine, not whether this build links MPI, so without an opt-out a consumer built
+// without MPI on a machine that has one compiles MPI_Init and then fails to link.
+// molpro::utilities defines it through CMake when built without MPI, so consumers
+// inherit that decision.
+#if !defined(HAVE_MPI_H) && !defined(MOLPRO_NO_MPI_H)
 #if defined(OMPI_MPI_H) || defined(MPI_INCLUDED)
 #define HAVE_MPI_H
 #endif
